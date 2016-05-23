@@ -1,13 +1,18 @@
 package org.academiadecodigo.macasdoze.gameobjects;
 
+import org.academiadecodigo.macasdoze.field.Position;
+
 /**
  * Created by codecadet on 23/05/16.
  */
-public interface MovableGameObject {
+public abstract class MovableGameObject extends GameObject {
 
-    int getX();
-    int getY();
+    public MovableGameObject(Position position) {
+        super(position);
+    }
 
-    public void move(int dx, int dy);
+    public void move(int dx, int dy) {
+        super.getPosition(
+    }
 
 }

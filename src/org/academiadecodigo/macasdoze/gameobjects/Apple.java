@@ -1,22 +1,21 @@
 package org.academiadecodigo.macasdoze.gameobjects;
 
+import org.academiadecodigo.macasdoze.field.Position;
+
 /**
  * Created by codecadet on 23/05/16.
  */
-public abstract class Apple extends GameObject implements MovableGameObject{
+public abstract class Apple extends MovableGameObject{
 
-    @Override
-    public int getX() {
-        return 0;
+    private int fallSpeed;
+
+    
+    public Apple(Position position) {
+        super(position);
     }
 
-    @Override
-    public int getY() {
-        return 0;
-    }
 
-    @Override
-    public void move(int dx, int dy) {
-
+    public void fall() {
+        super.move(0, fallSpeed);
     }
 }

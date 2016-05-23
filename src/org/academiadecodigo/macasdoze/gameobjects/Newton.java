@@ -1,18 +1,14 @@
 package org.academiadecodigo.macasdoze.gameobjects;
 
+import org.academiadecodigo.macasdoze.field.Position;
+
 /**
  * Created by codecadet on 23/05/16.
  */
-public class Newton extends GameObject implements MovableGameObject{
+public class Newton extends  MovableGameObject{
 
-    @Override
-    public int getX() {
-        return 0;
-    }
-
-    @Override
-    public int getY() {
-        return 0;
+    public Newton(Position position) {
+        super(position);
     }
 
     @Override

@@ -1,6 +1,6 @@
 package org.academiadecodigo.macasdoze.gameobjects;
 
-import org.academiadecodigo.macasdoze.RandomGenerator;
+import org.academiadecodigo.macasdoze.field.PositionFactory;
 
 /**
  * Created by codecadet on 23/05/16.
@@ -8,16 +8,21 @@ import org.academiadecodigo.macasdoze.RandomGenerator;
 
 public class AppleFactory {
 
-    public static Apple createApple() {
+    private PositionFactory positionFactory;
 
-        int randomApple = RandomGenerator.getRandomNumber(AppleType.values().length - 1);
-        AppleType appleType = AppleType.values()[randomApple];
+    public AppleFactory(PositionFactory positionFactory) {
+        this.positionFactory = positionFactory;
+    }
+
+    public Apple createApple(AppleType type) {
+
+
         Apple apple = null;
 
-        switch (appleType) {
+        switch (type) {
 
             case RED:
-                apple = new Red();
+                apple = new Red(positionFactory.createPosition);
                 break;
 
             case GREEN:

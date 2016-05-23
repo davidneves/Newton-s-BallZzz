@@ -1,4 +1,4 @@
-package org.academiadecodigo.macasdoze.field;
+package org.academiadecodigo.macasdoze;
 
 /**
  * Created by codecadet on 23/05/16.
