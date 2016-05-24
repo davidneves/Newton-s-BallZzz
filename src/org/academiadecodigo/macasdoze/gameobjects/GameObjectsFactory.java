@@ -17,6 +17,10 @@ public class GameObjectsFactory {
     }
 
 
+    public PositionFactory getPositionFactory() {
+        return positionFactory;
+    }
+
     public Apple createApple(GameObjectType type) {
 
 

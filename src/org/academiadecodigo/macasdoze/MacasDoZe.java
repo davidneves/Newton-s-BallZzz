@@ -1,5 +1,6 @@
 package org.academiadecodigo.macasdoze;
 
+import org.academiadecodigo.macasdoze.field.Field;
 import org.academiadecodigo.macasdoze.gameobjects.Apple;
 import org.academiadecodigo.macasdoze.gameobjects.GameObjectsFactory;
 import org.academiadecodigo.macasdoze.gameobjects.Newton;
@@ -11,7 +12,7 @@ public class MacasDoZe {
 
     private int numObjects;
     private int delay;
-    //private Field display;
+    private Field field;
     public static final int height = 1200;
     public static final int width = 500;
 
@@ -25,11 +26,12 @@ public class MacasDoZe {
         this.factory = factory;
         this.numObjects = numObjects;
         this.delay = delay;
-        //display = new Field(height, width);
     }
 
 
     public void start(){
+
+        field = factory.getPositionFactory().createField(height, width);
 
         apples = new Apple[numObjects];
         appleCollector = new AppleCollector();

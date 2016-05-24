@@ -8,4 +8,6 @@ import org.academiadecodigo.macasdoze.gameobjects.GameObjectType;
 public interface PositionFactory {
 
     Position createPosition(GameObjectType type);
+
+    Field createField(int height, int width);
 }

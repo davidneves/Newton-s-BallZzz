@@ -1,5 +1,6 @@
 package org.academiadecodigo.macasdoze.simplegfx;
 
+import org.academiadecodigo.macasdoze.field.Field;
 import org.academiadecodigo.macasdoze.field.Position;
 import org.academiadecodigo.macasdoze.field.PositionFactory;
 import org.academiadecodigo.macasdoze.gameobjects.GameObjectType;
@@ -31,5 +32,10 @@ public class SimpleGfxPositionFactory implements PositionFactory {
                 break;
         }
         return position;
+    }
+
+    @Override
+    public Field createField(int height, int width) {
+        return new SimpleGfxField(height, width);
     }
 }
