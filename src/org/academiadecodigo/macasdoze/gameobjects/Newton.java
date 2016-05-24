@@ -11,9 +11,13 @@ public class Newton extends  MovableGameObject{
         super(position);
     }
 
-    @Override
-    public void move(int dx, int dy) {
 
+    public void moveLeft(int dx) {
+        super.move( -dx, 0);
+    }
+
+    public void moveRight(int dx) {
+        super.move(dx, 0);
     }
 
 }

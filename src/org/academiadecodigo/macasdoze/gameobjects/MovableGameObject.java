@@ -1,5 +1,6 @@
 package org.academiadecodigo.macasdoze.gameobjects;
 
+import org.academiadecodigo.macasdoze.field.MovablePosition;
 import org.academiadecodigo.macasdoze.field.Position;
 
 /**
@@ -11,8 +12,9 @@ public abstract class MovableGameObject extends GameObject {
         super(position);
     }
 
+
     public void move(int dx, int dy) {
-        super.getPosition(
+        ((MovablePosition) getPosition()).move(dx, dy);
     }
 
 }

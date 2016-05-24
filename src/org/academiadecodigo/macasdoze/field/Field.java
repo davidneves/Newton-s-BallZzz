@@ -1,17 +1,18 @@
 package org.academiadecodigo.macasdoze.field;
 
 /**
- * Created by <vi.KING_> David Neves on 23/05/16.
+ * Created by codecadet on 23/05/16.
  */
 public interface Field {
 
+    int getHeight();
+
+    int getWidth();
+
     void init();
-
-    int getX();
-
-    int getY();
 
     Position createPosition();
 
     Position createRandomTopPosition();
+
 }

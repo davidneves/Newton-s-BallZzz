@@ -9,11 +9,14 @@ public abstract class GameObject {
 
     private Position position;
 
-    public Position getPosition() {
-        return position;
-    }
 
     public GameObject(Position position) {
         this.position = position;
     }
+
+    
+    public Position getPosition() {
+        return position;
+    }
+
 }
