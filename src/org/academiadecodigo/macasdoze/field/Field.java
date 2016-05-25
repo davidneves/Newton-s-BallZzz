@@ -11,8 +11,4 @@ public interface Field {
 
     void init();
 
-    Position createPosition();
-
-    Position createRandomTopPosition();
-
 }

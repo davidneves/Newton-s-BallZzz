@@ -35,13 +35,5 @@ public class SimpleGfxField implements Field {
 
     }
 
-    @Override
-    public Position createPosition() {
-        return null;
-    }
 
-    @Override
-    public Position createRandomTopPosition() {
-        return null;
-    }
 }
