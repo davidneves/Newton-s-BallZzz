@@ -1,6 +1,6 @@
 package org.academiadecodigo.macasdoze.simplegfx;
 
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 /**
@@ -9,6 +9,6 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class SimpleGfxRedApple extends SimpleGfxApple {
 
     public SimpleGfxRedApple(int x, int y) {
-        super(new Rectangle(x, y, 20, 20));
+        super(new Picture(x, y, "resources/redApple.png"));
     }
 }

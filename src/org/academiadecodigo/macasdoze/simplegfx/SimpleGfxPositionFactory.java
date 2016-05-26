@@ -23,7 +23,7 @@ public class SimpleGfxPositionFactory implements PositionFactory {
         switch (type) {
 
             case NEWTON:
-                position = new SimpleGfxNewton(MacasDoZe.WIDTH /2 - SimpleGfxNewton.width/2, MacasDoZe.HEIGHT - SimpleGfxNewton.height + MacasDoZe.MARGIN);
+                position = new SimpleGfxNewton(MacasDoZe.WIDTH /2 - SimpleGfxNewton.width/2, MacasDoZe.HEIGHT - SimpleGfxNewton.height + MacasDoZe.MARGIN - 50);
                 break;
             case RED_APPLE:
                 position = new SimpleGfxRedApple(x, MacasDoZe.MARGIN);
