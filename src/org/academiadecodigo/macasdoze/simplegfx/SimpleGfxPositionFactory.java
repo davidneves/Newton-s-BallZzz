@@ -15,15 +15,15 @@ public class SimpleGfxPositionFactory implements PositionFactory {
     @Override
     public Position createPosition(GameObjectType type) {
 
-        int x = RandomGenerator.getRandomNumber(MacasDoZe.width);
-        int y = RandomGenerator.getRandomNumber(MacasDoZe.height);
+        int x = RandomGenerator.getRandomNumber(MacasDoZe.WIDTH);
+        int y = RandomGenerator.getRandomNumber(MacasDoZe.HEIGHT);
 
         Position position = null;
 
         switch (type) {
 
             case NEWTON:
-                position = new SimpleGfxNewton(MacasDoZe.width/2, 20);
+                position = new SimpleGfxNewton(MacasDoZe.WIDTH /2 - SimpleGfxNewton.width/2, MacasDoZe.HEIGHT - SimpleGfxNewton.height + MacasDoZe.MARGIN);
                 break;
             case RED_APPLE:
                 position = new SimpleGfxRedApple(0, y);
@@ -37,7 +37,7 @@ public class SimpleGfxPositionFactory implements PositionFactory {
     }
 
     @Override
-    public Field createField(int height, int width) {
-        return new SimpleGfxField(height, width);
+    public Field createField(int height, int width, int margin) {
+        return new SimpleGfxField(height, width, margin);
     }
 }

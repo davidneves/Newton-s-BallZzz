@@ -1,6 +1,10 @@
 package org.academiadecodigo.macasdoze.gameobjects;
 
+import org.academiadecodigo.macasdoze.MacasDoZe;
+import org.academiadecodigo.macasdoze.field.Field;
 import org.academiadecodigo.macasdoze.field.Position;
+import org.academiadecodigo.macasdoze.simplegfx.SimpleGfxField;
+import org.academiadecodigo.macasdoze.simplegfx.SimpleGfxNewton;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
@@ -18,6 +22,7 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
 
     public Newton(Position position) {
         super(position);
+        setKeyboard();
     }
 
 /*
@@ -29,11 +34,13 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
         super.move(dx, 0);
     }*/
 
-    public void move() {
-        while (leftPressed == true) {
+    public void move() throws InterruptedException{
+        while (leftPressed == true && this.getPosition().getX()> MacasDoZe.MARGIN) {
+            Thread.sleep(5);
             super.move(-1,0);
         }
-        while (rightPressed == true) {
+        while (rightPressed == true && this.getPosition().getX()< (MacasDoZe.WIDTH + MacasDoZe.MARGIN - SimpleGfxNewton.width)) {
+            Thread.sleep(5);
             super.move(1,0);
         }
     }

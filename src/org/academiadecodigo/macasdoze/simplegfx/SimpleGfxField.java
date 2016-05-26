@@ -9,15 +9,16 @@ import org.academiadecodigo.simplegraphics.graphics.Rectangle;
  */
 public class SimpleGfxField implements Field {
 
-    private static final int MARGIN = 10;
+    private int margin;
     private int height;
     private int width;
     private Rectangle field;
 
 
-    public SimpleGfxField(int height, int width) {
+    public SimpleGfxField(int height, int width, int margin) {
         this.height = height;
         this.width = width;
+        this.margin =  margin;
     }
 
 
@@ -34,7 +35,7 @@ public class SimpleGfxField implements Field {
 
     @Override
     public void init() {
-        field = new Rectangle(MARGIN, MARGIN, width, height);
+        field = new Rectangle(margin, margin, width, height);
         field.draw();
 
     }

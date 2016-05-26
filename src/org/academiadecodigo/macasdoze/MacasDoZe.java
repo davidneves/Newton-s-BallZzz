@@ -13,10 +13,11 @@ import java.util.LinkedList;
  */
 public class MacasDoZe {
 
-    private int delay;
+    public static int delay;
     private Field field;
-    public static final int height = 900;
-    public static final int width = 600;
+    public static final int HEIGHT = 900;
+    public static final int WIDTH = 600;
+    public static final int MARGIN = 10;
 
     private GameObjectsFactory factory;
     private LinkedList<Apple> appleList;
@@ -32,12 +33,12 @@ public class MacasDoZe {
 
     public void init(){
 
-        field = factory.getPositionFactory().createField(height, width);
+        field = factory.getPositionFactory().createField(HEIGHT, WIDTH, MARGIN);
         field.init();
 
         appleCollector = new AppleCollector(newton, appleList);
 
-        factory.createNewton();
+        newton = factory.createNewton();
 
         LinkedList objectList = new LinkedList();
 
@@ -52,13 +53,15 @@ public class MacasDoZe {
 
             Thread.sleep(delay);
 
-            randomGameObject = GameObjectType.values()[RandomGenerator.getRandomByRange(1, GameObjectType.values().length)];
+            /*randomGameObject = GameObjectType.values()[RandomGenerator.getRandomByRange(1, GameObjectType.values().length - 1)];
 
             appleList.add(factory.createApple(randomGameObject));
 
             for (int i = 0; i < appleList.size(); i++) {
                 appleList.get(i).fall();
-            }
+            }*/
+
+            newton.move();
 
 
         }

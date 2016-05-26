@@ -11,16 +11,21 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class SimpleGfxNewton extends SimpleGfxMovablePosition {
 
 
-    int posX;
-    int posY;
-    Rectangle newton = new Rectangle(posX, posY, 70, 140);
+    public static int width = 70;
+    public static int height = 140;
 
+    public int getWidth() {
+        return width;
+    }
 
+    public int getHeight() {
+        return height;
+    }
 
     public SimpleGfxNewton(int x, int y) {
-        super(new Picture(x, y));
-        posX = x;
-        posY = y;
+        super(new Picture(x, y,"resources/newtonL.png"));
+        //posX = x;
+        //posY = y;
     }
 
 }
