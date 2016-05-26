@@ -8,14 +8,15 @@ import org.academiadecodigo.macasdoze.field.Position;
 public abstract class Apple extends MovableGameObject{
 
     private int fallSpeed;
+    private boolean collected;
 
-    
-    public Apple(Position position) {
+    public Apple(Position position, int fallSpeed) {
         super(position);
+        this.fallSpeed = fallSpeed;
     }
-
 
     public void fall() {
         super.move(0, fallSpeed);
     }
+
 }

@@ -29,11 +29,11 @@ public class GameObjectsFactory {
         switch (type) {
 
             case RED_APPLE:
-                apple = new RedApple((MovablePosition) positionFactory.createPosition(type));
+                apple = new RedApple((MovablePosition) positionFactory.createPosition(type), 3);
                 break;
 
             case GREEN_APPLE:
-                apple = new GreenApple((MovablePosition) positionFactory.createPosition(type));
+                apple = new GreenApple((MovablePosition) positionFactory.createPosition(type), 2);
                 break;
         }
         return apple;

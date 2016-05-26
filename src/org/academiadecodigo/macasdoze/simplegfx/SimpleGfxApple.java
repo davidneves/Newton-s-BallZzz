@@ -7,6 +7,7 @@ import org.academiadecodigo.simplegraphics.graphics.Shape;
  */
 public abstract class SimpleGfxApple extends SimpleGfxMovablePosition {
 
+
     public SimpleGfxApple(Shape shape) {
 
         super(shape);

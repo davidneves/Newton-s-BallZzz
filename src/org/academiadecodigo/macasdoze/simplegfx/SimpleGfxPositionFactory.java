@@ -26,11 +26,11 @@ public class SimpleGfxPositionFactory implements PositionFactory {
                 position = new SimpleGfxNewton(MacasDoZe.WIDTH /2 - SimpleGfxNewton.width/2, MacasDoZe.HEIGHT - SimpleGfxNewton.height + MacasDoZe.MARGIN);
                 break;
             case RED_APPLE:
-                position = new SimpleGfxRedApple(0, y);
+                position = new SimpleGfxRedApple(x, MacasDoZe.MARGIN);
                 break;
 
             case GREEN_APPLE:
-                position = new SimpleGfxGreenApple(0, y);
+                position = new SimpleGfxGreenApple(x, MacasDoZe.MARGIN);
                 break;
         }
         return position;

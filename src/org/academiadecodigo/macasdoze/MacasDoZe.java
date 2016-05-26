@@ -40,8 +40,7 @@ public class MacasDoZe {
 
         newton = factory.createNewton();
 
-        LinkedList objectList = new LinkedList();
-
+        appleList = new LinkedList();
 
     }
 
@@ -53,18 +52,22 @@ public class MacasDoZe {
 
             Thread.sleep(delay);
 
-            /*randomGameObject = GameObjectType.values()[RandomGenerator.getRandomByRange(1, GameObjectType.values().length - 1)];
+            randomGameObject = GameObjectType.values()[RandomGenerator.getRandomByRange(1, GameObjectType.values().length - 1)];
 
             appleList.add(factory.createApple(randomGameObject));
 
-            for (int i = 0; i < appleList.size(); i++) {
-                appleList.get(i).fall();
-            }*/
+            moveAllObjects();
 
             newton.move();
 
-
         }
 
+    }
+
+    public void moveAllObjects() {
+
+            for (int i = 0; i < appleList.size(); i++) {
+                appleList.get(i).fall();
+            }
     }
 }
