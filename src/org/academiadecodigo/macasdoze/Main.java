@@ -2,6 +2,7 @@ package org.academiadecodigo.macasdoze;
 
 import org.academiadecodigo.macasdoze.field.PositionFactory;
 import org.academiadecodigo.macasdoze.gameobjects.GameObjectsFactory;
+import org.academiadecodigo.macasdoze.simplegfx.SimpleGfxField;
 import org.academiadecodigo.macasdoze.simplegfx.SimpleGfxPositionFactory;
 
 /**
@@ -14,6 +15,8 @@ public class Main {
         PositionFactory factory = new SimpleGfxPositionFactory();
 
         MacasDoZe macasDoZe = new MacasDoZe( new GameObjectsFactory(factory), 150);
+
+
 
         macasDoZe.start();
 

@@ -14,8 +14,8 @@ public class MacasDoZe {
 
     private int delay;
     private Field field;
-    public static final int height = 1200;
-    public static final int width = 500;
+    public static final int height = 900;
+    public static final int width = 600;
 
     private GameObjectsFactory factory;
     private LinkedList<Apple> appleList;
@@ -32,6 +32,7 @@ public class MacasDoZe {
     public void start(){
 
         field = factory.getPositionFactory().createField(height, width);
+        field.init();
 
         appleCollector = new AppleCollector();
 
