@@ -9,12 +9,13 @@ import org.academiadecodigo.macasdoze.simplegfx.SimpleGfxPositionFactory;
  */
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         PositionFactory factory = new SimpleGfxPositionFactory();
 
         MacasDoZe macasDoZe = new MacasDoZe( new GameObjectsFactory(factory), 150);
 
+        macasDoZe.init();
         macasDoZe.start();
 
     }

@@ -2,6 +2,7 @@ package org.academiadecodigo.macasdoze;
 
 import org.academiadecodigo.macasdoze.field.Field;
 import org.academiadecodigo.macasdoze.gameobjects.Apple;
+import org.academiadecodigo.macasdoze.gameobjects.GameObjectType;
 import org.academiadecodigo.macasdoze.gameobjects.GameObjectsFactory;
 import org.academiadecodigo.macasdoze.gameobjects.Newton;
 
@@ -29,11 +30,37 @@ public class MacasDoZe {
     }
 
 
-    public void start(){
+    public void init(){
 
         field = factory.getPositionFactory().createField(height, width);
 
-        appleCollector = new AppleCollector();
+        appleCollector = new AppleCollector(newton, appleList);
+
+        factory.createNewton();
+
+        LinkedList objectList = new LinkedList();
+
+
+    }
+
+    public void start() throws InterruptedException {
+
+        GameObjectType randomGameObject;
+
+        while (true) {
+
+            Thread.sleep(delay);
+
+            randomGameObject = GameObjectType.values()[RandomGenerator.getRandomByRange(1, GameObjectType.values().length)];
+
+            appleList.add(factory.createApple(randomGameObject));
+
+            for (int i = 0; i < appleList.size(); i++) {
+                appleList.get(i).fall();
+            }
+
+
+        }
 
     }
 }
