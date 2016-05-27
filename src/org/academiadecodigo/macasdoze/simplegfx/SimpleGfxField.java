@@ -1,8 +1,8 @@
 package org.academiadecodigo.macasdoze.simplegfx;
 
 import org.academiadecodigo.macasdoze.field.Field;
-import org.academiadecodigo.macasdoze.field.Position;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
+import org.academiadecodigo.simplegraphics.pictures.Picture;
+
 
 /**
  * Created by <vi.KING_> David Neves on 23/05/16.
@@ -12,7 +12,7 @@ public class SimpleGfxField implements Field {
     private int margin;
     private int height;
     private int width;
-    private Rectangle field;
+    private Picture field;
 
 
     public SimpleGfxField(int height, int width, int margin) {
@@ -35,7 +35,7 @@ public class SimpleGfxField implements Field {
 
     @Override
     public void init() {
-        field = new Rectangle(margin, margin, width, height);
+        field = new Picture(margin, margin,"resources/fieldBackground.png");
         field.draw();
 
     }
