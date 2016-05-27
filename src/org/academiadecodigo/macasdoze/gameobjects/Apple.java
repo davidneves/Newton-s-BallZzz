@@ -10,7 +10,8 @@ public abstract class Apple extends MovableGameObject{
     public static final int SIZE = 20;
     private int fallSpeed;
     private int points;
-    private boolean collected;
+    private int fallenCycleCounter = 1;
+    private boolean fallen;
 
     public Apple(Position position, int fallSpeed, int points) {
         super(position);
@@ -30,4 +31,19 @@ public abstract class Apple extends MovableGameObject{
         super.move(0, fallSpeed);
     }
 
+    public boolean isFallen() {
+        return fallen;
+    }
+
+    public void setFallen(boolean fallen) {
+        this.fallen = fallen;
+    }
+
+    public int getFallenCycleCounter() {
+        return fallenCycleCounter;
+    }
+
+    public void increaseFallenCycleCounter() {
+        this.fallenCycleCounter++;
+    }
 }

@@ -12,4 +12,6 @@ public interface Position {
     int getWidth();
 
     int getHeight();
+
+    void deleteObject();
 }

@@ -30,4 +30,9 @@ public abstract class SimpleGfxPosition implements Position {
     public int getY() {
         return shape.getY();
     }
+
+    @Override
+    public void deleteObject() {
+        shape.delete();
+    }
 }

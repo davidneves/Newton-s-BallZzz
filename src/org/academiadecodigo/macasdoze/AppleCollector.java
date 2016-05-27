@@ -26,11 +26,11 @@ public class AppleCollector {
                 if (appleList.get(i).getPosition().getY() > newton.getPosition().getY() && (appleList.get(i).getPosition().getX() < newton.getPosition().getX() + newton.getPosition().getWidth()
                         && appleList.get(i).getPosition().getWidth() + appleList.get(i).getPosition().getX() > newton.getPosition().getX())) {
                     newton.increasePoints(appleList.get(i).getPoints());
+                    appleList.get(i).getPosition().deleteObject();
                     appleList.remove(i);
                     System.out.println(newton.getPoints());
                 }
             }
         }
-
     }
 }
