@@ -12,7 +12,7 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 /**
  * Created by codecadet on 23/05/16.
  */
-public class Newton extends  MovableGameObject implements KeyboardHandler{
+public class Newton extends MovableGameObject implements KeyboardHandler {
 
 
     private int points = 0;
@@ -21,6 +21,7 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
     private Keyboard k;
     private boolean leftPressed;
     private boolean rightPressed;
+    private boolean spacePressed;
     private AppleCollector appleCollector;
 
     public Newton(Position position, AppleCollector appleCollector) {
@@ -39,18 +40,34 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
 
 
     public void move() {
-        if (leftPressed == true && this.getPosition().getX()> MacasDoZe.MARGIN) {
+
+        int startingY = MacasDoZe.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND - this.getPosition().getHeight();
+        if (leftPressed && this.getPosition().getX() > MacasDoZe.MARGIN) {
             for (int i = 0; i < speed; i++) {
                 super.move(-1, 0);
             }
 
         }
-        if (rightPressed == true && this.getPosition().getX()< (MacasDoZe.WIDTH + MacasDoZe.MARGIN - SimpleGfxNewton.WIDTH)) {
+        if (rightPressed && this.getPosition().getX() < (MacasDoZe.WIDTH + MacasDoZe.MARGIN - SimpleGfxNewton.WIDTH)) {
             for (int i = 0; i < speed; i++) {
                 super.move(1, 0);
             }
         }
-        //appleCollector.appleCatch();
+
+        if (this.getPosition().getY() < startingY && !spacePressed) {
+            for (int i = 0; i < speed; i++) {
+                super.move(0, 1);
+
+            }
+        }
+
+        if (spacePressed && this.getPosition().getY() <= startingY && spacePressed)
+            for (int i = 0; i < speed; i++) {
+                super.move(0, -1);
+                if (this.getPosition().getY() < MacasDoZe.HEIGHT - MacasDoZe.GROUND - (2 * SimpleGfxNewton.HEIGHT)) {
+                    spacePressed = false;
+                }
+            }
     }
 
 
@@ -70,6 +87,11 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
         rightPressedEvent.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         k.addEventListener(rightPressedEvent);
 
+        KeyboardEvent spacePressedEvent = new KeyboardEvent();
+        spacePressedEvent.setKey(KeyboardEvent.KEY_SPACE);
+        spacePressedEvent.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        k.addEventListener(spacePressedEvent);
+
 
         KeyboardEvent leftReleasedEvent = new KeyboardEvent();
         leftReleasedEvent.setKey(KeyboardEvent.KEY_LEFT);
@@ -80,6 +102,11 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
         rightReleasedEvent.setKey(KeyboardEvent.KEY_RIGHT);
         rightReleasedEvent.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
         k.addEventListener(rightReleasedEvent);
+
+        KeyboardEvent spaceReleasedEvent = new KeyboardEvent();
+        spaceReleasedEvent.setKey(KeyboardEvent.KEY_SPACE);
+        spaceReleasedEvent.setKeyboardEventType(KeyboardEventType.KEY_RELEASED);
+        k.addEventListener(spaceReleasedEvent);
 
     }
 
@@ -92,10 +119,9 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
         } else if (e.getKey() == KeyboardEvent.KEY_RIGHT) {
             rightPressed = true;
             getPosition().updatePicture("resources/newtonR.png");
+        } else if (e.getKey() == KeyboardEvent.KEY_SPACE && this.getPosition().getY() == MacasDoZe.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND - SimpleGfxNewton.HEIGHT) {
+            spacePressed = true;
         }
-
-
-
 
 
     }
@@ -107,6 +133,9 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
             leftPressed = false;
         } else if (e.getKey() == KeyboardEvent.KEY_RIGHT) {
             rightPressed = false;
+        } else if (e.getKey() == KeyboardEvent.KEY_SPACE) {
+            //spacePressed = false;
+
         }
 
     }
