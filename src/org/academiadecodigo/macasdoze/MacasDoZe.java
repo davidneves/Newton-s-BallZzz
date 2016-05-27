@@ -2,7 +2,6 @@ package org.academiadecodigo.macasdoze;
 
 import org.academiadecodigo.macasdoze.field.Field;
 import org.academiadecodigo.macasdoze.gameobjects.Apple;
-import org.academiadecodigo.macasdoze.gameobjects.GameObjectType;
 import org.academiadecodigo.macasdoze.gameobjects.GameObjectsFactory;
 import org.academiadecodigo.macasdoze.gameobjects.Newton;
 

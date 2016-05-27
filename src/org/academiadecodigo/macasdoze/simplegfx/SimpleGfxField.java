@@ -1,7 +1,7 @@
 package org.academiadecodigo.macasdoze.simplegfx;
 
-import org.academiadecodigo.macasdoze.field.Field;
 import org.academiadecodigo.macasdoze.Score;
+import org.academiadecodigo.macasdoze.field.Field;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
@@ -16,14 +16,22 @@ public class SimpleGfxField implements Field {
     private int height;
     private int width;
     private int ground;
+
     private Picture field;
     private Text score;
+
+    private Picture greenApple;
+    private Text greenApples;
+    private Picture redApple;
+    private Text redApples;
+    private Picture megaApple;
+    private Text megaApples;
 
 
     public SimpleGfxField(int height, int width, int margin, int ground) {
         this.height = height;
         this.width = width;
-        this.margin =  margin;
+        this.margin = margin;
         this.ground = ground;
     }
 
@@ -41,18 +49,41 @@ public class SimpleGfxField implements Field {
 
     @Override
     public void init() {
-        field = new Picture(margin, margin,"resources/fieldBackground.png");
+
+        field = new Picture(margin, margin, "resources/fieldBackground.png");
         field.draw();
-        score = new Text(margin, height+margin, "");
+
+        score = new Text(margin, height + 2 * margin, "");
         score.setColor(Color.BLACK);
         score.draw();
+
+        megaApple = new Picture(550, height + margin, "resources/macApple.png");
+        megaApple.draw();
+
+        megaApples = new Text(590, height + 2 * margin, "" + Score.megaApples);
+        megaApples.draw();
+
+        greenApple = new Picture(450, height + margin, "resources/greenApple.png");
+        greenApple.draw();
+
+        greenApples = new Text(490, height + 2 * margin, "" + Score.greenApples);
+        greenApples.draw();
+
+        redApple = new Picture(350, height + margin, "resources/redApple.png");
+        redApple.draw();
+
+        redApples = new Text(390, height + 2 * margin, "" + Score.redApples);
+        redApples.draw();
+
+
     }
 
     public void displayScore() {
         score.setText("Newton's SCORE: " + Score.score);
+        megaApples.setText("" + Score.megaApples);
+        redApples.setText("" + Score.redApples);
+        greenApples.setText("" + Score.greenApples);
     }
-
-
 
 
 }

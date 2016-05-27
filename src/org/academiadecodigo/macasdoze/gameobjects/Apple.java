@@ -23,10 +23,6 @@ public abstract class Apple extends MovableGameObject{
         return points;
     }
 
-    public void setPoints(int points) {
-        this.points = points;
-    }
-
     public void fall() {
         super.move(0, fallSpeed);
     }

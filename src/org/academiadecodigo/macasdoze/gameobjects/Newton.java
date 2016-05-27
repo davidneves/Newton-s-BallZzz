@@ -1,6 +1,5 @@
 package org.academiadecodigo.macasdoze.gameobjects;
 
-import org.academiadecodigo.macasdoze.AppleCollector;
 import org.academiadecodigo.macasdoze.MacasDoZe;
 import org.academiadecodigo.macasdoze.field.Position;
 import org.academiadecodigo.macasdoze.simplegfx.SimpleGfxNewton;
@@ -21,7 +20,6 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
     private boolean leftPressed;
     private boolean rightPressed;
     private boolean spacePressed;
-    private AppleCollector appleCollector;
 
     public Newton(Position position) {
         super(position);

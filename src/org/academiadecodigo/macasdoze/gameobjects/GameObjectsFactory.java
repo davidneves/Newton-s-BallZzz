@@ -11,7 +11,6 @@ import org.academiadecodigo.macasdoze.field.PositionFactory;
 public class GameObjectsFactory {
 
     private PositionFactory positionFactory;
-    //GameObjectType randomType;
 
 
     public GameObjectsFactory(PositionFactory positionFactory) {
