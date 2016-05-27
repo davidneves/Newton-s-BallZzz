@@ -25,8 +25,6 @@ public class SimpleGfxNewton extends SimpleGfxMovablePosition {
     public SimpleGfxNewton(int x, int y) {
         super(new Picture(x, y,"resources/newtonL.png"));
 
-        //posX = x;
-        //posY = y;
     }
 
 }

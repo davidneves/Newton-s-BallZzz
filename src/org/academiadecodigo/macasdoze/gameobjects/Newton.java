@@ -15,26 +15,15 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 public class Newton extends  MovableGameObject implements KeyboardHandler{
 
 
-    private int points = 0;
     private final int speed = 5;
 
     private Keyboard k;
     private boolean leftPressed;
     private boolean rightPressed;
-    private AppleCollector appleCollector;
 
-    public Newton(Position position, AppleCollector appleCollector) {
+    public Newton(Position position) {
         super(position);
         setKeyboard();
-        this.appleCollector = appleCollector;
-    }
-
-    public int getPoints() {
-        return points;
-    }
-
-    public void increasePoints(int points) {
-        this.points += points;
     }
 
 
@@ -50,7 +39,6 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
                 super.move(1, 0);
             }
         }
-        //appleCollector.appleCatch();
     }
 
 
@@ -93,10 +81,6 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
             rightPressed = true;
             getPosition().updatePicture("resources/newtonR.png");
         }
-
-
-
-
 
     }
 

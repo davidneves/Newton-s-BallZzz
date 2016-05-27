@@ -1,6 +1,6 @@
 package org.academiadecodigo.macasdoze.gameobjects;
 
-import org.academiadecodigo.macasdoze.AppleCollector;
+import org.academiadecodigo.macasdoze.RandomGenerator;
 import org.academiadecodigo.macasdoze.field.MovablePosition;
 import org.academiadecodigo.macasdoze.field.PositionFactory;
 
@@ -11,6 +11,7 @@ import org.academiadecodigo.macasdoze.field.PositionFactory;
 public class GameObjectsFactory {
 
     private PositionFactory positionFactory;
+    //GameObjectType randomType;
 
 
     public GameObjectsFactory(PositionFactory positionFactory) {
@@ -22,30 +23,28 @@ public class GameObjectsFactory {
         return positionFactory;
     }
 
-    public Apple createApple(GameObjectType type) {
+    public Apple createApple() {
+        int probCreateMegaApple = 15;
+        int probGreenApple = 55;
 
+        int randomGen = RandomGenerator.getRandomByRange(0, 100);
 
         Apple apple = null;
 
-        switch (type) {
-
-            case RED_APPLE:
-                apple = new RedApple((MovablePosition) positionFactory.createPosition(type), 2, 20);
-                break;
-
-            case GREEN_APPLE:
-                apple = new GreenApple((MovablePosition) positionFactory.createPosition(type), 5, 10);
-                break;
-
-            case MEGA_APPLE:
-                apple = new MegaApple((MovablePosition) positionFactory.createPosition(type), 6, -10);
+        if(randomGen < probCreateMegaApple){
+            apple = new MegaApple((MovablePosition) positionFactory.createPosition(GameObjectType.MEGA_APPLE), 5, -50);
+        } else if (randomGen < probGreenApple){
+            apple = new GreenApple((MovablePosition) positionFactory.createPosition(GameObjectType.GREEN_APPLE), 4, 20);
+        } else {
+            apple = new RedApple((MovablePosition) positionFactory.createPosition(GameObjectType.RED_APPLE), 2, 10);
         }
+
         return apple;
     }
 
-    public Newton createNewton(AppleCollector appleCollector) {
+    public Newton createNewton() {
 
-        Newton newton = new Newton((MovablePosition) positionFactory.createPosition(GameObjectType.NEWTON), appleCollector);
+        Newton newton = new Newton((MovablePosition) positionFactory.createPosition(GameObjectType.NEWTON));
         return newton;
     }
 

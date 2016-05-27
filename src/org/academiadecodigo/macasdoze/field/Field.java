@@ -11,4 +11,6 @@ public interface Field {
 
     void init();
 
+    void displayScore();
+
 }

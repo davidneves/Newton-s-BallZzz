@@ -9,5 +9,5 @@ public interface PositionFactory {
 
     Position createPosition(GameObjectType type);
 
-    Field createField(int height, int width, int margin);
+    Field createField(int height, int width, int margin, int ground);
 }

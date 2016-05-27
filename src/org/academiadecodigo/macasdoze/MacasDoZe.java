@@ -33,11 +33,11 @@ public class MacasDoZe {
 
     public void init() {
 
-        field = factory.getPositionFactory().createField(HEIGHT, WIDTH, MARGIN);
+        field = factory.getPositionFactory().createField(HEIGHT, WIDTH, MARGIN, GROUND);
         field.init();
 
 
-        newton = factory.createNewton(appleCollector);
+        newton = factory.createNewton();
 
         appleList = new LinkedList();
         appleCollector = new AppleCollector(newton, appleList);
@@ -46,15 +46,13 @@ public class MacasDoZe {
 
     public void start() throws InterruptedException {
 
-        GameObjectType randomGameObject;
 
         while (true) {
 
             Thread.sleep(delay);
             if (RandomGenerator.getRandomNumber(100) == 5) {
-                randomGameObject = GameObjectType.values()[RandomGenerator.getRandomByRange(1, GameObjectType.values().length - 1)];
 
-                appleList.add(factory.createApple(randomGameObject));
+                appleList.add(factory.createApple());
             }
 
             for (int i = 0; i < appleList.size(); i++) {
@@ -74,11 +72,11 @@ public class MacasDoZe {
             newton.move();
             appleCollector.appleCatch();
 
+            field.displayScore();
+
         }
 
     }
 
-    /*public void moveAllObjects() throws InterruptedException {
 
-    }*/
 }

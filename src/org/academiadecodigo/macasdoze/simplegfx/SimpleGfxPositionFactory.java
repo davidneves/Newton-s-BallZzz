@@ -41,7 +41,7 @@ public class SimpleGfxPositionFactory implements PositionFactory {
     }
 
     @Override
-    public Field createField(int height, int width, int margin) {
-        return new SimpleGfxField(height, width, margin);
+    public Field createField(int height, int width, int margin, int ground) {
+        return new SimpleGfxField(height, width, margin, ground);
     }
 }
