@@ -14,6 +14,8 @@ public class SimpleGfxNewton extends SimpleGfxMovablePosition {
     public static int width = 70;
     public static int height = 140;
 
+
+
     public int getWidth() {
         return width;
     }
@@ -24,6 +26,7 @@ public class SimpleGfxNewton extends SimpleGfxMovablePosition {
 
     public SimpleGfxNewton(int x, int y) {
         super(new Picture(x, y,"resources/newtonL.png"));
+
         //posX = x;
         //posY = y;
     }

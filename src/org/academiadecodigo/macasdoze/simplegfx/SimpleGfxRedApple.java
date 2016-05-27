@@ -11,4 +11,6 @@ public class SimpleGfxRedApple extends SimpleGfxApple {
     public SimpleGfxRedApple(int x, int y) {
         super(new Picture(x, y, "resources/redApple.png"));
     }
+
+
 }
