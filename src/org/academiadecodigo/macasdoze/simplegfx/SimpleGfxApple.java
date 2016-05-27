@@ -8,6 +8,19 @@ import org.academiadecodigo.simplegraphics.graphics.Shape;
 public abstract class SimpleGfxApple extends SimpleGfxMovablePosition {
 
 
+    private int width = 30;
+    private int height = 30;
+
+    @Override
+    public int getWidth() {
+        return width;
+    }
+
+    @Override
+    public int getHeight() {
+        return height;
+    }
+
     public SimpleGfxApple(Shape shape) {
 
         super(shape);

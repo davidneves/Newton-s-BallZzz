@@ -7,6 +7,7 @@ import org.academiadecodigo.macasdoze.field.Position;
  */
 public abstract class Apple extends MovableGameObject{
 
+    public static final int SIZE = 20;
     private int fallSpeed;
     private int points;
     private boolean collected;

@@ -20,12 +20,15 @@ public class AppleCollector {
 
     public void appleCatch() {
 
+        if (appleList.size() != 0) {
 
-        for (int i = 0; i < appleList.size(); i++) {
-            if (appleList.get(i).getPosition().getY() > newton.getPosition().getY() && appleList.get(i).getPosition().getX() == newton.getPosition().getX()){
-                newton.setPoints(appleList.get(i).getPoints());
-                appleList.remove(i);
-                System.out.println(newton.getPoints());
+            for (int i = 0; i < appleList.size(); i++) {
+                if (appleList.get(i).getPosition().getY() > newton.getPosition().getY() && (appleList.get(i).getPosition().getX() < newton.getPosition().getX() + newton.getPosition().getWidth()
+                        && appleList.get(i).getPosition().getWidth() + appleList.get(i).getPosition().getX() > newton.getPosition().getX())) {
+                    newton.increasePoints(appleList.get(i).getPoints());
+                    appleList.remove(i);
+                    System.out.println(newton.getPoints());
+                }
             }
         }
 

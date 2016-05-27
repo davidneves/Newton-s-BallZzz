@@ -18,6 +18,7 @@ public class MacasDoZe {
     public static final int HEIGHT = 900;
     public static final int WIDTH = 600;
     public static final int MARGIN = 10;
+    public static final int GROUND = 50;
 
     private GameObjectsFactory factory;
     private LinkedList<Apple> appleList;
@@ -36,11 +37,11 @@ public class MacasDoZe {
         field = factory.getPositionFactory().createField(HEIGHT, WIDTH, MARGIN);
         field.init();
 
-        appleCollector = new AppleCollector(newton, appleList);
 
         newton = factory.createNewton(appleCollector);
 
         appleList = new LinkedList();
+        appleCollector = new AppleCollector(newton, appleList);
 
     }
 
@@ -65,6 +66,7 @@ public class MacasDoZe {
                 }
             }
             newton.move();
+            appleCollector.appleCatch();
 
 
         }
