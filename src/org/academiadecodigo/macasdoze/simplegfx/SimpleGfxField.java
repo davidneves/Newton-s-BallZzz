@@ -12,6 +12,7 @@ public class SimpleGfxField implements Field {
     private int margin;
     private int height;
     private int width;
+    private int ground;
     private Picture field;
 
 

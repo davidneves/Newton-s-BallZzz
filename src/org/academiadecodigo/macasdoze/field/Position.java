@@ -9,8 +9,11 @@ public interface Position {
 
     int getY();
 
+    int getWidth();
+
+    int getHeight();
+
+    void deleteObject();
+
     void updatePicture(String path);
-
-
-
 }

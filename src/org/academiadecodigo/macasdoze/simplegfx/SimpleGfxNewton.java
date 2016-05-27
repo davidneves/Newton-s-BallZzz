@@ -1,7 +1,5 @@
 package org.academiadecodigo.macasdoze.simplegfx;
 
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
-
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 
@@ -11,17 +9,17 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class SimpleGfxNewton extends SimpleGfxMovablePosition {
 
 
-    public static int width = 70;
-    public static int height = 140;
+    public static final int WIDTH = 70;
+    public static final int HEIGHT = 140;
 
 
 
     public int getWidth() {
-        return width;
+        return WIDTH;
     }
 
     public int getHeight() {
-        return height;
+        return HEIGHT;
     }
 
     public SimpleGfxNewton(int x, int y) {

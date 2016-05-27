@@ -13,12 +13,12 @@ import java.util.LinkedList;
  */
 public class MacasDoZe {
 
-    public static int delay;
-    private Field field;
     public static final int HEIGHT = 900;
     public static final int WIDTH = 600;
     public static final int MARGIN = 10;
-
+    public static final int GROUND = 50;
+    public static int delay;
+    private Field field;
     private GameObjectsFactory factory;
     private LinkedList<Apple> appleList;
     private AppleCollector appleCollector;
@@ -31,16 +31,16 @@ public class MacasDoZe {
     }
 
 
-    public void init(){
+    public void init() {
 
         field = factory.getPositionFactory().createField(HEIGHT, WIDTH, MARGIN);
         field.init();
 
-        appleCollector = new AppleCollector(newton, appleList);
 
         newton = factory.createNewton(appleCollector);
 
         appleList = new LinkedList();
+        appleCollector = new AppleCollector(newton, appleList);
 
     }
 
@@ -57,15 +57,22 @@ public class MacasDoZe {
                 appleList.add(factory.createApple(randomGameObject));
             }
 
-
             for (int i = 0; i < appleList.size(); i++) {
-                appleList.get(i).fall();
-                if (appleList.get(i).getPosition().getY() > HEIGHT - 50) {
-                    appleList.remove(i);
+                if (!appleList.get(i).isFallen()) {
+                    appleList.get(i).fall();
+                }
+
+                if (appleList.get(i).getPosition().getY() > HEIGHT - GROUND) {
+                    appleList.get(i).setFallen(true);
+                    appleList.get(i).increaseFallenCycleCounter();
+                    if (appleList.get(i).getFallenCycleCounter() % 240 == 0) { //3" rule
+                        appleList.get(i).getPosition().deleteObject();
+                        appleList.remove(i);
+                    }
                 }
             }
             newton.move();
-
+            appleCollector.appleCatch();
 
         }
 

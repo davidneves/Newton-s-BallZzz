@@ -36,6 +36,9 @@ public class GameObjectsFactory {
             case GREEN_APPLE:
                 apple = new GreenApple((MovablePosition) positionFactory.createPosition(type), 5, 10);
                 break;
+
+            case MEGA_APPLE:
+                apple = new MegaApple((MovablePosition) positionFactory.createPosition(type), 6, -10);
         }
         return apple;
     }
