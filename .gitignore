@@ -1,4 +1,7 @@
 
+*.java.orig
+
+
 # Created by https://www.gitignore.io/api/java,intellij,osx,windows
 
 ### Intellij ###
