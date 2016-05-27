@@ -62,19 +62,19 @@ public class SimpleGfxField implements Field {
         score.setColor(Color.BLACK);
         score.draw();
 
-        megaApple = new Picture(550, height + margin, "resources/macApple.png");
+        megaApple = new Picture(550, height + margin, "resources/applePurple3.png");
         megaApple.draw();
 
         megaApples = new Text(590, height + 2 * margin, "" + Score.megaApples);
         megaApples.draw();
 
-        greenApple = new Picture(450, height + margin, "resources/greenApple.png");
+        greenApple = new Picture(450, height + margin, "resources/appleGreen3.png");
         greenApple.draw();
 
         greenApples = new Text(490, height + 2 * margin, "" + Score.greenApples);
         greenApples.draw();
 
-        redApple = new Picture(350, height + margin, "resources/redApple.png");
+        redApple = new Picture(350, height + margin, "resources/appleRed3.png");
         redApple.draw();
 
         redApples = new Text(390, height + 2 * margin, "" + Score.redApples);
