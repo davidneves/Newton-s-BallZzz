@@ -15,7 +15,7 @@ public class SimpleGfxPositionFactory implements PositionFactory {
     @Override
     public Position createPosition(GameObjectType type) {
 
-        int x = RandomGenerator.getRandomNumber(MacasDoZe.WIDTH);
+        int x = RandomGenerator.getRandomByRange(MacasDoZe.MARGIN, MacasDoZe.WIDTH - 20);
         int y = RandomGenerator.getRandomNumber(MacasDoZe.HEIGHT);
 
         Position position = null;
@@ -23,7 +23,7 @@ public class SimpleGfxPositionFactory implements PositionFactory {
         switch (type) {
 
             case NEWTON:
-                position = new SimpleGfxNewton(MacasDoZe.WIDTH /2 - SimpleGfxNewton.width/2, MacasDoZe.HEIGHT - SimpleGfxNewton.height + MacasDoZe.MARGIN - 50);
+                position = new SimpleGfxNewton(MacasDoZe.WIDTH /2 - SimpleGfxNewton.width/2 + MacasDoZe.MARGIN, MacasDoZe.HEIGHT - SimpleGfxNewton.height + MacasDoZe.MARGIN - 50);
                 break;
             case RED_APPLE:
                 position = new SimpleGfxRedApple(x, MacasDoZe.MARGIN);

@@ -18,6 +18,7 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
 
 
     private int points;
+    private final int speed = 5;
 
     private Keyboard k;
     private boolean leftPressed;
@@ -38,14 +39,18 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
         this.points = points;
     }
 
-    public void move() throws InterruptedException {
+
+    public void move() {
         if (leftPressed == true && this.getPosition().getX()> MacasDoZe.MARGIN) {
-            //Thread.sleep(5);
-            super.move(-20,0);
+            for (int i = 0; i < speed; i++) {
+                super.move(-1, 0);
+            }
+
         }
         if (rightPressed == true && this.getPosition().getX()< (MacasDoZe.WIDTH + MacasDoZe.MARGIN - SimpleGfxNewton.width)) {
-            //Thread.sleep(5);
-            super.move(20,0);
+            for (int i = 0; i < speed; i++) {
+                super.move(1, 0);
+            }
         }
         //appleCollector.appleCatch();
     }
@@ -85,8 +90,10 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
 
         if (e.getKey() == KeyboardEvent.KEY_LEFT) {
             leftPressed = true;
+            //path = "resources/newtonL.png";
         } else if (e.getKey() == KeyboardEvent.KEY_RIGHT) {
             rightPressed = true;
+            //path = "resources/newtonR.png";
         }
 
 

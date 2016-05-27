@@ -13,7 +13,7 @@ public class Main {
 
         PositionFactory factory = new SimpleGfxPositionFactory();
 
-        MacasDoZe macasDoZe = new MacasDoZe( new GameObjectsFactory(factory), 100);
+        MacasDoZe macasDoZe = new MacasDoZe( new GameObjectsFactory(factory), 10);
 
         macasDoZe.init();
         macasDoZe.start();

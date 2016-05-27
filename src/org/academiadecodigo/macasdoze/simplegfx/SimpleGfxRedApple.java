@@ -1,6 +1,6 @@
 package org.academiadecodigo.macasdoze.simplegfx;
 
-
+import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 /**

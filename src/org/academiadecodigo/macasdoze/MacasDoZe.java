@@ -51,7 +51,7 @@ public class MacasDoZe {
         while (true) {
 
             Thread.sleep(delay);
-            if (RandomGenerator.getRandomNumber(8) == 5) {
+            if (RandomGenerator.getRandomNumber(100) == 5) {
                 randomGameObject = GameObjectType.values()[RandomGenerator.getRandomByRange(1, GameObjectType.values().length - 1)];
 
                 appleList.add(factory.createApple(randomGameObject));
@@ -60,7 +60,7 @@ public class MacasDoZe {
 
             for (int i = 0; i < appleList.size(); i++) {
                 appleList.get(i).fall();
-                if (appleList.get(i).getPosition().getY() > HEIGHT) {
+                if (appleList.get(i).getPosition().getY() > HEIGHT - 50) {
                     appleList.remove(i);
                 }
             }
