@@ -1,5 +1,6 @@
 package org.academiadecodigo.macasdoze.gameobjects;
 
+import org.academiadecodigo.macasdoze.AppleCollector;
 import org.academiadecodigo.macasdoze.field.MovablePosition;
 import org.academiadecodigo.macasdoze.field.PositionFactory;
 
@@ -29,19 +30,19 @@ public class GameObjectsFactory {
         switch (type) {
 
             case RED_APPLE:
-                apple = new RedApple((MovablePosition) positionFactory.createPosition(type), 3);
+                apple = new RedApple((MovablePosition) positionFactory.createPosition(type), 50, 20);
                 break;
 
             case GREEN_APPLE:
-                apple = new GreenApple((MovablePosition) positionFactory.createPosition(type), 2);
+                apple = new GreenApple((MovablePosition) positionFactory.createPosition(type), 30, 10);
                 break;
         }
         return apple;
     }
 
-    public Newton createNewton() {
+    public Newton createNewton(AppleCollector appleCollector) {
 
-        Newton newton = new Newton((MovablePosition) positionFactory.createPosition(GameObjectType.NEWTON));
+        Newton newton = new Newton((MovablePosition) positionFactory.createPosition(GameObjectType.NEWTON), appleCollector);
         return newton;
     }
 

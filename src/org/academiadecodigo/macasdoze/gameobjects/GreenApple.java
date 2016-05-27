@@ -7,7 +7,7 @@ import org.academiadecodigo.macasdoze.field.Position;
  */
 public class GreenApple extends Apple {
 
-    public GreenApple(Position position, int fallSpeed) {
-        super(position, fallSpeed);
+    public GreenApple(Position position, int fallSpeed, int points) {
+        super(position, fallSpeed, points);
     }
 }

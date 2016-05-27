@@ -1,5 +1,6 @@
 package org.academiadecodigo.macasdoze.gameobjects;
 
+import org.academiadecodigo.macasdoze.AppleCollector;
 import org.academiadecodigo.macasdoze.MacasDoZe;
 import org.academiadecodigo.macasdoze.field.Field;
 import org.academiadecodigo.macasdoze.field.Position;
@@ -15,34 +16,38 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
  */
 public class Newton extends  MovableGameObject implements KeyboardHandler{
 
+
+    private int points;
+
     private Keyboard k;
     private boolean leftPressed;
     private boolean rightPressed;
+    private AppleCollector appleCollector;
 
-
-    public Newton(Position position) {
+    public Newton(Position position, AppleCollector appleCollector) {
         super(position);
         setKeyboard();
+        this.appleCollector = appleCollector;
     }
 
-/*
-    public void moveLeft(int dx) {
-        super.move( -dx, 0);
+    public int getPoints() {
+        return points;
     }
 
-    public void moveRight(int dx) {
-        super.move(dx, 0);
-    }*/
+    public void setPoints(int points) {
+        this.points = points;
+    }
 
-    public void move() throws InterruptedException{
-        while (leftPressed == true && this.getPosition().getX()> MacasDoZe.MARGIN) {
-            Thread.sleep(5);
-            super.move(-1,0);
+    public void move() throws InterruptedException {
+        if (leftPressed == true && this.getPosition().getX()> MacasDoZe.MARGIN) {
+            //Thread.sleep(5);
+            super.move(-20,0);
         }
-        while (rightPressed == true && this.getPosition().getX()< (MacasDoZe.WIDTH + MacasDoZe.MARGIN - SimpleGfxNewton.width)) {
-            Thread.sleep(5);
-            super.move(1,0);
+        if (rightPressed == true && this.getPosition().getX()< (MacasDoZe.WIDTH + MacasDoZe.MARGIN - SimpleGfxNewton.width)) {
+            //Thread.sleep(5);
+            super.move(20,0);
         }
+        //appleCollector.appleCatch();
     }
 
 

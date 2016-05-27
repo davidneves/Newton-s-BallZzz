@@ -38,7 +38,7 @@ public class MacasDoZe {
 
         appleCollector = new AppleCollector(newton, appleList);
 
-        newton = factory.createNewton();
+        newton = factory.createNewton(appleCollector);
 
         appleList = new LinkedList();
 
@@ -51,23 +51,27 @@ public class MacasDoZe {
         while (true) {
 
             Thread.sleep(delay);
+            if (RandomGenerator.getRandomNumber(8) == 5) {
+                randomGameObject = GameObjectType.values()[RandomGenerator.getRandomByRange(1, GameObjectType.values().length - 1)];
 
-            randomGameObject = GameObjectType.values()[RandomGenerator.getRandomByRange(1, GameObjectType.values().length - 1)];
+                appleList.add(factory.createApple(randomGameObject));
+            }
 
-            appleList.add(factory.createApple(randomGameObject));
 
-            moveAllObjects();
-
+            for (int i = 0; i < appleList.size(); i++) {
+                appleList.get(i).fall();
+                if (appleList.get(i).getPosition().getY() > HEIGHT) {
+                    appleList.remove(i);
+                }
+            }
             newton.move();
+
 
         }
 
     }
 
-    public void moveAllObjects() {
+    /*public void moveAllObjects() throws InterruptedException {
 
-            for (int i = 0; i < appleList.size(); i++) {
-                appleList.get(i).fall();
-            }
-    }
+    }*/
 }
