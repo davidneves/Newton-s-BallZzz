@@ -5,7 +5,6 @@ import org.academiadecodigo.macasdoze.RandomGenerator;
 import org.academiadecodigo.macasdoze.field.Field;
 import org.academiadecodigo.macasdoze.field.Position;
 import org.academiadecodigo.macasdoze.field.PositionFactory;
-import org.academiadecodigo.macasdoze.gameobjects.Apple;
 import org.academiadecodigo.macasdoze.gameobjects.GameObjectType;
 
 /**
@@ -16,7 +15,7 @@ public class SimpleGfxPositionFactory implements PositionFactory {
     @Override
     public Position createPosition(GameObjectType type) {
 
-        int x = RandomGenerator.getRandomByRange(MacasDoZe.MARGIN, MacasDoZe.WIDTH - Apple.SIZE);
+        int x = RandomGenerator.getRandomByRange(MacasDoZe.MARGIN, MacasDoZe.WIDTH - SimpleGfxApple.SIZE);
         int y = RandomGenerator.getRandomByRange(MacasDoZe.MARGIN, MacasDoZe.WIDTH - MacasDoZe.GROUND);
 
         Position position = null;

@@ -6,6 +6,7 @@ package org.academiadecodigo.macasdoze;
 public class Score {
 
     public static int score;
+    public static int rottenApples;
 
     public static int greenApples;
     public static int redApples;
@@ -15,15 +16,20 @@ public class Score {
         score += points;
     }
 
+    public static void increaseRottenApples() {
+        rottenApples++;
+    }
+
     public static void increaseGreenApples() {
-        Score.greenApples++;
+        greenApples++;
     }
 
     public static void increaseRedApples() {
-        Score.redApples++;
+        redApples++;
     }
 
     public static void increaseMegaApples() {
-        Score.megaApples++;
+        megaApples++;
     }
+
 }

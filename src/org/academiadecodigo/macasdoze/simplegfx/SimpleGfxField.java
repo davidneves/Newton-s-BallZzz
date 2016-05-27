@@ -19,6 +19,8 @@ public class SimpleGfxField implements Field {
 
     private Picture field;
     private Text score;
+    private int timer = 30;
+    private Text timerText;
 
     private Picture greenApple;
     private Text greenApples;
@@ -46,6 +48,9 @@ public class SimpleGfxField implements Field {
         return width;
     }
 
+    public int getTimer() {
+        return timer;
+    }
 
     @Override
     public void init() {
@@ -75,15 +80,37 @@ public class SimpleGfxField implements Field {
         redApples = new Text(390, height + 2 * margin, "" + Score.redApples);
         redApples.draw();
 
+        timerText = new Text(width - 2*margin, margin * 2, "" + timer);
+        timerText.setColor(Color.WHITE);
+        timerText.grow(10, 10);
+        timerText.draw();
 
     }
 
     public void displayScore() {
-        score.setText("Newton's SCORE: " + Score.score);
+        score.setText("Newton's Score: " + Score.score);
         megaApples.setText("" + Score.megaApples);
         redApples.setText("" + Score.redApples);
         greenApples.setText("" + Score.greenApples);
     }
 
+    public void updateTimer() {
+        timer--;
+        timerText.setText("" + timer);
+    }
+
+    public void youLoose() {
+        Text youLoose = new Text(285, 150, "GAME OVER!");
+        youLoose.grow(200, 60);
+        youLoose.setColor(Color.RED);
+        youLoose.draw();
+    }
+
+    public void youWin() {
+        Text youWin = new Text(300, 150, "YOU WIN!");
+        youWin.grow(200, 60);
+        youWin.setColor(Color.YELLOW);
+        youWin.draw();
+    }
 
 }
