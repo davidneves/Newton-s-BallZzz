@@ -20,6 +20,8 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
     private Keyboard k;
     private boolean leftPressed;
     private boolean rightPressed;
+    private boolean spacePressed;
+    private AppleCollector appleCollector;
 
     public Newton(Position position) {
         super(position);
@@ -28,17 +30,34 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
 
 
     public void move() {
-        if (leftPressed == true && this.getPosition().getX()> MacasDoZe.MARGIN) {
+
+        int startingY = MacasDoZe.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND - this.getPosition().getHeight();
+        if (leftPressed && this.getPosition().getX() > MacasDoZe.MARGIN) {
             for (int i = 0; i < speed; i++) {
                 super.move(-1, 0);
             }
 
         }
-        if (rightPressed == true && this.getPosition().getX()< (MacasDoZe.WIDTH + MacasDoZe.MARGIN - SimpleGfxNewton.WIDTH)) {
+        if (rightPressed && this.getPosition().getX() < (MacasDoZe.WIDTH + MacasDoZe.MARGIN - SimpleGfxNewton.WIDTH)) {
             for (int i = 0; i < speed; i++) {
                 super.move(1, 0);
             }
         }
+
+        if (this.getPosition().getY() < startingY && !spacePressed) {
+            for (int i = 0; i < speed; i++) {
+                super.move(0, 1);
+
+            }
+        }
+
+        if (spacePressed && this.getPosition().getY() <= startingY && spacePressed)
+            for (int i = 0; i < speed; i++) {
+                super.move(0, -1);
+                if (this.getPosition().getY() < MacasDoZe.HEIGHT - MacasDoZe.GROUND - (2 * SimpleGfxNewton.HEIGHT)) {
+                    spacePressed = false;
+                }
+            }
     }
 
 
@@ -57,6 +76,11 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
         rightPressedEvent.setKey(KeyboardEvent.KEY_RIGHT);
         rightPressedEvent.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
         k.addEventListener(rightPressedEvent);
+
+        KeyboardEvent spacePressedEvent = new KeyboardEvent();
+        spacePressedEvent.setKey(KeyboardEvent.KEY_SPACE);
+        spacePressedEvent.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        k.addEventListener(spacePressedEvent);
 
 
         KeyboardEvent leftReleasedEvent = new KeyboardEvent();
@@ -80,6 +104,8 @@ public class Newton extends  MovableGameObject implements KeyboardHandler{
         } else if (e.getKey() == KeyboardEvent.KEY_RIGHT) {
             rightPressed = true;
             getPosition().updatePicture("resources/newtonR.png");
+        } else if (e.getKey() == KeyboardEvent.KEY_SPACE && this.getPosition().getY() == MacasDoZe.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND - SimpleGfxNewton.HEIGHT) {
+            spacePressed = true;
         }
 
     }
