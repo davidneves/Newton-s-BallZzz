@@ -80,7 +80,7 @@ public class SimpleGfxField implements Field {
         redApples = new Text(390, height + 2 * margin, "" + Score.redApples);
         redApples.draw();
 
-        timerText = new Text(width - 2*margin, margin * 2, "" + timer);
+        timerText = new Text(width - 2 * margin, margin * 2, "" + timer);
         timerText.setColor(Color.WHITE);
         timerText.grow(10, 10);
         timerText.draw();

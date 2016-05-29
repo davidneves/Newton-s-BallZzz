@@ -13,6 +13,10 @@ public class SimpleGfxNewton extends SimpleGfxMovablePosition {
     public static final int HEIGHT = 140;
 
 
+    public SimpleGfxNewton(int x, int y) {
+        super(new Picture(x, y, "resources/newtonL.png"));
+
+    }
 
     public int getWidth() {
         return WIDTH;
@@ -20,11 +24,6 @@ public class SimpleGfxNewton extends SimpleGfxMovablePosition {
 
     public int getHeight() {
         return HEIGHT;
-    }
-
-    public SimpleGfxNewton(int x, int y) {
-        super(new Picture(x, y,"resources/newtonL.png"));
-
     }
 
 }

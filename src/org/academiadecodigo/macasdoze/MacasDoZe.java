@@ -34,9 +34,10 @@ public class MacasDoZe {
 
     public void init() {
 
+        Sound.playSound();
+
         field = factory.getPositionFactory().createField(HEIGHT, WIDTH, MARGIN, GROUND);
         field.init();
-
 
         newton = factory.createNewton();
 
@@ -78,9 +79,10 @@ public class MacasDoZe {
                     }
                 }
 
-                if (Score.rottenApples > 60) {
+                if (Score.rottenApples > 30) {
                     field.youLoose();
                     keepPlaying = false;
+                    Sound.stopSound();
                 }
             }
             newton.move();
@@ -96,11 +98,9 @@ public class MacasDoZe {
                     end();
                 }
                 keepPlaying = false;
+                Sound.stopSound();
             }
-
-
         }
-
     }
 
     public void end() throws InterruptedException {
@@ -124,11 +124,7 @@ public class MacasDoZe {
                         appleList.remove(i);
                     }
                 }
-
             }
         }
-
     }
-
-
 }

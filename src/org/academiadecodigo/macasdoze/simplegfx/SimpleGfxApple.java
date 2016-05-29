@@ -9,6 +9,10 @@ public abstract class SimpleGfxApple extends SimpleGfxMovablePosition {
 
     public static final int SIZE = 30;
 
+    public SimpleGfxApple(Shape shape) {
+        super(shape);
+    }
+
     @Override
     public int getWidth() {
         return SIZE;
@@ -17,10 +21,5 @@ public abstract class SimpleGfxApple extends SimpleGfxMovablePosition {
     @Override
     public int getHeight() {
         return SIZE;
-    }
-
-    public SimpleGfxApple(Shape shape) {
-
-        super(shape);
     }
 }

@@ -12,7 +12,6 @@ public abstract class SimpleGfxPosition implements Position {
     private Shape shape;
 
 
-
     public SimpleGfxPosition(Shape shape) {
         this.shape = shape;
         shape.draw();
@@ -24,13 +23,10 @@ public abstract class SimpleGfxPosition implements Position {
     }
 
 
-    public void updatePicture(String path){
-        ((Picture)shape).load(path);
+    public void updatePicture(String path) {
+        ((Picture) shape).load(path);
 
     }
-
-
-
 
 
     @Override

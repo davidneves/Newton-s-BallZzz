@@ -5,7 +5,7 @@ import org.academiadecodigo.macasdoze.field.Position;
 /**
  * Created by codecadet on 23/05/16.
  */
-public abstract class Apple extends MovableGameObject{
+public abstract class Apple extends MovableGameObject {
 
     private int fallSpeed;
     private int points;
