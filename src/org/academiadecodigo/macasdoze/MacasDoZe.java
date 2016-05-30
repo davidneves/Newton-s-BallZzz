@@ -112,8 +112,13 @@ public class MacasDoZe {
         if (Score.timer == 0) {
             if (Score.score < 200) {
                 field.youLose();
+                newton.getPosition().updatePicture("resources/newtonDead.png");
+                newton.setAlive(false);
             } else {
                 field.youWin();
+                newton.getPosition().updatePicture("resources/newtonWin.png");
+                newton.setAlive(false);
+
                 end();
             }
             Sound.stopSound();
