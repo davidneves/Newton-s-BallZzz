@@ -8,6 +8,8 @@ public class Score {
     public static int score;
     public static int rottenApples;
 
+    public static int timer = 30;
+
     public static int greenApples;
     public static int redApples;
     public static int megaApples;
@@ -30,6 +32,10 @@ public class Score {
 
     public static void increaseMegaApples() {
         megaApples++;
+    }
+
+    public static void increaseTimer(int n) {
+        timer += n;
     }
 
 }

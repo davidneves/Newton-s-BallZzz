@@ -31,7 +31,7 @@ public class GameObjectsFactory {
         Apple apple = null;
 
         if (randomGen < probCreateMegaApple) {
-            apple = new MegaApple((MovablePosition) positionFactory.createPosition(GameObjectType.MEGA_APPLE), 5, -50);
+            apple = new MegaApple((MovablePosition) positionFactory.createPosition(GameObjectType.MEGA_APPLE), 5, -50, 5);
         } else if (randomGen < probGreenApple) {
             apple = new GreenApple((MovablePosition) positionFactory.createPosition(GameObjectType.GREEN_APPLE), 4, 20);
         } else {

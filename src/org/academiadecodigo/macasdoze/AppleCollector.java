@@ -1,9 +1,6 @@
 package org.academiadecodigo.macasdoze;
 
-import org.academiadecodigo.macasdoze.gameobjects.Apple;
-import org.academiadecodigo.macasdoze.gameobjects.GreenApple;
-import org.academiadecodigo.macasdoze.gameobjects.Newton;
-import org.academiadecodigo.macasdoze.gameobjects.RedApple;
+import org.academiadecodigo.macasdoze.gameobjects.*;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -36,12 +33,14 @@ public class AppleCollector {
 
                 Score.increaseScore(apple.getPoints());
                 Sound.appleCatchSound();
+
                 if (apple instanceof GreenApple) {
                     Score.increaseGreenApples();
                 } else if (apple instanceof RedApple) {
                     Score.increaseRedApples();
                 } else {
                     Score.increaseMegaApples();
+                    Score.increaseTimer(((MegaApple) apple).getTimeBoost());
                 }
 
                 apple.getPosition().deleteObject();

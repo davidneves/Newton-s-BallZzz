@@ -13,14 +13,10 @@ public interface Field {
 
     void displayScore();
 
-    void youLoose();
+    void youLose();
 
     void youWin();
 
     void updateTimer();
-
-    int getTimer();
-
-    void increaseTimer(int n);
 
 }
