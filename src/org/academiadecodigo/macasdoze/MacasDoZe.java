@@ -121,7 +121,7 @@ public class MacasDoZe {
             } else {
                 field.youWin();
                 newton.getPosition().updatePicture("resources/newtonWin.png");
-                newton.setAlive(false);
+                newton.setWinner(true);
 
                 end();
             }
