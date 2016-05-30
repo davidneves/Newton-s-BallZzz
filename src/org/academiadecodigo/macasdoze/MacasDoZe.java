@@ -59,52 +59,18 @@ public class MacasDoZe {
             cycles++;
 
             Thread.sleep(delay);
-            if (RandomGenerator.getRandomNumber(100) == 5) {
+            createApple();
 
-                appleList.add(factory.createApple());
-            }
-
-            for (int i = 0; i < appleList.size(); i++) {
-
-                Apple apple = appleList.get(i);
-
-                if (!apple.isFallen()) {
-                    apple.fall();
-                }
-
-                if (apple.getPosition().getY() > HEIGHT - GROUND) {
-                    apple.setFallen(true);
-                    apple.increaseFallenCycleCounter();
-                    if (apple.getFallenCycleCounter() % 240 == 0) { //3" rule
-                        Score.increaseRottenApples();
-                        apple.getPosition().deleteObject();
-                        appleList.remove(i);
-                    }
-                }
-
-                if (Score.rottenApples > 30) {
-                    field.youLoose();
-                    keepPlaying = false;
-                    Sound.stopSound();
-                }
-            }
+            moveApples();
             newton.move();
             appleCollector.appleCatch();
 
             field.displayScore();
 
-            if (field.getTimer() == 0) {
-                if (Score.score < 200) {
-                    field.youLoose();
-                } else {
-                    field.youWin();
-                    end();
-                }
-                keepPlaying = false;
-                Sound.stopSound();
-            }
+            checkGameEnd();
         }
     }
+
 
     public void end() throws InterruptedException {
 
@@ -133,4 +99,54 @@ public class MacasDoZe {
             }
         }
     }
+
+    private void checkGameEnd() throws InterruptedException {
+
+        if (field.getTimer() == 0) {
+            if (Score.score < 200) {
+                field.youLoose();
+            } else {
+                field.youWin();
+                end();
+            }
+            keepPlaying = false;
+            Sound.stopSound();
+        }
+    }
+
+    private void moveApples() {
+        for (int i = 0; i < appleList.size(); i++) {
+
+            Apple apple = appleList.get(i);
+
+            if (!apple.isFallen()) {
+                apple.fall();
+            }
+
+            if (apple.getPosition().getY() > HEIGHT - GROUND) {
+                apple.setFallen(true);
+                apple.increaseFallenCycleCounter();
+                if (apple.getFallenCycleCounter() % 240 == 0) { //3" rule
+                    Score.increaseRottenApples();
+                    apple.getPosition().deleteObject();
+                    appleList.remove(i);
+                }
+            }
+
+            if (Score.rottenApples > 30) {
+                field.youLoose();
+                keepPlaying = false;
+                Sound.stopSound();
+            }
+        }
+    }
+
+    private void createApple() {
+
+        if (RandomGenerator.getRandomNumber(100) == 5) {
+
+            appleList.add(factory.createApple());
+        }
+    }
+
 }
