@@ -5,7 +5,6 @@ import org.academiadecodigo.macasdoze.RandomGenerator;
 import org.academiadecodigo.macasdoze.field.Field;
 import org.academiadecodigo.macasdoze.field.Position;
 import org.academiadecodigo.macasdoze.field.PositionFactory;
-import org.academiadecodigo.macasdoze.gameobjects.Apple;
 import org.academiadecodigo.macasdoze.gameobjects.GameObjectType;
 
 /**
@@ -16,7 +15,7 @@ public class SimpleGfxPositionFactory implements PositionFactory {
     @Override
     public Position createPosition(GameObjectType type) {
 
-        int x = RandomGenerator.getRandomByRange(MacasDoZe.MARGIN, MacasDoZe.WIDTH - Apple.SIZE);
+        int x = RandomGenerator.getRandomByRange(MacasDoZe.MARGIN, MacasDoZe.WIDTH - SimpleGfxApple.SIZE);
         int y = RandomGenerator.getRandomByRange(MacasDoZe.MARGIN, MacasDoZe.WIDTH - MacasDoZe.GROUND);
 
         Position position = null;
@@ -24,7 +23,7 @@ public class SimpleGfxPositionFactory implements PositionFactory {
         switch (type) {
 
             case NEWTON:
-                position = new SimpleGfxNewton(MacasDoZe.WIDTH /2 - SimpleGfxNewton.WIDTH /2 + MacasDoZe.MARGIN, MacasDoZe.HEIGHT - SimpleGfxNewton.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND);
+                position = new SimpleGfxNewton(MacasDoZe.WIDTH / 2 - SimpleGfxNewton.WIDTH / 2 + MacasDoZe.MARGIN, MacasDoZe.HEIGHT - SimpleGfxNewton.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND);
                 break;
             case RED_APPLE:
                 position = new SimpleGfxRedApple(x, MacasDoZe.MARGIN);

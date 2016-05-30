@@ -13,4 +13,12 @@ public interface Field {
 
     void displayScore();
 
+    void youLoose();
+
+    void youWin();
+
+    void updateTimer();
+
+    int getTimer();
+
 }

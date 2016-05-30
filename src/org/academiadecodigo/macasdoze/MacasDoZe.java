@@ -17,6 +17,8 @@ public class MacasDoZe {
     public static final int MARGIN = 10;
     public static final int GROUND = 50;
     public static int delay;
+
+    private boolean keepPlaying = true;
     private Field field;
     private GameObjectsFactory factory;
     private LinkedList<Apple> appleList;
@@ -32,9 +34,10 @@ public class MacasDoZe {
 
     public void init() {
 
+        Sound.playSound();
+
         field = factory.getPositionFactory().createField(HEIGHT, WIDTH, MARGIN, GROUND);
         field.init();
-
 
         newton = factory.createNewton();
 
@@ -45,8 +48,15 @@ public class MacasDoZe {
 
     public void start() throws InterruptedException {
 
+        int cycles = 0;
 
-        while (true) {
+        while (keepPlaying) {
+
+            if (cycles % 80 == 0) {
+                field.updateTimer();
+            }
+
+            cycles++;
 
             Thread.sleep(delay);
             if (RandomGenerator.getRandomNumber(100) == 5) {
@@ -63,9 +73,16 @@ public class MacasDoZe {
                     appleList.get(i).setFallen(true);
                     appleList.get(i).increaseFallenCycleCounter();
                     if (appleList.get(i).getFallenCycleCounter() % 240 == 0) { //3" rule
+                        Score.increaseRottenApples();
                         appleList.get(i).getPosition().deleteObject();
                         appleList.remove(i);
                     }
+                }
+
+                if (Score.rottenApples > 30) {
+                    field.youLoose();
+                    keepPlaying = false;
+                    Sound.stopSound();
                 }
             }
             newton.move();
@@ -73,9 +90,41 @@ public class MacasDoZe {
 
             field.displayScore();
 
+            if (field.getTimer() == 0) {
+                if (Score.score < 200) {
+                    field.youLoose();
+                } else {
+                    field.youWin();
+                    end();
+                }
+                keepPlaying = false;
+                Sound.stopSound();
+            }
         }
-
     }
 
+    public void end() throws InterruptedException {
 
+        while (true) {
+
+            Thread.sleep(delay);
+
+            appleList.add(factory.createApple());
+
+            for (int i = 0; i < appleList.size(); i++) {
+                if (!appleList.get(i).isFallen()) {
+                    appleList.get(i).fall();
+                }
+
+                if (appleList.get(i).getPosition().getY() > HEIGHT - GROUND) {
+                    appleList.get(i).setFallen(true);
+                    appleList.get(i).increaseFallenCycleCounter();
+                    if (appleList.get(i).getFallenCycleCounter() % 80 == 0) { //1" rule
+                        appleList.get(i).getPosition().deleteObject();
+                        appleList.remove(i);
+                    }
+                }
+            }
+        }
+    }
 }

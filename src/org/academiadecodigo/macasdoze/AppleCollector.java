@@ -30,6 +30,7 @@ public class AppleCollector {
                         && (appleList.get(i).getPosition().getX() < newton.getPosition().getX() + newton.getPosition().getWidth()
                         && appleList.get(i).getPosition().getWidth() + appleList.get(i).getPosition().getX() > newton.getPosition().getX())) {
                     Score.increaseScore(appleList.get(i).getPoints());
+                    Sound.appleCatchSound();
                     if (appleList.get(i) instanceof GreenApple) {
                         Score.increaseGreenApples();
                     } else if (appleList.get(i) instanceof RedApple) {
