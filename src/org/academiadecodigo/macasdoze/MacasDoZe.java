@@ -72,7 +72,7 @@ public class MacasDoZe {
     }
 
 
-    public void end() throws InterruptedException {
+    private void end() throws InterruptedException {
 
         while (true) {
 
@@ -81,18 +81,20 @@ public class MacasDoZe {
             appleList.add(factory.createApple());
 
             Iterator<Apple> it = appleList.iterator();
-            Apple apple = it.next();
+            while (it.hasNext()) {
+                Apple apple = it.next();
 
-            if (!apple.isFallen()) {
-                apple.fall();
-            }
+                if (!apple.isFallen()) {
+                    apple.fall();
+                }
 
-            if (apple.getPosition().getY() > HEIGHT - GROUND) {
-                apple.setFallen(true);
-                apple.increaseFallenCycleCounter();
-                if (apple.getFallenCycleCounter() % 80 == 0) { //1" rule
-                    apple.getPosition().deleteObject();
-                    it.remove();
+                if (apple.getPosition().getY() > HEIGHT - GROUND) {
+                    apple.setFallen(true);
+                    apple.increaseFallenCycleCounter();
+                    if (apple.getFallenCycleCounter() % 80 == 0) { //1" rule
+                        apple.getPosition().deleteObject();
+                        it.remove();
+                    }
                 }
             }
 
