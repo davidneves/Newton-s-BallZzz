@@ -5,6 +5,7 @@ import org.academiadecodigo.macasdoze.gameobjects.Apple;
 import org.academiadecodigo.macasdoze.gameobjects.GameObjectsFactory;
 import org.academiadecodigo.macasdoze.gameobjects.Newton;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -64,30 +65,29 @@ public class MacasDoZe {
                 appleList.add(factory.createApple());
             }
 
-            for (int i = 0; i < appleList.size(); i++) {
+            Iterator<Apple> it = appleList.iterator();
+            Apple apple = it.next();
 
-                Apple apple = appleList.get(i);
+            if (!apple.isFallen()) {
+                apple.fall();
+            }
 
-                if (!apple.isFallen()) {
-                    apple.fall();
-                }
-
-                if (apple.getPosition().getY() > HEIGHT - GROUND) {
-                    apple.setFallen(true);
-                    apple.increaseFallenCycleCounter();
-                    if (apple.getFallenCycleCounter() % 240 == 0) { //3" rule
-                        Score.increaseRottenApples();
-                        apple.getPosition().deleteObject();
-                        appleList.remove(i);
-                    }
-                }
-
-                if (Score.rottenApples > 30) {
-                    field.youLoose();
-                    keepPlaying = false;
-                    Sound.stopSound();
+            if (apple.getPosition().getY() > HEIGHT - GROUND) {
+                apple.setFallen(true);
+                apple.increaseFallenCycleCounter();
+                if (apple.getFallenCycleCounter() % 240 == 0) { //3" rule
+                    Score.increaseRottenApples();
+                    apple.getPosition().deleteObject();
+                    it.remove();
                 }
             }
+
+            if (Score.rottenApples > 30) {
+                field.youLoose();
+                keepPlaying = false;
+                Sound.stopSound();
+            }
+
             newton.move();
             appleCollector.appleCatch();
 
