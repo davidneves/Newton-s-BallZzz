@@ -5,6 +5,7 @@ import org.academiadecodigo.macasdoze.gameobjects.GreenApple;
 import org.academiadecodigo.macasdoze.gameobjects.Newton;
 import org.academiadecodigo.macasdoze.gameobjects.RedApple;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
@@ -22,25 +23,30 @@ public class AppleCollector {
 
     public void appleCatch() {
 
-        if (appleList.size() != 0) {
+        Apple apple = null;
+        Iterator<Apple> it = appleList.iterator();
+        while (it.hasNext()) {
 
-            for (int i = 0; i < appleList.size(); i++) {
-                if ((appleList.get(i).getPosition().getY() > newton.getPosition().getY()
-                        && appleList.get(i).getPosition().getY() + appleList.get(i).getPosition().getHeight() < newton.getPosition().getY() + newton.getPosition().getHeight())
-                        && (appleList.get(i).getPosition().getX() < newton.getPosition().getX() + newton.getPosition().getWidth()
-                        && appleList.get(i).getPosition().getWidth() + appleList.get(i).getPosition().getX() > newton.getPosition().getX())) {
-                    Score.increaseScore(appleList.get(i).getPoints());
-                    Sound.appleCatchSound();
-                    if (appleList.get(i) instanceof GreenApple) {
-                        Score.increaseGreenApples();
-                    } else if (appleList.get(i) instanceof RedApple) {
-                        Score.increaseRedApples();
-                    } else {
-                        Score.increaseMegaApples();
-                    }
-                    appleList.get(i).getPosition().deleteObject();
-                    appleList.remove(i);
+            apple = it.next();
+
+            if (apple.getPosition().getY() > newton.getPosition().getY()
+                    && apple.getPosition().getY() + apple.getPosition().getHeight() < newton.getPosition().getY() + newton.getPosition().getHeight()
+                    && (apple.getPosition().getX() < newton.getPosition().getX() + newton.getPosition().getWidth()
+                    && apple.getPosition().getWidth() + apple.getPosition().getX() > newton.getPosition().getX())) {
+
+                Score.increaseScore(apple.getPoints());
+                Sound.appleCatchSound();
+                if (apple instanceof GreenApple) {
+                    Score.increaseGreenApples();
+                } else if (apple instanceof RedApple) {
+                    Score.increaseRedApples();
+                } else {
+                    Score.increaseMegaApples();
                 }
+
+                apple.getPosition().deleteObject();
+                it.remove();
+
             }
         }
     }

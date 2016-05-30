@@ -26,4 +26,5 @@ public class SimpleGfxNewton extends SimpleGfxMovablePosition {
         return HEIGHT;
     }
 
+
 }
