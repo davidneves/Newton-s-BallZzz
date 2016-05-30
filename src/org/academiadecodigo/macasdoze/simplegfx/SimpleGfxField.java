@@ -97,7 +97,7 @@ public class SimpleGfxField implements Field {
         timerText.setText("" + Score.timer);
     }
 
-    public void youLoose() {
+    public void youLose() {
         Text youLoose = new Text(285, 150, "GAME OVER!");
         youLoose.grow(200, 60);
         youLoose.setColor(Color.RED);

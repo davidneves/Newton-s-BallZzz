@@ -19,7 +19,6 @@ public class MacasDoZe {
     public static final int GROUND = 50;
     public static int delay;
 
-    private boolean keepPlaying = true;
     private Field field;
     private GameObjectsFactory factory;
     private LinkedList<Apple> appleList;
@@ -51,7 +50,7 @@ public class MacasDoZe {
 
         int cycles = 0;
 
-        while (keepPlaying) {
+        while (checkGameEnd()) {
 
             if (cycles % 80 == 0) {
                 field.updateTimer();
@@ -60,10 +59,26 @@ public class MacasDoZe {
             cycles++;
 
             Thread.sleep(delay);
-            if (RandomGenerator.getRandomNumber(100) == 5) {
+            createApple();
 
-                appleList.add(factory.createApple());
-            }
+            moveApples();
+            newton.move();
+            appleCollector.appleCatch();
+
+            field.displayScore();
+
+            checkGameEnd();
+        }
+    }
+
+
+    public void end() throws InterruptedException {
+
+        while (true) {
+
+            Thread.sleep(delay);
+
+            appleList.add(factory.createApple());
 
             Iterator<Apple> it = appleList.iterator();
             Apple apple = it.next();
@@ -75,62 +90,71 @@ public class MacasDoZe {
             if (apple.getPosition().getY() > HEIGHT - GROUND) {
                 apple.setFallen(true);
                 apple.increaseFallenCycleCounter();
+                if (apple.getFallenCycleCounter() % 80 == 0) { //1" rule
+                    apple.getPosition().deleteObject();
+                    it.remove();
+                }
+            }
+
+        }
+    }
+
+    private boolean checkGameEnd() throws InterruptedException {
+
+        if (Score.rottenApples > 30) {
+            field.youLose();
+            Sound.stopSound();
+            return false;
+        }
+
+        if (Score.timer == 0) {
+            if (Score.score < 200) {
+                field.youLose();
+            } else {
+                field.youWin();
+                end();
+            }
+            Sound.stopSound();
+            return false;
+        }
+
+        return true;
+    }
+
+    private void moveApples() {
+
+
+        Iterator<Apple> it = appleList.iterator();
+
+        while (it.hasNext()) {
+
+            Apple apple = it.next();
+
+            if (!apple.isFallen()) {
+                apple.fall();
+            }
+
+            if (apple.getPosition().getY() > HEIGHT - GROUND) {
+                apple.setFallen(true);
+                apple.increaseFallenCycleCounter();
+
                 if (apple.getFallenCycleCounter() % 240 == 0) { //3" rule
                     Score.increaseRottenApples();
                     apple.getPosition().deleteObject();
                     it.remove();
                 }
             }
-
-            if (Score.rottenApples > 30) {
-                field.youLoose();
-                keepPlaying = false;
-                Sound.stopSound();
-            }
-
-            newton.move();
-            appleCollector.appleCatch();
-
-            field.displayScore();
-
-            if (Score.timer == 0) {
-                if (Score.score < 200) {
-                    field.youLoose();
-                } else {
-                    field.youWin();
-                    end();
-                }
-                keepPlaying = false;
-                Sound.stopSound();
-            }
         }
+
     }
 
-    public void end() throws InterruptedException {
 
-        while (true) {
+    private void createApple() {
 
-            Thread.sleep(delay);
+        if (RandomGenerator.getRandomNumber(100) == 5) {
 
             appleList.add(factory.createApple());
-
-            for (int i = 0; i < appleList.size(); i++) {
-
-                Apple apple = appleList.get(i);
-
-                if (!apple.isFallen()) {
-                    apple.fall();
-                }
-
-                if (apple.getPosition().getY() > HEIGHT - GROUND) {
-                    apple.setFallen(true);
-                    apple.increaseFallenCycleCounter();
-                    if (apple.getFallenCycleCounter() % 80 == 0) { //1" rule
-                        apple.getPosition().deleteObject();
-                        appleList.remove(i);
-                    }
-                }
-            }
         }
     }
+
 }

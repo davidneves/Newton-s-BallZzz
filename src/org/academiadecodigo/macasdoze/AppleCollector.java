@@ -33,6 +33,7 @@ public class AppleCollector {
 
                 Score.increaseScore(apple.getPoints());
                 Sound.appleCatchSound();
+
                 if (apple instanceof GreenApple) {
                     Score.increaseGreenApples();
                 } else if (apple instanceof RedApple) {
