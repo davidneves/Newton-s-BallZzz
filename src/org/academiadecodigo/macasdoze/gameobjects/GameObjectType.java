@@ -9,5 +9,5 @@ public enum GameObjectType {
     RED_APPLE,
     GREEN_APPLE,
     MEGA_APPLE
-    
+
 }

@@ -11,7 +11,7 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 /**
  * Created by codecadet on 23/05/16.
  */
-public class Newton extends  MovableGameObject implements KeyboardHandler{
+public class Newton extends MovableGameObject implements KeyboardHandler {
 
 
     private final int speed = 5;
