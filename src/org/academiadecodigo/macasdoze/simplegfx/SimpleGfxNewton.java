@@ -9,7 +9,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class SimpleGfxNewton extends SimpleGfxMovablePosition {
 
 
-    public static final int WIDTH = 69;
+    public static final int WIDTH = 70;
     public static final int HEIGHT = 117;
 
 
@@ -25,5 +25,6 @@ public class SimpleGfxNewton extends SimpleGfxMovablePosition {
     public int getHeight() {
         return HEIGHT;
     }
+
 
 }
