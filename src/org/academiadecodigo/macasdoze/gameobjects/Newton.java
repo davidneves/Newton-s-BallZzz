@@ -98,10 +98,10 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
 
         if (e.getKey() == KeyboardEvent.KEY_LEFT) {
             leftPressed = true;
-            getPosition().updatePicture("resources/newtonL.png");
+            getPosition().updatePicture("resources/newtonWL.png");
         } else if (e.getKey() == KeyboardEvent.KEY_RIGHT) {
             rightPressed = true;
-            getPosition().updatePicture("resources/newtonR.png");
+            getPosition().updatePicture("resources/newtonWR.png");
         } else if (e.getKey() == KeyboardEvent.KEY_SPACE && this.getPosition().getY() == MacasDoZe.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND - SimpleGfxNewton.HEIGHT) {
             spacePressed = true;
         }
