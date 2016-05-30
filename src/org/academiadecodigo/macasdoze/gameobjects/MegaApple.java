@@ -7,7 +7,14 @@ import org.academiadecodigo.macasdoze.field.Position;
  */
 public class MegaApple extends Apple {
 
-    public MegaApple(Position position, int fallSpeed, int points) {
+    private int timeBoost;
+
+    public MegaApple(Position position, int fallSpeed, int points, int timeBoost) {
         super(position, fallSpeed, points);
+        this.timeBoost = timeBoost;
+    }
+
+    public int getTimeBoost() {
+        return timeBoost;
     }
 }

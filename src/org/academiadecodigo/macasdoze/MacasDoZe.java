@@ -93,7 +93,7 @@ public class MacasDoZe {
 
             field.displayScore();
 
-            if (field.getTimer() == 0) {
+            if (Score.timer == 0) {
                 if (Score.score < 200) {
                     field.youLoose();
                 } else {

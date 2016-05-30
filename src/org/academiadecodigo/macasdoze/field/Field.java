@@ -19,8 +19,4 @@ public interface Field {
 
     void updateTimer();
 
-    int getTimer();
-
-    void increaseTimer(int n);
-
 }
