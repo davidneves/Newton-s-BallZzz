@@ -32,7 +32,7 @@ public class MacasDoZe {
     }
 
 
-    public void init() {
+    public void init(){
 
         Sound.playSound();
 
