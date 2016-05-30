@@ -8,6 +8,7 @@ public enum GameObjectType {
     NEWTON,
     RED_APPLE,
     GREEN_APPLE,
-    MEGA_APPLE
+    PURPLE_APPLE,
+    BLACK_APPLE
 
 }

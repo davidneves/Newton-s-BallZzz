@@ -23,15 +23,19 @@ public class GameObjectsFactory {
     }
 
     public Apple createApple() {
-        int probCreateMegaApple = 15;
-        int probGreenApple = 55;
+
+        int probBlackApple = 5;
+        int probPurpleApple = 15;
+        int probGreenApple = 50;
 
         int randomGen = RandomGenerator.getRandomByRange(0, 100);
 
         Apple apple = null;
 
-        if (randomGen < probCreateMegaApple) {
-            apple = new MegaApple((MovablePosition) positionFactory.createPosition(GameObjectType.MEGA_APPLE), 5, -50, 5);
+        if (randomGen < probBlackApple) {
+            apple = new BlackApple((MovablePosition) positionFactory.createPosition(GameObjectType.BLACK_APPLE), 6, -50);
+        } else if (randomGen < probPurpleApple) {
+            apple = new PurpleApple((MovablePosition) positionFactory.createPosition(GameObjectType.PURPLE_APPLE), 5, 0, 5);
         } else if (randomGen < probGreenApple) {
             apple = new GreenApple((MovablePosition) positionFactory.createPosition(GameObjectType.GREEN_APPLE), 4, 20);
         } else {

@@ -12,7 +12,8 @@ public class Score {
 
     public static int greenApples;
     public static int redApples;
-    public static int megaApples;
+    public static int purpleApples;
+    public static int blackApples;
 
     public static void increaseScore(int points) {
         score += points;
@@ -30,8 +31,12 @@ public class Score {
         redApples++;
     }
 
-    public static void increaseMegaApples() {
-        megaApples++;
+    public static void increasePurpleApples() {
+        purpleApples++;
+    }
+
+    public static void increaseBlackApples() {
+        blackApples++;
     }
 
     public static void increaseTimer(int n) {

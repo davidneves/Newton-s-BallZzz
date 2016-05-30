@@ -114,7 +114,7 @@ public class MacasDoZe {
         }
 
         if (Score.timer == 0) {
-            if (Score.score < 200) {
+            if (Score.score < 250) {
                 field.youLose();
                 newton.getPosition().updatePicture("resources/newtonDead.png");
                 newton.setAlive(false);
