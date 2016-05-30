@@ -21,4 +21,6 @@ public interface Field {
 
     int getTimer();
 
+    void increaseTimer(int n);
+
 }

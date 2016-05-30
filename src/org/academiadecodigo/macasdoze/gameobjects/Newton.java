@@ -30,6 +30,7 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
     public void move() {
 
         int startingY = MacasDoZe.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND - this.getPosition().getHeight();
+
         if (leftPressed && this.getPosition().getX() > MacasDoZe.MARGIN) {
             for (int i = 0; i < speed; i++) {
                 super.move(-1, 0);
