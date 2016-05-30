@@ -71,35 +71,39 @@ public class MacasDoZe {
         }
     }
 
+    private void createApple() {
 
-    private void end() throws InterruptedException {
-
-        while (true) {
-
-            Thread.sleep(delay);
+        if (RandomGenerator.getRandomNumber(100) == 5) {
 
             appleList.add(factory.createApple());
-
-            Iterator<Apple> it = appleList.iterator();
-            while (it.hasNext()) {
-                Apple apple = it.next();
-
-                if (!apple.isFallen()) {
-                    apple.fall();
-                }
-
-                if (apple.getPosition().getY() > HEIGHT - GROUND) {
-                    apple.setFallen(true);
-                    apple.increaseFallenCycleCounter();
-                    if (apple.getFallenCycleCounter() % 80 == 0) { //1" rule
-                        apple.getPosition().deleteObject();
-                        it.remove();
-                    }
-                }
-            }
-
         }
     }
+
+    private void moveApples() {
+
+        Iterator<Apple> it = appleList.iterator();
+
+        while (it.hasNext()) {
+
+            Apple apple = it.next();
+
+            if (!apple.isFallen()) {
+                apple.fall();
+            }
+
+            if (apple.getPosition().getY() > HEIGHT - GROUND) {
+                apple.setFallen(true);
+                apple.increaseFallenCycleCounter();
+
+                if (apple.getFallenCycleCounter() % 240 == 0) { //3" rule
+                    Score.increaseRottenApples();
+                    apple.getPosition().deleteObject();
+                    it.remove();
+                }
+            }
+        }
+    }
+
 
     private boolean checkGameEnd() throws InterruptedException {
 
@@ -123,40 +127,32 @@ public class MacasDoZe {
         return true;
     }
 
-    private void moveApples() {
+    private void end() throws InterruptedException {
 
+        while (true) {
 
-        Iterator<Apple> it = appleList.iterator();
+            Thread.sleep(delay);
 
-        while (it.hasNext()) {
+            appleList.add(factory.createApple());
 
-            Apple apple = it.next();
+            Iterator<Apple> it = appleList.iterator();
 
-            if (!apple.isFallen()) {
-                apple.fall();
-            }
+            while (it.hasNext()) {
+                Apple apple = it.next();
 
-            if (apple.getPosition().getY() > HEIGHT - GROUND) {
-                apple.setFallen(true);
-                apple.increaseFallenCycleCounter();
+                if (!apple.isFallen()) {
+                    apple.fall();
+                }
 
-                if (apple.getFallenCycleCounter() % 240 == 0) { //3" rule
-                    Score.increaseRottenApples();
-                    apple.getPosition().deleteObject();
-                    it.remove();
+                if (apple.getPosition().getY() > HEIGHT - GROUND) {
+                    apple.setFallen(true);
+                    apple.increaseFallenCycleCounter();
+                    if (apple.getFallenCycleCounter() % 80 == 0) { //1" rule
+                        apple.getPosition().deleteObject();
+                        it.remove();
+                    }
                 }
             }
         }
-
     }
-
-
-    private void createApple() {
-
-        if (RandomGenerator.getRandomNumber(100) == 5) {
-
-            appleList.add(factory.createApple());
-        }
-    }
-
 }
