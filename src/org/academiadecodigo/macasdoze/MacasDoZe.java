@@ -65,16 +65,19 @@ public class MacasDoZe {
             }
 
             for (int i = 0; i < appleList.size(); i++) {
-                if (!appleList.get(i).isFallen()) {
-                    appleList.get(i).fall();
+
+                Apple apple = appleList.get(i);
+
+                if (!apple.isFallen()) {
+                    apple.fall();
                 }
 
-                if (appleList.get(i).getPosition().getY() > HEIGHT - GROUND) {
-                    appleList.get(i).setFallen(true);
-                    appleList.get(i).increaseFallenCycleCounter();
-                    if (appleList.get(i).getFallenCycleCounter() % 240 == 0) { //3" rule
+                if (apple.getPosition().getY() > HEIGHT - GROUND) {
+                    apple.setFallen(true);
+                    apple.increaseFallenCycleCounter();
+                    if (apple.getFallenCycleCounter() % 240 == 0) { //3" rule
                         Score.increaseRottenApples();
-                        appleList.get(i).getPosition().deleteObject();
+                        apple.getPosition().deleteObject();
                         appleList.remove(i);
                     }
                 }
@@ -112,15 +115,18 @@ public class MacasDoZe {
             appleList.add(factory.createApple());
 
             for (int i = 0; i < appleList.size(); i++) {
-                if (!appleList.get(i).isFallen()) {
-                    appleList.get(i).fall();
+
+                Apple apple = appleList.get(i);
+
+                if (!apple.isFallen()) {
+                    apple.fall();
                 }
 
-                if (appleList.get(i).getPosition().getY() > HEIGHT - GROUND) {
-                    appleList.get(i).setFallen(true);
-                    appleList.get(i).increaseFallenCycleCounter();
-                    if (appleList.get(i).getFallenCycleCounter() % 80 == 0) { //1" rule
-                        appleList.get(i).getPosition().deleteObject();
+                if (apple.getPosition().getY() > HEIGHT - GROUND) {
+                    apple.setFallen(true);
+                    apple.increaseFallenCycleCounter();
+                    if (apple.getFallenCycleCounter() % 80 == 0) { //1" rule
+                        apple.getPosition().deleteObject();
                         appleList.remove(i);
                     }
                 }
