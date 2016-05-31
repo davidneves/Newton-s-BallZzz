@@ -37,10 +37,11 @@ public class MacasDoZe {
         menu = new SimpleGfxMenu();
 
         menu.init();
-
+        Sound.playMenuSound();
         while (!menu.continueGame()){
             Thread.sleep(delay);
         }
+        Sound.stopSound();
         menu.clearMenu();
         gameDraw();
         start();

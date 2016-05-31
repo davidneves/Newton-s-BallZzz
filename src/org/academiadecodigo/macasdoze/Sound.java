@@ -14,11 +14,25 @@ public class Sound {
     private static InputStream in;
     private static AudioStream as;
 
-    public static void playSound() {
+    public static void playMenuSound() {
 
         try {
 
             in = new FileInputStream("resources/Mozart.wav");
+            as = new AudioStream(in);
+
+            AudioPlayer.player.start(as);
+
+        } catch (Exception e) {
+            System.out.println("file not found.");
+        }
+    }
+
+    public static void playSound() {
+
+        try {
+
+            in = new FileInputStream("resources/tetris.wav");
             as = new AudioStream(in);
 
             AudioPlayer.player.start(as);
