@@ -1,6 +1,7 @@
 package org.academiadecodigo.macasdoze.simplegfx;
 
 import org.academiadecodigo.macasdoze.MacasDoZe;
+import org.academiadecodigo.macasdoze.field.Menu;
 import org.academiadecodigo.simplegraphics.graphics.Color;
 import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.graphics.Text;
@@ -13,7 +14,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 /**
  * Created by codecadet on 30/05/16.
  */
-public class Menu implements MouseHandler {
+public class SimpleGfxMenu implements Menu, MouseHandler {
 
     private int margin;
     private int height;
@@ -35,7 +36,7 @@ public class Menu implements MouseHandler {
     private Text blackRules;
     private Text gameName;
 
-    public Menu() {
+    public SimpleGfxMenu() {
         margin = MacasDoZe.MARGIN;
         height = MacasDoZe.HEIGHT;
         width = MacasDoZe.WIDTH;

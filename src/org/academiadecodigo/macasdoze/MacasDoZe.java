@@ -4,7 +4,7 @@ import org.academiadecodigo.macasdoze.field.Field;
 import org.academiadecodigo.macasdoze.gameobjects.Apple;
 import org.academiadecodigo.macasdoze.gameobjects.GameObjectsFactory;
 import org.academiadecodigo.macasdoze.gameobjects.Newton;
-import org.academiadecodigo.macasdoze.simplegfx.Menu;
+import org.academiadecodigo.macasdoze.simplegfx.SimpleGfxMenu;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -25,7 +25,7 @@ public class MacasDoZe {
     private LinkedList<Apple> appleList;
     private AppleCollector appleCollector;
     private Newton newton;
-    private Menu menu;
+    private SimpleGfxMenu menu;
 
 
     public MacasDoZe(GameObjectsFactory factory, int delay) {
@@ -34,7 +34,7 @@ public class MacasDoZe {
     }
 
     public void init() throws InterruptedException {
-        menu = new Menu();
+        menu = new SimpleGfxMenu();
 
         menu.init();
 
@@ -164,6 +164,7 @@ public class MacasDoZe {
 
             createApple(1);
             moveApples();
+            newton.move();
         }
     }
 
@@ -178,6 +179,7 @@ public class MacasDoZe {
 
             createBlackApple(50);
             moveApples();
+            newton.move();
         }
     }
 }

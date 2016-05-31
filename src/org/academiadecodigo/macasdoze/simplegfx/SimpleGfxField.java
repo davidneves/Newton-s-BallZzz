@@ -118,6 +118,11 @@ public class SimpleGfxField implements Field {
         youWin.grow(200, 60);
         youWin.setColor(Color.YELLOW);
         youWin.draw();
+
+        Text sss = new Text(300, 230, "Parabéns Catarina!");
+        sss.grow(150, 20);
+        sss.setColor(Color.BLUE);
+        sss.draw();
     }
 
 }
