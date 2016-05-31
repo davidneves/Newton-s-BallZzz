@@ -33,8 +33,11 @@ public class SimpleGfxPositionFactory implements PositionFactory {
                 position = new SimpleGfxGreenApple(x, MacasDoZe.MARGIN);
                 break;
 
-            case MEGA_APPLE:
-                position = new SimpleGfxMegaApple(x, MacasDoZe.MARGIN);
+            case PURPLE_APPLE:
+                position = new SimpleGfxPurpleApple(x, MacasDoZe.MARGIN);
+                break;
+            case BLACK_APPLE:
+                position = new SimpleGfxBlackApple(x, MacasDoZe.MARGIN);
         }
         return position;
     }

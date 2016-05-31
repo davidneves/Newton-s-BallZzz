@@ -38,9 +38,11 @@ public class AppleCollector {
                     Score.increaseGreenApples();
                 } else if (apple instanceof RedApple) {
                     Score.increaseRedApples();
+                } else if (apple instanceof PurpleApple){
+                    Score.increasePurpleApples();
+                    Score.increaseTimer(((PurpleApple) apple).getTimeBoost());
                 } else {
-                    Score.increaseMegaApples();
-                    Score.increaseTimer(((MegaApple) apple).getTimeBoost());
+                    Score.increaseBlackApples();
                 }
 
                 apple.getPosition().deleteObject();

@@ -20,6 +20,8 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
     private boolean leftPressed;
     private boolean rightPressed;
     private boolean spacePressed;
+    private boolean alive = true;
+    private boolean winner;
 
     public Newton(Position position) {
         super(position);
@@ -96,17 +98,33 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
 
     @Override
     public void keyPressed(KeyboardEvent e) {
-
-        if (e.getKey() == KeyboardEvent.KEY_LEFT) {
-            leftPressed = true;
-            getPosition().updatePicture("resources/newtonWL.png");
-        } else if (e.getKey() == KeyboardEvent.KEY_RIGHT) {
-            rightPressed = true;
-            getPosition().updatePicture("resources/newtonWR.png");
-        } else if (e.getKey() == KeyboardEvent.KEY_SPACE && this.getPosition().getY() == MacasDoZe.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND - SimpleGfxNewton.HEIGHT) {
-            spacePressed = true;
+        if (winner) {
+            if (e.getKey() == KeyboardEvent.KEY_LEFT) {
+                leftPressed = true;
+                getPosition().updatePicture("resources/newtonWinLeft.png");
+            } else if (e.getKey() == KeyboardEvent.KEY_RIGHT) {
+                rightPressed = true;
+                getPosition().updatePicture("resources/newtonWin.png");
+            }
+        } else if (!alive) {
+            if (e.getKey() == KeyboardEvent.KEY_LEFT) {
+                leftPressed = true;
+                getPosition().updatePicture("resources/newtonDeadLeft.png");
+            } else if (e.getKey() == KeyboardEvent.KEY_RIGHT) {
+                rightPressed = true;
+                getPosition().updatePicture("resources/newtonDead.png");
+            }
+        } else {
+            if (e.getKey() == KeyboardEvent.KEY_LEFT) {
+                leftPressed = true;
+                getPosition().updatePicture("resources/newtonWL.png");
+            } else if (e.getKey() == KeyboardEvent.KEY_RIGHT) {
+                rightPressed = true;
+                getPosition().updatePicture("resources/newtonWR.png");
+            } else if (e.getKey() == KeyboardEvent.KEY_SPACE && this.getPosition().getY() == MacasDoZe.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND - SimpleGfxNewton.HEIGHT) {
+                spacePressed = true;
+            }
         }
-
     }
 
     @Override
@@ -118,5 +136,13 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
             rightPressed = false;
         }
 
+    }
+
+    public void setAlive(boolean alive) {
+        this.alive = alive;
+    }
+
+    public void setWinner(boolean winner) {
+        this.winner = winner;
     }
 }

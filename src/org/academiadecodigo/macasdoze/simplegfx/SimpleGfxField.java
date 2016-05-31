@@ -27,8 +27,11 @@ public class SimpleGfxField implements Field {
     private Picture redApple;
     private Text redApples;
 
-    private Picture megaApple;
-    private Text megaApples;
+    private Picture purpleApple;
+    private Text purpleApples;
+
+    private Picture blackApple;
+    private Text blackApples;
 
 
     public SimpleGfxField(int height, int width, int margin, int ground) {
@@ -60,22 +63,28 @@ public class SimpleGfxField implements Field {
         score.setColor(Color.BLACK);
         score.draw();
 
-        megaApple = new Picture(550, height + margin + 3, "resources/applePurple3.png");
-        megaApple.draw();
+        blackApple = new Picture(550, height + margin + 3, "resources/appleBlack3.png");
+        blackApple.draw();
 
-        megaApples = new Text(590, height + 2 * margin, "" + Score.megaApples);
-        megaApples.draw();
+        blackApples = new Text(590, height + 2 * margin, "" + Score.blackApples);
+        blackApples.draw();
 
-        greenApple = new Picture(450, height + margin + 3, "resources/appleGreen3.png");
+        purpleApple = new Picture(450, height + margin + 3, "resources/applePurple3.png");
+        purpleApple.draw();
+
+        purpleApples = new Text(490, height + 2 * margin, "" + Score.purpleApples);
+        purpleApples.draw();
+
+        greenApple = new Picture(350, height + margin + 3, "resources/appleGreen3.png");
         greenApple.draw();
 
-        greenApples = new Text(490, height + 2 * margin, "" + Score.greenApples);
+        greenApples = new Text(390, height + 2 * margin, "" + Score.greenApples);
         greenApples.draw();
 
-        redApple = new Picture(350, height + margin + 3, "resources/appleRed3.png");
+        redApple = new Picture(250, height + margin + 3, "resources/appleRed3.png");
         redApple.draw();
 
-        redApples = new Text(390, height + 2 * margin, "" + Score.redApples);
+        redApples = new Text(290, height + 2 * margin, "" + Score.redApples);
         redApples.draw();
 
         timerText = new Text(width - 2 * margin, margin * 2, "" + Score.timer);
@@ -87,7 +96,7 @@ public class SimpleGfxField implements Field {
 
     public void displayScore() {
         score.setText("Newton's Score: " + Score.score);
-        megaApples.setText("" + Score.megaApples);
+        purpleApples.setText("" + Score.purpleApples);
         redApples.setText("" + Score.redApples);
         greenApples.setText("" + Score.greenApples);
     }
