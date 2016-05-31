@@ -17,7 +17,8 @@ public class Main {
 
 
         macasDoZe.init();
-        macasDoZe.start();
+
 
     }
+
 }
