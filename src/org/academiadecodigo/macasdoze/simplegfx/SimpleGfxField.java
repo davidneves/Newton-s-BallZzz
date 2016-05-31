@@ -99,6 +99,7 @@ public class SimpleGfxField implements Field {
         purpleApples.setText("" + Score.purpleApples);
         redApples.setText("" + Score.redApples);
         greenApples.setText("" + Score.greenApples);
+        blackApples.setText("" + Score.blackApples);
     }
 
     public void updateTimer() {
