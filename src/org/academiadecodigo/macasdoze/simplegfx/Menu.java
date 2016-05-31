@@ -20,7 +20,6 @@ public class Menu implements MouseHandler {
     private int width;
     private boolean continueGame;
 
-    private MacasDoZe macasDoZe;
 
     private Picture background;
     private Picture play;
@@ -36,14 +35,13 @@ public class Menu implements MouseHandler {
     private Text blackRules;
     private Text gameName;
 
-    public Menu(MacasDoZe macasDoZe) {
+    public Menu() {
         margin = MacasDoZe.MARGIN;
         height = MacasDoZe.HEIGHT;
         width = MacasDoZe.WIDTH;
-        this.macasDoZe = macasDoZe;
     }
 
-    public void init(){
+    public void init() {
 
         Mouse m = new Mouse(this);
 
@@ -102,17 +100,31 @@ public class Menu implements MouseHandler {
 
         if (m.getEventType() == MouseEventType.MOUSE_CLICKED && (m.getX() > play.getX() && m.getX() < play.getX() + play.getWidth())
                 && (m.getY() > play.getY() && m.getY() < play.getY() + play.getHeight())) {
-            macasDoZe.init();
-            continueGame = true;
-            return;
-        }
 
+            continueGame = true;
+        }
     }
 
     @Override
     public void mouseMoved(MouseEvent mouseEvent) {
 
 
+    }
+
+    public void clearMenu() {
+        background.delete();
+        play.delete();
+        rules.delete();
+        rules2.delete();
+        redApple.delete();
+        greenApple.delete();
+        purpleApple.delete();
+        blackApple.delete();
+        redRules.delete();
+        greenRules.delete();
+        purpleRules.delete();
+        blackRules.delete();
+        gameName.delete();
     }
 
     public boolean continueGame() {
