@@ -81,7 +81,7 @@ public class Sound {
 
         try {
 
-            in = new FileInputStream("resources/chorus.wav");
+            in = new FileInputStream("resources/Celebration.wav");
             as = new AudioStream(in);
 
             AudioPlayer.player.start(as);
