@@ -39,7 +39,7 @@ public class MacasDoZe {
         menu.init();
         Sound.playMenuSound();
         while (!menu.continueGame()){
-            Thread.sleep(delay);
+            menu.animatePlayButton();
         }
         Sound.stopSound();
         menu.clearMenu();

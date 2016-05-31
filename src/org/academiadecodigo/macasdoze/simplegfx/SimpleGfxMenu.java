@@ -91,9 +91,20 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         blackRules.setColor(Color.DARK_GRAY);
         blackRules.draw();
 
-        play = new Picture(160, 450, "resources/playButtonWhite.png");
+        play = new Picture(160, 450, "resources/playButton1.png");
         play.draw();
 
+    }
+
+    public void animatePlayButton() throws InterruptedException {
+        play.load("resources/playButton1.png");
+        Thread.sleep(125);
+        play.load("resources/playButton2.png");
+        Thread.sleep(125);
+        play.load("resources/playButton3.png");
+        Thread.sleep(125);
+        play.load("resources/playButton4.png");
+        Thread.sleep(125);
     }
 
     @Override
