@@ -59,7 +59,7 @@ public class MacasDoZe {
             cycles++;
 
             Thread.sleep(delay);
-            createApple();
+            createApple(100);
 
             moveApples();
             newton.move();
@@ -71,11 +71,19 @@ public class MacasDoZe {
         }
     }
 
-    private void createApple() {
+    private void createApple(int prob) {
 
-        if (RandomGenerator.getRandomNumber(100) == 5) {
+        if (RandomGenerator.getRandomNumber(prob) == 1) {
 
             appleList.add(factory.createApple());
+        }
+    }
+
+    private void createBlackApple(int prob) {
+
+        if (RandomGenerator.getRandomNumber(prob) == 1) {
+
+            appleList.add(factory.createBlackApple());
         }
     }
 
@@ -118,46 +126,44 @@ public class MacasDoZe {
                 field.youLose();
                 newton.getPosition().updatePicture("resources/newtonDead.png");
                 newton.setAlive(false);
+                endLose();
+
             } else {
                 field.youWin();
                 newton.getPosition().updatePicture("resources/newtonWin.png");
                 newton.setWinner(true);
-
-                end();
+                endWin();
             }
-            Sound.stopSound();
             return false;
         }
-
         return true;
     }
 
-    private void end() throws InterruptedException {
+    private void endWin() throws InterruptedException {
+
+        Sound.stopSound();
+        Sound.playVictory();
 
         while (true) {
 
             Thread.sleep(delay);
 
-            appleList.add(factory.createApple());
+            createApple(1);
+            moveApples();
+        }
+    }
 
-            Iterator<Apple> it = appleList.iterator();
+    private void endLose() throws InterruptedException {
 
-            while (it.hasNext()) {
-                Apple apple = it.next();
+        Sound.stopSound();
+        Sound.playGameOver();
 
-                if (!apple.isFallen()) {
-                    apple.fall();
-                }
+        while (true) {
 
-                if (apple.getPosition().getY() > HEIGHT - GROUND) {
-                    apple.setFallen(true);
-                    apple.increaseFallenCycleCounter();
-                    if (apple.getFallenCycleCounter() % 80 == 0) { //1" rule
-                        apple.getPosition().deleteObject();
-                        it.remove();
-                    }
-                }
-            }
+            Thread.sleep(delay);
+
+            createBlackApple(50);
+            moveApples();
         }
     }
 }

@@ -24,9 +24,9 @@ public class GameObjectsFactory {
 
     public Apple createApple() {
 
-        int probBlackApple = 5;
-        int probPurpleApple = 15;
-        int probGreenApple = 50;
+        int probBlackApple = 10;
+        int probPurpleApple = 20;
+        int probGreenApple = 55;
 
         int randomGen = RandomGenerator.getRandomByRange(0, 100);
 
@@ -43,6 +43,11 @@ public class GameObjectsFactory {
         }
 
         return apple;
+    }
+
+    public Apple createBlackApple() {
+
+        return new BlackApple((MovablePosition) positionFactory.createPosition(GameObjectType.BLACK_APPLE), 4, 0);
     }
 
     public Newton createNewton() {

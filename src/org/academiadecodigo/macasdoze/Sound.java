@@ -49,4 +49,34 @@ public class Sound {
 
     }
 
+    public static void playGameOver() {
+
+        try {
+
+            in = new FileInputStream("resources/gameover.wav");
+            as = new AudioStream(in);
+
+            AudioPlayer.player.start(as);
+
+        } catch (Exception e) {
+            System.out.println("file not found.");
+        }
+    }
+
+    public static void playVictory() {
+
+        try {
+
+            in = new FileInputStream("resources/chorus.wav");
+            as = new AudioStream(in);
+
+            AudioPlayer.player.start(as);
+
+        } catch (Exception e) {
+            System.out.println("file not found.");
+        }
+    }
+
+
+
 }
