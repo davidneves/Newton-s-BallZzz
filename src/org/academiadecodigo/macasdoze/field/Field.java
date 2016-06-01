@@ -19,4 +19,6 @@ public interface Field {
 
     void updateTimer();
 
+    void clear();
+
 }

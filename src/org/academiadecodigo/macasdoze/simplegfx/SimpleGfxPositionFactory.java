@@ -2,6 +2,7 @@ package org.academiadecodigo.macasdoze.simplegfx;
 
 import org.academiadecodigo.macasdoze.MacasDoZe;
 import org.academiadecodigo.macasdoze.RandomGenerator;
+import org.academiadecodigo.macasdoze.Score;
 import org.academiadecodigo.macasdoze.field.Field;
 import org.academiadecodigo.macasdoze.field.Position;
 import org.academiadecodigo.macasdoze.field.PositionFactory;
@@ -43,7 +44,7 @@ public class SimpleGfxPositionFactory implements PositionFactory {
     }
 
     @Override
-    public Field createField(int height, int width, int margin, int ground) {
-        return new SimpleGfxField(height, width, margin, ground);
+    public Field createField(int height, int width, int margin, int ground, Score score) {
+        return new SimpleGfxField(height, width, margin, ground, score);
     }
 }

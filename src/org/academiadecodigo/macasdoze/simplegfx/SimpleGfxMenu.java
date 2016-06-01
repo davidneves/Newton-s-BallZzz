@@ -62,7 +62,7 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         rules.grow(20, 15);
         rules.draw();
 
-        rules1 = new Text(180, 160, "Use the ARROWS to move and SPACE to jump.");
+        rules1 = new Text(145, 163, "Use the ARROWS to move, SPACE to jump and P to pause.");
         rules1.setColor(Color.WHITE);
         rules1.grow(10, 10);
         rules1.draw();

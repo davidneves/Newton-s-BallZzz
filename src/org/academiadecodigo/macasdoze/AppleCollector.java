@@ -12,10 +12,12 @@ public class AppleCollector {
 
     private Newton newton;
     private LinkedList<Apple> appleList;
+    private Score score;
 
-    public AppleCollector(Newton newton, LinkedList<Apple> appleList) {
+    public AppleCollector(Newton newton, LinkedList<Apple> appleList, Score score) {
         this.newton = newton;
         this.appleList = appleList;
+        this.score = score;
     }
 
     public void appleCatch() {
@@ -31,18 +33,18 @@ public class AppleCollector {
                     && (apple.getPosition().getX() < newton.getPosition().getX() + newton.getPosition().getWidth()
                     && apple.getPosition().getWidth() + apple.getPosition().getX() > newton.getPosition().getX())) {
 
-                Score.increaseScore(apple.getPoints());
+                score.increaseScore(apple.getPoints());
                 Sound.appleCatchSound();
 
                 if (apple instanceof GreenApple) {
-                    Score.increaseGreenApples();
+                    score.increaseGreenApples();
                 } else if (apple instanceof RedApple) {
-                    Score.increaseRedApples();
+                    score.increaseRedApples();
                 } else if (apple instanceof PurpleApple){
-                    Score.increasePurpleApples();
-                    Score.increaseTimer(((PurpleApple) apple).getTimeBoost());
+                    score.increasePurpleApples();
+                    score.increaseTimer(((PurpleApple) apple).getTimeBoost());
                 } else {
-                    Score.increaseBlackApples();
+                    score.increaseBlackApples();
                 }
 
                 apple.getPosition().deleteObject();
