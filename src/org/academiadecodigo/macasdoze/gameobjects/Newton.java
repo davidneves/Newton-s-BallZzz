@@ -102,18 +102,18 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
         if (winner) {
             if (e.getKey() == KeyboardEvent.KEY_LEFT) {
                 leftPressed = true;
-                getPosition().updatePicture("resources/newtonWinLeft.png");
+                getPosition().updatePicture("resources/newtonWinLeft69x115.png");
             } else if (e.getKey() == KeyboardEvent.KEY_RIGHT) {
                 rightPressed = true;
-                getPosition().updatePicture("resources/newtonWin.png");
+                getPosition().updatePicture("resources/newtonWinRight69x115.png");
             }
         } else if (!alive) {
             if (e.getKey() == KeyboardEvent.KEY_LEFT) {
                 leftPressed = true;
-                getPosition().updatePicture("resources/newtonDeadLeft.png");
+                getPosition().updatePicture("resources/newtonDL.png");
             } else if (e.getKey() == KeyboardEvent.KEY_RIGHT) {
                 rightPressed = true;
-                getPosition().updatePicture("resources/newtonDead.png");
+                getPosition().updatePicture("resources/newtonDR.png");
             }
         } else {
             if (e.getKey() == KeyboardEvent.KEY_LEFT) {
