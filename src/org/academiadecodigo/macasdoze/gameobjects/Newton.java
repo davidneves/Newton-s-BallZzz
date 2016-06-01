@@ -3,6 +3,7 @@ package org.academiadecodigo.macasdoze.gameobjects;
 import org.academiadecodigo.macasdoze.MacasDoZe;
 import org.academiadecodigo.macasdoze.field.Position;
 import org.academiadecodigo.macasdoze.simplegfx.SimpleGfxNewton;
+import org.academiadecodigo.simplegraphics.graphics.Canvas;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
@@ -66,7 +67,6 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
 
         k = new Keyboard(this);
 
-        Keyboard k = new Keyboard(this);
 
         KeyboardEvent leftPressedEvent = new KeyboardEvent();
         leftPressedEvent.setKey(KeyboardEvent.KEY_LEFT);
