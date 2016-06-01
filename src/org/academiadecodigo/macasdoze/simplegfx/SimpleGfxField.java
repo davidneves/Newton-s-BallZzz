@@ -17,6 +17,7 @@ public class SimpleGfxField implements Field {
     private int width;
     private int ground;
     private Score score;
+    private Text restart;
 
     private Picture field;
     private Text scoreText;
@@ -115,7 +116,7 @@ public class SimpleGfxField implements Field {
         youLoose.setColor(Color.RED);
         youLoose.draw();
 
-        Text restart = new Text(265, 575, "Press R to restart");
+        restart = new Text(265, 575, "Press R to restart");
         restart.grow(10, 10);
         restart.setColor(Color.WHITE);
         restart.draw();
@@ -127,7 +128,7 @@ public class SimpleGfxField implements Field {
         youWin.setColor(Color.YELLOW);
         youWin.draw();
 
-        Text restart = new Text(265, 575, "Press R to restart");
+        restart = new Text(265, 575, "Press R to restart");
         restart.grow(10, 10);
         restart.setColor(Color.WHITE);
         restart.draw();
@@ -136,6 +137,7 @@ public class SimpleGfxField implements Field {
     public void clear() {
 
         score = null;
+        restart.delete();
 
         field.delete();
         scoreText.delete();

@@ -238,6 +238,7 @@ public class MacasDoZe implements KeyboardHandler {
         newton = null;
         menu = null;
         restart = false;
+        //newton.getPosition().
 
     }
 

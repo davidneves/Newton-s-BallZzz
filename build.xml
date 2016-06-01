@@ -1,11 +1,11 @@
 <?xml version="1.0" ?>
-<project name="car_crash_3" default="jarfile">
+<project name="Newton's Balls" default="jarfile">
 
     <!-- Initialize build properties  -->
     <target name="init" description="Initializes properties">
-        <property name="project.name" value="car_crash_3" />
+        <property name="project.name" value="megagame" />
         <property name="src.dir" value="src" />
-        <property name="main.class" value="org.academiadecodigo.carcrash.Main" />
+        <property name="main.class" value="org.academiadecodigo.macasdoze.Main" />
         <property name="build.dir" value="build" />
         <property name="classes.dir" value="${build.dir}/classes" />
         <property name="lib.dir" value="lib" />

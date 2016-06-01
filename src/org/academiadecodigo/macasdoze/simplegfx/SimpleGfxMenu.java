@@ -64,12 +64,12 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
 
         rules1 = new Text(145, 163, "Use the ARROWS to move, SPACE to jump and P to pause.");
         rules1.setColor(Color.WHITE);
-        rules1.grow(10, 10);
+        rules1.grow(9, 8);
         rules1.draw();
 
         rules2 = new Text(190, 200, "Beware of what kind of apples you collect:");
         rules2.setColor(Color.WHITE);
-        rules2.grow(10, 10);
+        rules2.grow(10, 9);
         rules2.draw();
 
         redApple = new Picture(85, 240, "resources/appleRed0.png");
@@ -129,6 +129,7 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
     }
 
     public void clearMenu() {
+
         background.delete();
         play.delete();
         rules.delete();
