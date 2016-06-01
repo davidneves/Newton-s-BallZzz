@@ -156,13 +156,13 @@ public class MacasDoZe implements KeyboardHandler {
         if (score.getTimer() == 0) {
             if (score.getScore() < 250) {
                 field.youLose();
-                newton.getPosition().updatePicture("resources/newtonDead.png");
+                newton.getPosition().updatePicture("resources/newtonDL.png");
                 newton.setAlive(false);
                 endLose();
 
             } else {
                 field.youWin();
-                newton.getPosition().updatePicture("resources/newtonWin.png");
+                newton.getPosition().updatePicture("resources/newtonWinLeft69x115.png");
                 newton.setWinner(true);
                 endWin();
             }

@@ -63,6 +63,23 @@ public class Sound {
 
     }
 
+    public static void jumpSound() {
+
+        try {
+
+            InputStream in = new FileInputStream("resources/jump.wav");
+            AudioStream as = new AudioStream(in);
+
+            AudioPlayer.player.start(as);
+
+        } catch (Exception e) {
+            System.out.println("file not found.");
+        }
+
+    }
+
+
+
     public static void playGameOver() {
 
         try {
