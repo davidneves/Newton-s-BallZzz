@@ -16,9 +16,10 @@ public class SimpleGfxField implements Field {
     private int height;
     private int width;
     private int ground;
+    private Score score;
 
     private Picture field;
-    private Text score;
+    private Text scoreText;
     private Text timerText;
 
     private Picture greenApple;
@@ -34,11 +35,12 @@ public class SimpleGfxField implements Field {
     private Text blackApples;
 
 
-    public SimpleGfxField(int height, int width, int margin, int ground) {
+    public SimpleGfxField(int height, int width, int margin, int ground, Score score) {
         this.height = height;
         this.width = width;
         this.margin = margin;
         this.ground = ground;
+        this.score = score;
     }
 
 
@@ -59,35 +61,35 @@ public class SimpleGfxField implements Field {
         field = new Picture(margin, margin, "resources/fieldBackground.png");
         field.draw();
 
-        score = new Text(margin, height + 2 * margin, "");
-        score.setColor(Color.BLACK);
-        score.draw();
+        scoreText = new Text(margin, height + 2 * margin, "");
+        scoreText.setColor(Color.BLACK);
+        scoreText.draw();
 
         blackApple = new Picture(550, height + margin + 3, "resources/appleBlack3.png");
         blackApple.draw();
 
-        blackApples = new Text(590, height + 2 * margin, "" + Score.blackApples);
+        blackApples = new Text(590, height + 2 * margin, "" + score.getBlackApples());
         blackApples.draw();
 
         purpleApple = new Picture(450, height + margin + 3, "resources/applePurple3.png");
         purpleApple.draw();
 
-        purpleApples = new Text(490, height + 2 * margin, "" + Score.purpleApples);
+        purpleApples = new Text(490, height + 2 * margin, "" + score.getPurpleApples());
         purpleApples.draw();
 
         greenApple = new Picture(350, height + margin + 3, "resources/appleGreen3.png");
         greenApple.draw();
 
-        greenApples = new Text(390, height + 2 * margin, "" + Score.greenApples);
+        greenApples = new Text(390, height + 2 * margin, "" + score.getGreenApples());
         greenApples.draw();
 
         redApple = new Picture(250, height + margin + 3, "resources/appleRed3.png");
         redApple.draw();
 
-        redApples = new Text(290, height + 2 * margin, "" + Score.redApples);
+        redApples = new Text(290, height + 2 * margin, "" + score.getRedApples());
         redApples.draw();
 
-        timerText = new Text(width - 2 * margin, 2 * margin, "" + Score.timer);
+        timerText = new Text(width - 2 * margin, 2 * margin, "" + score.getTimer());
         timerText.setColor(Color.WHITE);
         timerText.grow(10, 10);
         timerText.draw();
@@ -95,16 +97,16 @@ public class SimpleGfxField implements Field {
     }
 
     public void displayScore() {
-        score.setText("Newton's Score: " + Score.score);
-        purpleApples.setText("" + Score.purpleApples);
-        redApples.setText("" + Score.redApples);
-        greenApples.setText("" + Score.greenApples);
-        blackApples.setText("" + Score.blackApples);
+        scoreText.setText("Newton's Score: " + score.getScore());
+        purpleApples.setText("" + score.getPurpleApples());
+        redApples.setText("" + score.getRedApples());
+        greenApples.setText("" + score.getGreenApples());
+        blackApples.setText("" + score.getBlackApples());
     }
 
     public void updateTimer() {
-        Score.timer--;
-        timerText.setText("" + Score.timer);
+        score.decreaseTimer();
+        timerText.setText("" + score.getTimer());
     }
 
     public void youLose() {
@@ -112,6 +114,11 @@ public class SimpleGfxField implements Field {
         youLoose.grow(200, 60);
         youLoose.setColor(Color.RED);
         youLoose.draw();
+
+        Text restart = new Text(265, 575, "Press R to restart");
+        restart.grow(10, 10);
+        restart.setColor(Color.WHITE);
+        restart.draw();
     }
 
     public void youWin() {
@@ -120,10 +127,31 @@ public class SimpleGfxField implements Field {
         youWin.setColor(Color.YELLOW);
         youWin.draw();
 
-        Text sss = new Text(300, 230, "Parabéns Catarina!");
-        sss.grow(150, 20);
-        sss.setColor(Color.BLUE);
-        sss.draw();
+        Text restart = new Text(265, 575, "Press R to restart");
+        restart.grow(10, 10);
+        restart.setColor(Color.WHITE);
+        restart.draw();
+    }
+
+    public void clear() {
+
+        score = null;
+
+        field.delete();
+        scoreText.delete();
+        timerText.delete();
+
+        greenApple.delete();
+        greenApples.delete();
+
+        redApple.delete();
+        redApples.delete();
+
+        purpleApple.delete();
+        purpleApples.delete();
+
+        blackApple.delete();
+        blackApples.delete();
     }
 
 }

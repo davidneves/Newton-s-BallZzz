@@ -1,5 +1,6 @@
 package org.academiadecodigo.macasdoze.field;
 
+import org.academiadecodigo.macasdoze.Score;
 import org.academiadecodigo.macasdoze.gameobjects.GameObjectType;
 
 /**
@@ -9,5 +10,5 @@ public interface PositionFactory {
 
     Position createPosition(GameObjectType type);
 
-    Field createField(int height, int width, int margin, int ground);
+    Field createField(int height, int width, int margin, int ground, Score score);
 }

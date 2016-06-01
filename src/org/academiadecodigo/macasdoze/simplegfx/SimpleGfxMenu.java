@@ -3,7 +3,6 @@ package org.academiadecodigo.macasdoze.simplegfx;
 import org.academiadecodigo.macasdoze.MacasDoZe;
 import org.academiadecodigo.macasdoze.field.Menu;
 import org.academiadecodigo.simplegraphics.graphics.Color;
-import org.academiadecodigo.simplegraphics.graphics.Rectangle;
 import org.academiadecodigo.simplegraphics.graphics.Text;
 import org.academiadecodigo.simplegraphics.mouse.Mouse;
 import org.academiadecodigo.simplegraphics.mouse.MouseEvent;
@@ -25,6 +24,7 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
     private Picture background;
     private Picture play;
     private Text rules;
+    private Text rules1;
     private Text rules2;
     private Picture redApple;
     private Picture greenApple;
@@ -57,36 +57,41 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         gameName.grow(220, 50);
         gameName.draw();
 
-        rules = new Text(140, 140, "Get 250 points by collecting apples before the time runs out.");
+        rules = new Text(140, 130, "Get 250 points by collecting apples before the time runs out.");
         rules.setColor(Color.WHITE);
         rules.grow(20, 15);
         rules.draw();
 
-        rules2 = new Text(190, 170, "Beware of what kind of apples you collect:");
+        rules1 = new Text(145, 163, "Use the ARROWS to move, SPACE to jump and P to pause.");
+        rules1.setColor(Color.WHITE);
+        rules1.grow(10, 10);
+        rules1.draw();
+
+        rules2 = new Text(190, 200, "Beware of what kind of apples you collect:");
         rules2.setColor(Color.WHITE);
         rules2.grow(10, 10);
         rules2.draw();
 
-        redApple = new Picture(85, 220, "resources/appleRed0.png");
-        redRules = new Text(130, 230, "Are worth 10 points!");
+        redApple = new Picture(85, 240, "resources/appleRed0.png");
+        redRules = new Text(130, 250, "Are worth 10 points!");
         redApple.draw();
         redRules.setColor(Color.DARK_GRAY);
         redRules.draw();
 
-        greenApple = new Picture(345, 220, "resources/appleGreen0.png");
-        greenRules = new Text(390, 230, "Are worth 20 points!");
+        greenApple = new Picture(345, 240, "resources/appleGreen0.png");
+        greenRules = new Text(390, 250, "Are worth 20 points!");
         greenApple.draw();
         greenRules.setColor(Color.DARK_GRAY);
         greenRules.draw();
 
-        purpleApple = new Picture(85, 270, "resources/applePurple0.png");
-        purpleRules = new Text(130, 280, "Will get you 5 extra seconds!");
+        purpleApple = new Picture(85, 290, "resources/applePurple0.png");
+        purpleRules = new Text(130, 300, "Will get you 5 extra seconds!");
         purpleApple.draw();
         purpleRules.setColor(Color.DARK_GRAY);
         purpleRules.draw();
 
-        blackApple = new Picture(345, 270, "resources/appleBlack0.png");
-        blackRules = new Text(390, 280, "Makes you lose 50 points!");
+        blackApple = new Picture(345, 290, "resources/appleBlack0.png");
+        blackRules = new Text(390, 300, "Makes you lose 50 points!");
         blackApple.draw();
         blackRules.setColor(Color.DARK_GRAY);
         blackRules.draw();
@@ -127,6 +132,7 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         background.delete();
         play.delete();
         rules.delete();
+        rules1.delete();
         rules2.delete();
         redApple.delete();
         greenApple.delete();

@@ -5,42 +5,68 @@ package org.academiadecodigo.macasdoze;
  */
 public class Score {
 
-    public static int score;
-    public static int rottenApples;
+    private int score;
+    private int timer;
 
-    public static int timer = 30;
+    private int greenApples;
+    private int redApples;
+    private int purpleApples;
+    private int blackApples;
 
-    public static int greenApples;
-    public static int redApples;
-    public static int purpleApples;
-    public static int blackApples;
 
-    public static void increaseScore(int points) {
+    public Score(int timer) {
+        this.timer = timer;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public int getBlackApples() {
+        return blackApples;
+    }
+
+    public int getPurpleApples() {
+        return purpleApples;
+    }
+
+    public int getRedApples() {
+        return redApples;
+    }
+
+    public int getGreenApples() {
+        return greenApples;
+    }
+
+    public int getTimer() {
+        return timer;
+    }
+
+    public void increaseScore(int points) {
         score += points;
     }
 
-    public static void increaseRottenApples() {
-        rottenApples++;
-    }
-
-    public static void increaseGreenApples() {
+    public void increaseGreenApples() {
         greenApples++;
     }
 
-    public static void increaseRedApples() {
+    public void increaseRedApples() {
         redApples++;
     }
 
-    public static void increasePurpleApples() {
+    public void increasePurpleApples() {
         purpleApples++;
     }
 
-    public static void increaseBlackApples() {
+    public void increaseBlackApples() {
         blackApples++;
     }
 
-    public static void increaseTimer(int n) {
+    public void increaseTimer(int n) {
         timer += n;
     }
 
+    public void decreaseTimer() {
+        timer--;
+    }
 }
