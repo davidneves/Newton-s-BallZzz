@@ -5,6 +5,12 @@ import org.academiadecodigo.macasdoze.gameobjects.Apple;
 import org.academiadecodigo.macasdoze.gameobjects.GameObjectsFactory;
 import org.academiadecodigo.macasdoze.gameobjects.Newton;
 import org.academiadecodigo.macasdoze.simplegfx.SimpleGfxMenu;
+import org.academiadecodigo.simplegraphics.graphics.Color;
+import org.academiadecodigo.simplegraphics.graphics.Text;
+import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -12,7 +18,7 @@ import java.util.LinkedList;
 /**
  * Created by codecadet on 23/05/16.
  */
-public class MacasDoZe {
+public class MacasDoZe implements KeyboardHandler {
 
     public static final int HEIGHT = 900;
     public static final int WIDTH = 600;
@@ -26,6 +32,7 @@ public class MacasDoZe {
     private AppleCollector appleCollector;
     private Newton newton;
     private SimpleGfxMenu menu;
+    private boolean pause;
 
 
     public MacasDoZe(GameObjectsFactory factory, int delay) {
@@ -38,7 +45,7 @@ public class MacasDoZe {
 
         menu.init();
         Sound.playMenuSound();
-        while (!menu.continueGame()){
+        while (!menu.continueGame()) {
             menu.animatePlayButton();
         }
         Sound.stopSound();
@@ -47,7 +54,7 @@ public class MacasDoZe {
         start();
     }
 
-    public void gameDraw(){
+    public void gameDraw() {
 
         Sound.playSound();
 
@@ -59,6 +66,8 @@ public class MacasDoZe {
         appleList = new LinkedList();
         appleCollector = new AppleCollector(newton, appleList);
 
+        setKeyboard();
+
     }
 
     public void start() throws InterruptedException {
@@ -66,6 +75,17 @@ public class MacasDoZe {
         int cycles = 0;
 
         while (checkGameEnd()) {
+
+            while (pause) {
+                Text gameName = new Text(300, 150, "Paused");
+                gameName.setColor(Color.WHITE);
+                gameName.grow(200, 60);
+                gameName.draw();
+                Thread.sleep(delay);
+                gameName.delete();
+                Thread.sleep(delay);
+
+            }
 
             if (cycles % 80 == 0) {
                 field.updateTimer();
@@ -182,5 +202,38 @@ public class MacasDoZe {
             moveApples();
             newton.move();
         }
+    }
+
+    public void setKeyboard() {
+
+        Keyboard k = new Keyboard(this);
+
+        KeyboardEvent pPressedEvent = new KeyboardEvent();
+        pPressedEvent.setKey(KeyboardEvent.KEY_P);
+        pPressedEvent.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+        k.addEventListener(pPressedEvent);
+
+    }
+
+    @Override
+    public void keyPressed(KeyboardEvent keyboardEvent) {
+
+        if (keyboardEvent.getKey() == KeyboardEvent.KEY_P) {
+
+            if (!pause) {
+                pause = true;
+
+            } else {
+                pause = false;
+            }
+
+        }
+
+
+    }
+
+    @Override
+    public void keyReleased(KeyboardEvent keyboardEvent) {
+
     }
 }
