@@ -11,7 +11,9 @@ import org.academiadecodigo.simplegraphics.mouse.MouseHandler;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 /**
- * Created by codecadet on 30/05/16.
+ * @see Menu
+ * <p>
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mario Ponte on 31/05/16.
  */
 public class SimpleGfxMenu implements Menu, MouseHandler {
 
@@ -47,6 +49,9 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         width = MacasDoZe.WIDTH;
     }
 
+    /**
+     * @see Menu#init()
+     */
     public void init() {
 
         Mouse m = new Mouse(this);
@@ -114,6 +119,11 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
 
     }
 
+    /**
+     * Animates the Menu buttons.
+     *
+     * @throws InterruptedException
+     */
     public void animateMenu() throws InterruptedException {
         if (bird.getX() >= 520) {
             bird.translate(-520, 0);
@@ -141,7 +151,9 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
     }
 
 
-
+    /**
+     * @see Menu#clearMenu()
+     */
     public void clearMenu() {
 
         background.delete();
@@ -161,6 +173,11 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         credits.delete();
     }
 
+    /**
+     * Enables the start of the game.
+     *
+     * @return boolean
+     */
     public boolean continueGame() {
         return continueGame;
     }
