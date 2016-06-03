@@ -104,7 +104,7 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         play = new Picture(160, 450, "resources/playButton1.png");
         play.draw();
 
-        credits = new Text(30, height - 40, "A <vi_KING> game by:   David Neves   Fábio Santos   Hélia Marcos   Mário Ponte");
+        credits = new Text(30, height - 40, "A <vi_KING> game by:   David Neves   Fábio Santos   Hélia Marcos   Mario Ponte");
         credits.setColor(Color.BLUE);
         credits.draw();
 

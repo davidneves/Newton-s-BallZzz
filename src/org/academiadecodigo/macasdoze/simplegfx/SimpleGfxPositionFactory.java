@@ -34,18 +34,18 @@ public class SimpleGfxPositionFactory implements PositionFactory {
                 position = new SimpleGfxNewton(MacasDoZe.WIDTH / 2 - SimpleGfxNewton.WIDTH / 2 + MacasDoZe.MARGIN, MacasDoZe.HEIGHT - SimpleGfxNewton.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND);
                 break;
             case RED_APPLE:
-                position = new SimpleGfxRedApple(x, y, "resources/appleRed0.png");
+                position = new SimpleGfxRedApple(x, y, "resources/appleRed00.png");
                 break;
 
             case GREEN_APPLE:
-                position = new SimpleGfxGreenApple(x, y, "resources/appleGreen0.png");
+                position = new SimpleGfxGreenApple(x, y, "resources/appleGreen00.png");
                 break;
 
             case PURPLE_APPLE:
-                position = new SimpleGfxPurpleApple(x, y, "resources/applePurple0.png");
+                position = new SimpleGfxPurpleApple(x, y, "resources/applePurple00.png");
                 break;
             case BLACK_APPLE:
-                position = new SimpleGfxBlackApple(x, y, "resources/appleBlack0.png");
+                position = new SimpleGfxBlackApple(x, y, "resources/appleBlack00.png");
                 break;
             case NUGGET:
                 position = new SimpleGfxRedApple(x, y, "resources/nugget.png");
