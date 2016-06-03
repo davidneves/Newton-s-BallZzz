@@ -9,10 +9,17 @@ import org.academiadecodigo.macasdoze.field.PositionFactory;
 import org.academiadecodigo.macasdoze.gameobjects.GameObjectType;
 
 /**
- * Created by <vi.KING_> David Neves on 23/05/16.
+ * @see PositionFactory
+ * <p>
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
  */
 public class SimpleGfxPositionFactory implements PositionFactory {
 
+    /**
+     * @param type the type of Game Object
+     * @return a Position
+     * @see PositionFactory#createPosition(GameObjectType)
+     */
     @Override
     public Position createPosition(GameObjectType type) {
 
@@ -27,18 +34,18 @@ public class SimpleGfxPositionFactory implements PositionFactory {
                 position = new SimpleGfxNewton(MacasDoZe.WIDTH / 2 - SimpleGfxNewton.WIDTH / 2 + MacasDoZe.MARGIN, MacasDoZe.HEIGHT - SimpleGfxNewton.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND);
                 break;
             case RED_APPLE:
-                position = new SimpleGfxRedApple(x, y, "resources/appleRed0.png");
+                position = new SimpleGfxRedApple(x, y, "resources/appleRed00.png");
                 break;
 
             case GREEN_APPLE:
-                position = new SimpleGfxGreenApple(x, y, "resources/appleGreen0.png");
+                position = new SimpleGfxGreenApple(x, y, "resources/appleGreen00.png");
                 break;
 
             case PURPLE_APPLE:
-                position = new SimpleGfxPurpleApple(x, y, "resources/applePurple0.png");
+                position = new SimpleGfxPurpleApple(x, y, "resources/applePurple00.png");
                 break;
             case BLACK_APPLE:
-                position = new SimpleGfxBlackApple(x, y, "resources/appleBlack0.png");
+                position = new SimpleGfxBlackApple(x, y, "resources/appleBlack00.png");
                 break;
             case NUGGET:
                 position = new SimpleGfxRedApple(x, y, "resources/nugget.png");
@@ -46,6 +53,15 @@ public class SimpleGfxPositionFactory implements PositionFactory {
         return position;
     }
 
+    /**
+     * @param height
+     * @param width
+     * @param margin
+     * @param ground
+     * @param score
+     * @return a Field
+     * @see PositionFactory#createField(int, int, int, int, Score)
+     */
     @Override
     public Field createField(int height, int width, int margin, int ground, Score score) {
         return new SimpleGfxField(height, width, margin, ground, score);

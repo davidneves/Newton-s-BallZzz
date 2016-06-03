@@ -4,11 +4,31 @@ import org.academiadecodigo.macasdoze.Score;
 import org.academiadecodigo.macasdoze.gameobjects.GameObjectType;
 
 /**
- * Created by <vi.KING_> David Neves on 23/05/16.
+ * To be instantiated by the Position Factory of the defined library.
+ * <p>
+ * Creates the representations of the Game Objects.
+ * <p>
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
  */
 public interface PositionFactory {
 
+    /**
+     * Returns a representation for a given Game Object.
+     *
+     * @param type the type of Game Object
+     * @return a Position
+     */
     Position createPosition(GameObjectType type);
 
+    /**
+     * Returns a field.
+     *
+     * @param height
+     * @param width
+     * @param margin
+     * @param ground
+     * @param score
+     * @return a Field
+     */
     Field createField(int height, int width, int margin, int ground, Score score);
 }

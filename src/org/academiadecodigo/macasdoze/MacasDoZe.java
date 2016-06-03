@@ -60,14 +60,15 @@ public class MacasDoZe implements KeyboardHandler {
 
     private void gameDraw(boolean normalMode) {
 
-        Sound.playSound();
 
         score = new Score(30);
         field = factory.getPositionFactory().createField(HEIGHT, WIDTH, MARGIN, GROUND, score);
         if (normalMode) {
+            Sound.playSound();
             field.normalInit();
         } else {
             field.secretInit();
+            Sound.playSecretSong();
         }
 
         newton = factory.createNewton();

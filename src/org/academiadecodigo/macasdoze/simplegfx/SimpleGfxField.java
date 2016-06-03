@@ -8,7 +8,9 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 
 /**
- * Created by <vi.KING_> David Neves on 23/05/16.
+ * @see Field
+ * <p>
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
  */
 public class SimpleGfxField implements Field {
 
@@ -45,17 +47,9 @@ public class SimpleGfxField implements Field {
     }
 
 
-    @Override
-    public int getHeight() {
-        return height;
-    }
-
-    @Override
-    public int getWidth() {
-        return width;
-    }
-
-
+    /**
+     * @see Field#normalInit()
+     */
     @Override
     public void normalInit() {
 
@@ -97,6 +91,9 @@ public class SimpleGfxField implements Field {
 
     }
 
+    /**
+     * @see Field#secretInit()
+     */
     public void secretInit() {
 
         field = new Picture(margin, margin, "resources/fieldBackground.png");
@@ -119,6 +116,9 @@ public class SimpleGfxField implements Field {
 
     }
 
+    /**
+     * @see Field#displayScore()
+     */
     public void displayScore() {
         scoreText.setText("Newton's Score: " + score.getScore());
         purpleApples.setText("" + score.getPurpleApples());
@@ -127,15 +127,24 @@ public class SimpleGfxField implements Field {
         blackApples.setText("" + score.getBlackApples());
     }
 
+    /**
+     * @see Field#displaySecretScore()
+     */
     public void displaySecretScore() {
         redApples.setText("" + score.getRedApples());
     }
 
+    /**
+     * @see Field#updateTimer()
+     */
     public void updateTimer() {
         score.decreaseTimer();
         timerText.setText("" + score.getTimer());
     }
 
+    /**
+     * @see Field#youLose()
+     */
     public void youLose() {
         Text youLoose = new Text(285, 150, "GAME OVER!");
         youLoose.grow(200, 60);
@@ -148,6 +157,9 @@ public class SimpleGfxField implements Field {
         restart.draw();
     }
 
+    /**
+     * @see Field#youWin()
+     */
     public void youWin() {
         Text youWin = new Text(300, 150, "YOU WIN!");
         youWin.grow(200, 60);
@@ -160,6 +172,9 @@ public class SimpleGfxField implements Field {
         restart.draw();
     }
 
+    /**
+     * @see Field#clearNormalMode()
+     */
     public void clearNormalMode() {
 
         score = null;
@@ -182,6 +197,9 @@ public class SimpleGfxField implements Field {
         blackApples.delete();
     }
 
+    /**
+     * @see Field#clearSecretMode()
+     */
     public void clearSecretMode() {
 
         score = null;
