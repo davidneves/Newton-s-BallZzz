@@ -54,17 +54,21 @@ public class MacasDoZe implements KeyboardHandler {
 
         Sound.stopSound();
         menu.clearMenu();
-        gameDraw();
+        gameDraw(menu.isNormalMode());
         start(menu.isNormalMode());
     }
 
-    private void gameDraw() {
+    private void gameDraw(boolean normalMode) {
 
         Sound.playSound();
 
         score = new Score(30);
         field = factory.getPositionFactory().createField(HEIGHT, WIDTH, MARGIN, GROUND, score);
-        field.init();
+        if (normalMode) {
+            field.normalInit();
+        } else {
+            field.secretInit();
+        }
 
         newton = factory.createNewton();
 
@@ -109,7 +113,11 @@ public class MacasDoZe implements KeyboardHandler {
             newton.move();
             appleCollector.appleCatch();
 
-            field.displayScore();
+            if (normalMode) {
+                field.displayScore();
+            } else {
+                field.displaySecretScore();
+            }
 
             checkGameEnd();
         }
@@ -168,7 +176,14 @@ public class MacasDoZe implements KeyboardHandler {
     private boolean checkGameEnd() throws InterruptedException {
 
         if (score.getTimer() == 0) {
-            if (score.getScore() < 250) {
+
+            if (!menu.isNormalMode()) {
+                field.youWin();
+                newton.getPosition().updatePicture("resources/newtonWinLeft69x115.png");
+                newton.setWinner(true);
+                endSecret();
+
+            } else if (score.getScore() < 250) {
                 field.youLose();
                 newton.getPosition().updatePicture("resources/newtonDL.png");
                 newton.setAlive(false);
@@ -194,9 +209,9 @@ public class MacasDoZe implements KeyboardHandler {
 
             Thread.sleep(delay);
 
-            createApple(1);
-            moveApples();
+            createApple(6);
             newton.move();
+            moveApples();
 
             if (restart) {
                 clear();
@@ -215,6 +230,26 @@ public class MacasDoZe implements KeyboardHandler {
             Thread.sleep(delay);
 
             createBlackApple(50);
+            newton.move();
+            moveApples();
+
+            if (restart) {
+                clear();
+                Main.main(new String[]{});
+            }
+        }
+    }
+
+    private void endSecret() throws InterruptedException {
+
+        Sound.stopSound();
+        Sound.playVictory();
+
+        while (true) {
+
+            Thread.sleep(delay);
+
+            createNuggets(10);
             moveApples();
             newton.move();
 
@@ -223,6 +258,7 @@ public class MacasDoZe implements KeyboardHandler {
                 Main.main(new String[]{});
             }
         }
+
     }
 
     private void setKeyboard() {
@@ -244,7 +280,11 @@ public class MacasDoZe implements KeyboardHandler {
     private void clear() {
 
         Sound.stopSound();
-        field.clear();
+        if (menu.isNormalMode()) {
+            field.clearNormalMode();
+        } else {
+            field.clearSecretMode();
+        }
         field = null;
         factory = null;
         appleList = null;

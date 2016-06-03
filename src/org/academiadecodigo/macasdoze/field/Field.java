@@ -9,9 +9,13 @@ public interface Field {
 
     int getWidth();
 
-    void init();
+    void normalInit();
+
+    void secretInit();
 
     void displayScore();
+
+    void displaySecretScore();
 
     void youLose();
 
@@ -19,6 +23,8 @@ public interface Field {
 
     void updateTimer();
 
-    void clear();
+    void clearNormalMode();
+
+    void clearSecretMode();
 
 }

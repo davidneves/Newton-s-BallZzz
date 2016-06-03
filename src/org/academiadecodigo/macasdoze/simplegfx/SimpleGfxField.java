@@ -57,7 +57,7 @@ public class SimpleGfxField implements Field {
 
 
     @Override
-    public void init() {
+    public void normalInit() {
 
         field = new Picture(margin, margin, "resources/fieldBackground.png");
         field.draw();
@@ -97,12 +97,38 @@ public class SimpleGfxField implements Field {
 
     }
 
+    public void secretInit() {
+
+        field = new Picture(margin, margin, "resources/fieldBackground.png");
+        field.draw();
+
+        scoreText = new Text(margin, height + 2 * margin, "");
+        scoreText.setColor(Color.BLACK);
+        scoreText.draw();
+
+        redApple = new Picture(550, height + margin + 3, "resources/nugget.png");
+        redApple.draw();
+
+        redApples = new Text(590, height + 2 * margin, "" + score.getRedApples());
+        redApples.draw();
+
+        timerText = new Text(width - 2 * margin, 2 * margin, "" + score.getTimer());
+        timerText.setColor(Color.WHITE);
+        timerText.grow(10, 10);
+        timerText.draw();
+
+    }
+
     public void displayScore() {
         scoreText.setText("Newton's Score: " + score.getScore());
         purpleApples.setText("" + score.getPurpleApples());
         redApples.setText("" + score.getRedApples());
         greenApples.setText("" + score.getGreenApples());
         blackApples.setText("" + score.getBlackApples());
+    }
+
+    public void displaySecretScore() {
+        redApples.setText("" + score.getRedApples());
     }
 
     public void updateTimer() {
@@ -134,7 +160,7 @@ public class SimpleGfxField implements Field {
         restart.draw();
     }
 
-    public void clear() {
+    public void clearNormalMode() {
 
         score = null;
         restart.delete();
@@ -154,6 +180,20 @@ public class SimpleGfxField implements Field {
 
         blackApple.delete();
         blackApples.delete();
+    }
+
+    public void clearSecretMode() {
+
+        score = null;
+        restart.delete();
+
+        field.delete();
+        scoreText.delete();
+        timerText.delete();
+
+        redApple.delete();
+        redApples.delete();
+
     }
 
 }

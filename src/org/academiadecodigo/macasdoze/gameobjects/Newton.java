@@ -100,27 +100,39 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
     public void keyPressed(KeyboardEvent e) {
         if (winner) {
             if (e.getKey() == KeyboardEvent.KEY_LEFT) {
+                if (!leftPressed) {
+                    getPosition().updatePicture("resources/newtonWinLeft69x115.png");
+                }
                 leftPressed = true;
-                getPosition().updatePicture("resources/newtonWinLeft69x115.png");
             } else if (e.getKey() == KeyboardEvent.KEY_RIGHT) {
+                if (!rightPressed) {
+                    getPosition().updatePicture("resources/newtonWinRight69x115.png");
+                }
                 rightPressed = true;
-                getPosition().updatePicture("resources/newtonWinRight69x115.png");
             }
         } else if (!alive) {
             if (e.getKey() == KeyboardEvent.KEY_LEFT) {
+                if (!leftPressed) {
+                    getPosition().updatePicture("resources/newtonDL.png");
+                }
                 leftPressed = true;
-                getPosition().updatePicture("resources/newtonDL.png");
             } else if (e.getKey() == KeyboardEvent.KEY_RIGHT) {
+                if (!rightPressed) {
+                    getPosition().updatePicture("resources/newtonDR.png");
+                }
                 rightPressed = true;
-                getPosition().updatePicture("resources/newtonDR.png");
             }
         } else {
             if (e.getKey() == KeyboardEvent.KEY_LEFT) {
+                if (!leftPressed) {
+                    getPosition().updatePicture("resources/newtonWL.png");
+                }
                 leftPressed = true;
-                getPosition().updatePicture("resources/newtonWL.png");
             } else if (e.getKey() == KeyboardEvent.KEY_RIGHT) {
+                if (!rightPressed) {
+                    getPosition().updatePicture("resources/newtonWR.png");
+                }
                 rightPressed = true;
-                getPosition().updatePicture("resources/newtonWR.png");
             } else if (e.getKey() == KeyboardEvent.KEY_SPACE && this.getPosition().getY() == MacasDoZe.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND - SimpleGfxNewton.HEIGHT) {
                 spacePressed = true;
                 Sound.jumpSound();

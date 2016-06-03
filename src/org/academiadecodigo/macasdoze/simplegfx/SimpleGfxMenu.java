@@ -109,6 +109,7 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         credits.draw();
 
         bird = new Picture(margin, 380, "resources/bird1.png");
+        bird.grow(5, 5);
         bird.draw();
 
     }
@@ -119,18 +120,18 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         }
         bird.load("resources/bird" + i + ".png");
         play.load("resources/playButton1.png");
-        bird.translate(20, 0);
+        bird.translate(15, 0);
         Thread.sleep(125);
         play.load("resources/playButton2.png");
-        bird.translate(20, 0);
+        bird.translate(15, 0);
 
         Thread.sleep(125);
         play.load("resources/playButton3.png");
-        bird.translate(20, 0);
+        bird.translate(15, 0);
 
         Thread.sleep(125);
         play.load("resources/playButton4.png");
-        bird.translate(20, 0);
+        bird.translate(15, 0);
 
         Thread.sleep(125);
         if (i == 4) {
@@ -141,9 +142,8 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
 
 
 
-
-
     public void clearMenu() {
+
         background.delete();
         play.delete();
         rules.delete();

@@ -24,7 +24,12 @@ public abstract class SimpleGfxPosition implements Position {
 
 
     public void updatePicture(String path) {
+
+        try {
         ((Picture) shape).load(path);
+        } catch (Exception e) {
+            System.out.println("newton moving error");
+        }
 
     }
 
