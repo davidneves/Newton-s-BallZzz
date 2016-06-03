@@ -107,5 +107,21 @@ public class Sound {
         }
     }
 
+    public static void playSecretSong() {
+
+        try {
+
+            in = new FileInputStream("resources/bonusLevelSong.wav");
+            as = new AudioStream(in);
+
+            AudioPlayer.player.start(as);
+
+        } catch (Exception e) {
+            System.out.println("file not found.");
+        }
+    }
+
+
+
 
 }

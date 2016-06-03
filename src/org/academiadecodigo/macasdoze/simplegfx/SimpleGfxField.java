@@ -55,7 +55,9 @@ public class SimpleGfxField implements Field {
         return width;
     }
 
-
+    /**
+     * Initiates and draws the field score and timer objects.
+     */
     @Override
     public void normalInit() {
 
@@ -97,6 +99,9 @@ public class SimpleGfxField implements Field {
 
     }
 
+    /**
+     * Initiates and draws the field score and timer objects for the secret level.
+     */
     public void secretInit() {
 
         field = new Picture(margin, margin, "resources/fieldBackground.png");
@@ -119,6 +124,9 @@ public class SimpleGfxField implements Field {
 
     }
 
+    /**
+     * Updates the scores.
+     */
     public void displayScore() {
         scoreText.setText("Newton's Score: " + score.getScore());
         purpleApples.setText("" + score.getPurpleApples());
@@ -127,10 +135,16 @@ public class SimpleGfxField implements Field {
         blackApples.setText("" + score.getBlackApples());
     }
 
+    /**
+     * Updates the score for the secret level.
+     */
     public void displaySecretScore() {
         redApples.setText("" + score.getRedApples());
     }
 
+    /**
+     * Updates the ti.
+     */
     public void updateTimer() {
         score.decreaseTimer();
         timerText.setText("" + score.getTimer());

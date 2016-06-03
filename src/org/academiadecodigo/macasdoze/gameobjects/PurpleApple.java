@@ -14,6 +14,10 @@ public class PurpleApple extends Apple {
         this.timeBoost = timeBoost;
     }
 
+    /**
+     * @see Apple#isFallen()
+     *
+     */
     public int getTimeBoost() {
         return timeBoost;
     }
