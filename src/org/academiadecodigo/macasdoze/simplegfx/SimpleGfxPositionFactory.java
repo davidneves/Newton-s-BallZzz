@@ -17,7 +17,7 @@ public class SimpleGfxPositionFactory implements PositionFactory {
     public Position createPosition(GameObjectType type) {
 
         int x = RandomGenerator.getRandomByRange(MacasDoZe.MARGIN, MacasDoZe.WIDTH - SimpleGfxApple.SIZE);
-        int y = RandomGenerator.getRandomByRange(MacasDoZe.MARGIN, MacasDoZe.WIDTH - MacasDoZe.GROUND);
+        int y = MacasDoZe.MARGIN;
 
         Position position = null;
 
@@ -27,18 +27,18 @@ public class SimpleGfxPositionFactory implements PositionFactory {
                 position = new SimpleGfxNewton(MacasDoZe.WIDTH / 2 - SimpleGfxNewton.WIDTH / 2 + MacasDoZe.MARGIN, MacasDoZe.HEIGHT - SimpleGfxNewton.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND);
                 break;
             case RED_APPLE:
-                position = new SimpleGfxRedApple(x, MacasDoZe.MARGIN);
+                position = new SimpleGfxRedApple(x, y, "resources/appleRed0.png");
                 break;
 
             case GREEN_APPLE:
-                position = new SimpleGfxGreenApple(x, MacasDoZe.MARGIN);
+                position = new SimpleGfxGreenApple(x, y, "resources/appleGreen0.png");
                 break;
 
             case PURPLE_APPLE:
-                position = new SimpleGfxPurpleApple(x, MacasDoZe.MARGIN);
+                position = new SimpleGfxPurpleApple(x, y, "resources/applePurple0.png");
                 break;
             case BLACK_APPLE:
-                position = new SimpleGfxBlackApple(x, MacasDoZe.MARGIN);
+                position = new SimpleGfxBlackApple(x, y, "resources/appleBlack0.png");
         }
         return position;
     }

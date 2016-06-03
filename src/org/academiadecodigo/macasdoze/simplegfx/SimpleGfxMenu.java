@@ -35,6 +35,7 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
     private Text purpleRules;
     private Text blackRules;
     private Text gameName;
+    private Text credits;
 
     public SimpleGfxMenu() {
         margin = MacasDoZe.MARGIN;
@@ -99,6 +100,10 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         play = new Picture(160, 450, "resources/playButton1.png");
         play.draw();
 
+        credits = new Text(30, height - 40, "A <vi_KING> game by:   David Neves   Fábio Santos   Hélia Marcos   Mário Ponte");
+        credits.setColor(Color.BLUE);
+        credits.draw();
+
     }
 
     public void animatePlayButton() throws InterruptedException {
@@ -110,22 +115,6 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         Thread.sleep(125);
         play.load("resources/playButton4.png");
         Thread.sleep(125);
-    }
-
-    @Override
-    public void mouseClicked(MouseEvent m) {
-
-        if (m.getEventType() == MouseEventType.MOUSE_CLICKED && (m.getX() > play.getX() && m.getX() < play.getX() + play.getWidth())
-                && (m.getY() > play.getY() && m.getY() < play.getY() + play.getHeight())) {
-
-            continueGame = true;
-        }
-    }
-
-    @Override
-    public void mouseMoved(MouseEvent mouseEvent) {
-
-
     }
 
     public void clearMenu() {
@@ -144,9 +133,32 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         purpleRules.delete();
         blackRules.delete();
         gameName.delete();
+        credits.delete();
     }
 
     public boolean continueGame() {
         return continueGame;
     }
+
+    @Override
+    public void mouseClicked(MouseEvent m) {
+
+        if (m.getEventType() == MouseEventType.MOUSE_CLICKED && (m.getX() > play.getX() && m.getX() < play.getX() + play.getWidth())
+                && (m.getY() > play.getY() && m.getY() < play.getY() + play.getHeight())) {
+
+            continueGame = true;
+        } /*else if (m.getEventType() == MouseEventType.MOUSE_CLICKED && (m.getX() > bird.getX() && m.getX() < bird.getX() + bird.getWidth())
+                && (m.getY() > bird.getY() && m.getY() < bird.getY() + bird.getHeight())) {
+            SecretMiniGame
+        }*/
+    }
+
+    @Override
+    public void mouseMoved(MouseEvent mouseEvent) {
+    }
+
+}
+
+class SecretMiniGame {
+
 }

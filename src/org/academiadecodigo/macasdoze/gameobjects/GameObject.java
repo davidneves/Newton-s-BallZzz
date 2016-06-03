@@ -14,7 +14,7 @@ public abstract class GameObject {
         this.position = position;
     }
 
-    
+
     public Position getPosition() {
         return position;
     }

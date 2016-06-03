@@ -40,7 +40,7 @@ public class AppleCollector {
                     score.increaseGreenApples();
                 } else if (apple instanceof RedApple) {
                     score.increaseRedApples();
-                } else if (apple instanceof PurpleApple){
+                } else if (apple instanceof PurpleApple) {
                     score.increasePurpleApples();
                     score.increaseTimer(((PurpleApple) apple).getTimeBoost());
                 } else {

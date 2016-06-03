@@ -58,7 +58,7 @@ public class MacasDoZe implements KeyboardHandler {
         start();
     }
 
-    public void gameDraw() {
+    private void gameDraw() {
 
         Sound.playSound();
 
@@ -75,7 +75,7 @@ public class MacasDoZe implements KeyboardHandler {
 
     }
 
-    public void start() throws InterruptedException {
+    private void start() throws InterruptedException {
 
         int cycles = 0;
 
@@ -238,7 +238,6 @@ public class MacasDoZe implements KeyboardHandler {
         newton = null;
         menu = null;
         restart = false;
-        //newton.getPosition().
 
     }
 

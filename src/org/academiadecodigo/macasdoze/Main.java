@@ -15,10 +15,7 @@ public class Main {
 
         MacasDoZe macasDoZe = new MacasDoZe(new GameObjectsFactory(factory), 10);
 
-
         macasDoZe.init();
 
-
     }
-
 }

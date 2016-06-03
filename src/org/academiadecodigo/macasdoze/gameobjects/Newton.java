@@ -4,7 +4,6 @@ import org.academiadecodigo.macasdoze.MacasDoZe;
 import org.academiadecodigo.macasdoze.Sound;
 import org.academiadecodigo.macasdoze.field.Position;
 import org.academiadecodigo.macasdoze.simplegfx.SimpleGfxNewton;
-import org.academiadecodigo.simplegraphics.graphics.Canvas;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;

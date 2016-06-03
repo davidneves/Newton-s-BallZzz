@@ -7,7 +7,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
  */
 public class SimpleGfxPurpleApple extends SimpleGfxApple {
 
-    public SimpleGfxPurpleApple(int x, int y) {
-        super(new Picture(x, y, "resources/applePurple0.png"));
+    public SimpleGfxPurpleApple(int x, int y, String path) {
+        super(new Picture(x, y, path));
     }
 }
