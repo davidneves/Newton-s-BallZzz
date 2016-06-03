@@ -75,25 +75,25 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         rules2.grow(10, 10);
         rules2.draw();
 
-        redApple = new Picture(85, 240, "resources/appleRed0.png");
+        redApple = new Picture(85, 240, "resources/appleRed00.png");
         redRules = new Text(130, 250, "Are worth 10 points!");
         redApple.draw();
         redRules.setColor(Color.DARK_GRAY);
         redRules.draw();
 
-        greenApple = new Picture(345, 240, "resources/appleGreen0.png");
+        greenApple = new Picture(345, 240, "resources/appleGreen00.png");
         greenRules = new Text(390, 250, "Are worth 20 points!");
         greenApple.draw();
         greenRules.setColor(Color.DARK_GRAY);
         greenRules.draw();
 
-        purpleApple = new Picture(85, 290, "resources/applePurple0.png");
+        purpleApple = new Picture(85, 290, "resources/applePurple00.png");
         purpleRules = new Text(130, 300, "Will get you 5 extra seconds!");
         purpleApple.draw();
         purpleRules.setColor(Color.DARK_GRAY);
         purpleRules.draw();
 
-        blackApple = new Picture(345, 290, "resources/appleBlack0.png");
+        blackApple = new Picture(345, 290, "resources/appleBlack00.png");
         blackRules = new Text(390, 300, "Makes you lose 50 points!");
         blackApple.draw();
         blackRules.setColor(Color.DARK_GRAY);

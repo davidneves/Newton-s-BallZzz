@@ -8,6 +8,6 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 public class SimpleGfxBlackApple extends SimpleGfxApple {
 
     public SimpleGfxBlackApple(int x, int y) {
-        super(new Picture(x, y, "resources/appleBlack0.png"));
+        super(new Picture(x, y, "resources/appleBlack00.png"));
     }
 }
