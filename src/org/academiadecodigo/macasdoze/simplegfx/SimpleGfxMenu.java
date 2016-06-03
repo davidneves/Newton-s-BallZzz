@@ -37,6 +37,9 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
     private Text blackRules;
     private Text gameName;
     private Text credits;
+    private Picture bird;
+
+    private int i = 1;
 
     public SimpleGfxMenu() {
         margin = MacasDoZe.MARGIN;
@@ -105,21 +108,42 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         credits.setColor(Color.BLUE);
         credits.draw();
 
+        bird = new Picture(margin, 380, "resources/bird1.png");
+        bird.draw();
+
     }
 
-    public void animatePlayButton() throws InterruptedException {
+    public void animateMenu() throws InterruptedException {
+        if (bird.getX() >= 520) {
+            bird.translate(-520, 0);
+        }
+        bird.load("resources/bird" + i + ".png");
         play.load("resources/playButton1.png");
+        bird.translate(20, 0);
         Thread.sleep(125);
         play.load("resources/playButton2.png");
+        bird.translate(20, 0);
+
         Thread.sleep(125);
         play.load("resources/playButton3.png");
+        bird.translate(20, 0);
+
         Thread.sleep(125);
         play.load("resources/playButton4.png");
+        bird.translate(20, 0);
+
         Thread.sleep(125);
+        if (i == 4) {
+            i = 0;
+        }
+        i++;
     }
 
-    public void clearMenu() {
 
+
+
+
+    public void clearMenu() {
         background.delete();
         play.delete();
         rules.delete();
