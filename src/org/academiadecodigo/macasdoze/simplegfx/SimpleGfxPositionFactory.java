@@ -9,10 +9,17 @@ import org.academiadecodigo.macasdoze.field.PositionFactory;
 import org.academiadecodigo.macasdoze.gameobjects.GameObjectType;
 
 /**
- * Created by <vi.KING_> David Neves on 23/05/16.
+ * @see PositionFactory
+ * <p>
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
  */
 public class SimpleGfxPositionFactory implements PositionFactory {
 
+    /**
+     * @param type the type of Game Object
+     * @return a Position
+     * @see PositionFactory#createPosition(GameObjectType)
+     */
     @Override
     public Position createPosition(GameObjectType type) {
 
@@ -46,6 +53,15 @@ public class SimpleGfxPositionFactory implements PositionFactory {
         return position;
     }
 
+    /**
+     * @param height
+     * @param width
+     * @param margin
+     * @param ground
+     * @param score
+     * @return a Field
+     * @see PositionFactory#createField(int, int, int, int, Score)
+     */
     @Override
     public Field createField(int height, int width, int margin, int ground, Score score) {
         return new SimpleGfxField(height, width, margin, ground, score);
