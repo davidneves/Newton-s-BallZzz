@@ -49,7 +49,7 @@ public class MacasDoZe implements KeyboardHandler {
         Sound.playMenuSound();
 
         while (!menu.continueGame()) {
-            menu.animatePlayButton();
+            menu.animateMenu();
         }
 
         Sound.stopSound();
