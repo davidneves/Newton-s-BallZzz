@@ -55,7 +55,7 @@ public class MacasDoZe implements KeyboardHandler {
         Sound.stopSound();
         menu.clearMenu();
         gameDraw();
-        start();
+        start(menu.isNormalMode());
     }
 
     private void gameDraw() {
@@ -75,7 +75,7 @@ public class MacasDoZe implements KeyboardHandler {
 
     }
 
-    private void start() throws InterruptedException {
+    private void start(boolean normalMode) throws InterruptedException {
 
         int cycles = 0;
 
@@ -98,7 +98,12 @@ public class MacasDoZe implements KeyboardHandler {
             cycles++;
 
             Thread.sleep(delay);
-            createApple(100);
+
+            if (normalMode) {
+                createApple(100);
+            } else {
+                createNuggets(100);
+            }
 
             moveApples();
             newton.move();
@@ -116,6 +121,15 @@ public class MacasDoZe implements KeyboardHandler {
 
             appleList.add(factory.createApple());
         }
+    }
+
+    private void createNuggets(int prob) {
+
+        if (RandomGenerator.getRandomNumber(prob) == 1) {
+
+            appleList.add(factory.createNugget());
+        }
+
     }
 
     private void createBlackApple(int prob) {

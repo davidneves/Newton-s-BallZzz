@@ -56,4 +56,8 @@ public class GameObjectsFactory {
         return newton;
     }
 
+    public Apple createNugget() {
+        return new RedApple((MovablePosition) positionFactory.createPosition(GameObjectType.NUGGET), 5, 20);
+    }
+
 }

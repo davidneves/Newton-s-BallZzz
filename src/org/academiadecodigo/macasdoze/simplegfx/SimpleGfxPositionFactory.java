@@ -39,6 +39,9 @@ public class SimpleGfxPositionFactory implements PositionFactory {
                 break;
             case BLACK_APPLE:
                 position = new SimpleGfxBlackApple(x, y, "resources/appleBlack0.png");
+                break;
+            case NUGGET:
+                position = new SimpleGfxRedApple(x, y, "resources/nugget.png");
         }
         return position;
     }

@@ -19,6 +19,7 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
     private int height;
     private int width;
     private boolean continueGame;
+    private boolean normalMode = true;
 
 
     private Picture background;
@@ -147,18 +148,18 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
                 && (m.getY() > play.getY() && m.getY() < play.getY() + play.getHeight())) {
 
             continueGame = true;
-        } /*else if (m.getEventType() == MouseEventType.MOUSE_CLICKED && (m.getX() > bird.getX() && m.getX() < bird.getX() + bird.getWidth())
+        } else if (m.getEventType() == MouseEventType.MOUSE_CLICKED && (m.getX() > bird.getX() && m.getX() < bird.getX() + bird.getWidth())
                 && (m.getY() > bird.getY() && m.getY() < bird.getY() + bird.getHeight())) {
-            SecretMiniGame
-        }*/
+            normalMode = false;
+            continueGame = true;
+        }
     }
 
     @Override
     public void mouseMoved(MouseEvent mouseEvent) {
     }
 
-}
-
-class SecretMiniGame {
-
+    public boolean isNormalMode() {
+        return normalMode;
+    }
 }

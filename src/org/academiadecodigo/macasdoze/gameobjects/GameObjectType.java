@@ -9,6 +9,7 @@ public enum GameObjectType {
     RED_APPLE,
     GREEN_APPLE,
     PURPLE_APPLE,
-    BLACK_APPLE
+    BLACK_APPLE,
+    NUGGET
 
 }
