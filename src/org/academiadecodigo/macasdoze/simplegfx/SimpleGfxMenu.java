@@ -175,13 +175,17 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
 
     /**
      * Enables the start of the game.
-     *
+     * <p>
      * @return boolean
      */
     public boolean continueGame() {
         return continueGame;
     }
 
+    /**
+     * @param m
+     * @see MouseHandler#mouseClicked(MouseEvent)
+     */
     @Override
     public void mouseClicked(MouseEvent m) {
 
@@ -196,6 +200,10 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         }
     }
 
+    /**
+     * @param mouseEvent
+     * @see MouseHandler#mouseMoved(MouseEvent)
+     */
     @Override
     public void mouseMoved(MouseEvent mouseEvent) {
     }

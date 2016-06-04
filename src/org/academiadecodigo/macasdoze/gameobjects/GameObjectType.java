@@ -1,7 +1,9 @@
 package org.academiadecodigo.macasdoze.gameobjects;
 
 /**
- * Created by codecadet on 23/05/16.
+ * The types of game objects used in the game.
+ * <p>
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
  */
 public enum GameObjectType {
 

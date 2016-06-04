@@ -16,7 +16,11 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
- * Created by codecadet on 23/05/16.
+ * To be instantiated by the Main.
+ * <p>
+ * The game logic.
+ * <p>
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
  */
 public class MacasDoZe implements KeyboardHandler {
 
@@ -42,6 +46,12 @@ public class MacasDoZe implements KeyboardHandler {
         this.delay = delay;
     }
 
+    /**
+     * Initializes the Menu and its background sound.
+     * <p>
+     *
+     * @throws InterruptedException
+     */
     public void init() throws InterruptedException {
         menu = new SimpleGfxMenu();
 
@@ -58,6 +68,11 @@ public class MacasDoZe implements KeyboardHandler {
         start(menu.isNormalMode());
     }
 
+    /**
+     * Draws the game
+     *
+     * @param normalMode
+     */
     private void gameDraw(boolean normalMode) {
 
 
@@ -80,6 +95,13 @@ public class MacasDoZe implements KeyboardHandler {
 
     }
 
+    /**
+     * Initializes the game
+     * <p>
+     *
+     * @param normalMode
+     * @throws InterruptedException
+     */
     private void start(boolean normalMode) throws InterruptedException {
 
         int cycles = 0;
@@ -124,6 +146,9 @@ public class MacasDoZe implements KeyboardHandler {
         }
     }
 
+    /**
+     * @param prob Probability of creating Apples.
+     */
     private void createApple(int prob) {
 
         if (RandomGenerator.getRandomNumber(prob) == 1) {
@@ -132,6 +157,9 @@ public class MacasDoZe implements KeyboardHandler {
         }
     }
 
+    /**
+     * @param prob Probability of creating Nuggets.
+     */
     private void createNuggets(int prob) {
 
         if (RandomGenerator.getRandomNumber(prob) == 1) {
@@ -141,6 +169,9 @@ public class MacasDoZe implements KeyboardHandler {
 
     }
 
+    /**
+     * @param prob Probability of creating Black Apples.
+     */
     private void createBlackApple(int prob) {
 
         if (RandomGenerator.getRandomNumber(prob) == 1) {
@@ -149,6 +180,9 @@ public class MacasDoZe implements KeyboardHandler {
         }
     }
 
+    /**
+     * Makes the Apples fall.
+     */
     private void moveApples() {
 
         Iterator<Apple> it = appleList.iterator();
@@ -174,6 +208,13 @@ public class MacasDoZe implements KeyboardHandler {
     }
 
 
+    /**
+     * Checks if the game has ended.
+     * <p>
+     *
+     * @return boolean
+     * @throws InterruptedException
+     */
     private boolean checkGameEnd() throws InterruptedException {
 
         if (score.getTimer() == 0) {
@@ -201,6 +242,12 @@ public class MacasDoZe implements KeyboardHandler {
         return true;
     }
 
+    /**
+     * If the player wins it ends the game and plays the victory sound.
+     * <p>
+     *
+     * @throws InterruptedException
+     */
     private void endWin() throws InterruptedException {
 
         Sound.stopSound();
@@ -221,6 +268,12 @@ public class MacasDoZe implements KeyboardHandler {
         }
     }
 
+    /**
+     * If the player loses it ends the game and plays the game over sound.
+     * <p>
+     *
+     * @throws InterruptedException
+     */
     private void endLose() throws InterruptedException {
 
         Sound.stopSound();
@@ -241,6 +294,12 @@ public class MacasDoZe implements KeyboardHandler {
         }
     }
 
+    /**
+     * It ends the game's secret level and plays the victory sound.
+     * <p>
+     *
+     * @throws InterruptedException
+     */
     private void endSecret() throws InterruptedException {
 
         Sound.stopSound();
@@ -262,6 +321,9 @@ public class MacasDoZe implements KeyboardHandler {
 
     }
 
+    /**
+     * Sets the events of the keys P and R of the Keyboard.
+     */
     private void setKeyboard() {
 
         Keyboard k = new Keyboard(this);
@@ -278,6 +340,9 @@ public class MacasDoZe implements KeyboardHandler {
 
     }
 
+    /**
+     * Clears the field for the two levels of the game and stops the sound.
+     */
     private void clear() {
 
         Sound.stopSound();
@@ -296,6 +361,10 @@ public class MacasDoZe implements KeyboardHandler {
 
     }
 
+    /**
+     * @param keyboardEvent
+     * @see KeyboardHandler#keyPressed(KeyboardEvent)
+     */
     @Override
     public void keyPressed(KeyboardEvent keyboardEvent) {
 
@@ -312,6 +381,10 @@ public class MacasDoZe implements KeyboardHandler {
         }
     }
 
+    /**
+     * @param keyboardEvent
+     * @see KeyboardHandler#keyReleased(KeyboardEvent)
+     */
     @Override
     public void keyReleased(KeyboardEvent keyboardEvent) {
 

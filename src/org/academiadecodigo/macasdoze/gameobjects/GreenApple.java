@@ -3,7 +3,7 @@ package org.academiadecodigo.macasdoze.gameobjects;
 import org.academiadecodigo.macasdoze.field.Position;
 
 /**
- * Created by codecadet on 23/05/16.
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
  */
 public class GreenApple extends Apple {
 

@@ -5,7 +5,6 @@ import org.academiadecodigo.macasdoze.field.Position;
 /**
  * Defines the methods and properties of one apple
  * <p>
- *
  * <p>
  * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
  */
@@ -29,11 +28,9 @@ public abstract class Apple extends MovableGameObject {
     /**
      * Makes the apple "fall" with a given speed
      */
-
     public void fall() {
         super.move(0, fallSpeed);
     }
-
 
 
     public boolean isFallen() {

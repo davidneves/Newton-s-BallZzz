@@ -7,7 +7,6 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 /**
  * Defines the positon of one object using the SimpleGraphics library and draws it
  * <p>
- *
  * <p>
  * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
  */
@@ -19,7 +18,6 @@ public abstract class SimpleGfxPosition implements Position {
      * Creates a shape and draws it
      * @param shape
      */
-
     public SimpleGfxPosition(Shape shape) {
         this.shape = shape;
         shape.draw();

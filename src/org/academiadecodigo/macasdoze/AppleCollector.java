@@ -6,7 +6,7 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
- * Created by codecadet on 23/05/16.
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
  */
 public class AppleCollector {
 

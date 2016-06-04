@@ -1,7 +1,7 @@
 package org.academiadecodigo.macasdoze;
 
 /**
- * Created by <vi.KING_> David Neves on 06/05/16.
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 06/05/16.
  */
 public class RandomGenerator {
 

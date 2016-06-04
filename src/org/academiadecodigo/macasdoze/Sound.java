@@ -7,9 +7,9 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 /**
- *Sounds that our game will implement
+ * Sounds that our game will implement
  * <p>
- *
+ * <p>
  * <p>
  * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
  */
@@ -19,7 +19,7 @@ public class Sound {
     private static AudioStream as;
 
     /**
-     * Loads and plays the menu music
+     * Loads and plays the menu music.
      */
     public static void playMenuSound() {
 
@@ -36,9 +36,8 @@ public class Sound {
     }
 
     /**
-     * Loads and plays the normal game music
+     * Loads and plays the normal game music.
      */
-
     public static void playSound() {
 
         try {
@@ -54,7 +53,7 @@ public class Sound {
     }
 
     /**
-     * Stops the music
+     * Stops the music.
      */
     public static void stopSound() {
 
@@ -63,9 +62,8 @@ public class Sound {
     }
 
     /**
-     * Plays a sound every time you catch one apple
+     * Plays a sound every time you catch one apple.
      */
-
     public static void appleCatchSound() {
 
         try {
@@ -82,9 +80,8 @@ public class Sound {
     }
 
     /**
-     * Plays a sound every time newton jumps
+     * Plays a sound every time newton jumps.
      */
-
     public static void jumpSound() {
 
         try {
@@ -101,10 +98,8 @@ public class Sound {
     }
 
     /**
-     * Plays a music when you lose the game
+     * Plays a music when you lose the game.
      */
-
-
     public static void playGameOver() {
 
         try {
@@ -120,9 +115,8 @@ public class Sound {
     }
 
     /**
-     * Plays a music when you win the game
+     * Plays a music when you win the game.
      */
-
     public static void playVictory() {
 
         try {
@@ -138,9 +132,8 @@ public class Sound {
     }
 
     /**
-     * Plays the secret level music
+     * Plays the secret level music.
      */
-
     public static void playSecretSong() {
 
         try {

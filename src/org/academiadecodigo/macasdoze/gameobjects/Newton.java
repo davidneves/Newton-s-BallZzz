@@ -12,7 +12,6 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 /**
  * Defines what methods and properties newton will have
  * <p>
- *
  * <p>
  * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
  */
@@ -37,8 +36,6 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
     /**
     * Makes Newton move and jump
     */
-
-
     public void move() {
 
         int startingY = MacasDoZe.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND - this.getPosition().getHeight();
@@ -111,7 +108,6 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
      * Updates newton's picture according to his direction and moves him according to user input
      * @param e
      */
-    
     @Override
     public void keyPressed(KeyboardEvent e) {
         if (winner) {
