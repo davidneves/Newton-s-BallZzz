@@ -3,7 +3,10 @@ package org.academiadecodigo.macasdoze.gameobjects;
 import org.academiadecodigo.macasdoze.field.Position;
 
 /**
- * Created by codecadet on 23/05/16.
+ * Defines what every object will be
+ * <p>
+ * <p>
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
  */
 public abstract class GameObject {
 

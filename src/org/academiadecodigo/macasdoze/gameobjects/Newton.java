@@ -10,7 +10,11 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
 /**
- * Created by codecadet on 23/05/16.
+ * Defines what methods and properties newton will have
+ * <p>
+ *
+ * <p>
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
  */
 public class Newton extends MovableGameObject implements KeyboardHandler {
 
