@@ -10,10 +10,10 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
 import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 
 /**
- * Defines what methods and properties newton will have
+ * Defines what methods and properties Newton will have
  * <p>
  * <p>
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mario Ponte on 23/05/16.
  */
 public class Newton extends MovableGameObject implements KeyboardHandler {
 
@@ -34,7 +34,7 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
 
 
     /**
-    * Makes Newton move and jump
+    * Makes Newton move and jump.
     */
     public void move() {
 
@@ -69,7 +69,7 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
     }
 
     /**
-     * Sets the user input keys
+     * Sets the user input keys.
      */
     public void setKeyboard() {
 
@@ -105,7 +105,7 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
     }
 
     /**
-     * Updates newton's picture according to his direction and moves him according to user input
+     * Updates newton's picture according to his direction and moves him according to user input.
      * @param e
      */
     @Override

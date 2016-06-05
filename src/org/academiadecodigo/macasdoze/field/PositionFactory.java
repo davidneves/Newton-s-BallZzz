@@ -4,11 +4,11 @@ import org.academiadecodigo.macasdoze.Score;
 import org.academiadecodigo.macasdoze.gameobjects.GameObjectType;
 
 /**
- * To be instantiated by the Position Factory of the defined library.
+ * To be instantiated by the PositionFactory of the defined library.
  * <p>
  * Creates the representations of the Game Objects.
  * <p>
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mario Ponte on 23/05/16.
  */
 public interface PositionFactory {
 

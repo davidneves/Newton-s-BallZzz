@@ -10,7 +10,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 /**
  * @see Field
  * <p>
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mario Ponte on 23/05/16.
  */
 public class SimpleGfxField implements Field {
 
@@ -103,7 +103,7 @@ public class SimpleGfxField implements Field {
         scoreText.setColor(Color.BLACK);
         scoreText.draw();
 
-        redApple = new Picture(550, height + margin + 3, "resources/nugget.png");
+        redApple = new Picture(550, height + margin + 3, "resources/nuggetEaten.png");
         redApple.draw();
 
         redApples = new Text(590, height + 2 * margin, "" + score.getRedApples());

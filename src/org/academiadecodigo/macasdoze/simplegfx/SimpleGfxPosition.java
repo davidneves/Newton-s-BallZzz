@@ -5,17 +5,17 @@ import org.academiadecodigo.simplegraphics.graphics.Shape;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 /**
- * Defines the positon of one object using the SimpleGraphics library and draws it
+ * Defines the positon of one object using the SimpleGraphics library and draws it.
  * <p>
  * <p>
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mario Ponte on 23/05/16.
  */
 public abstract class SimpleGfxPosition implements Position {
 
     private Shape shape;
 
     /**
-     * Creates a shape and draws it
+     * Creates a shape and draws it.
      * @param shape
      */
     public SimpleGfxPosition(Shape shape) {

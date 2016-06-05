@@ -7,7 +7,7 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 /**
- * Sounds that our game will implement
+ * Sounds that our game will implement.
  * <p>
  * <p>
  * <p>

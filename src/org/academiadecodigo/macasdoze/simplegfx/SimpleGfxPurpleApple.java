@@ -3,7 +3,9 @@ package org.academiadecodigo.macasdoze.simplegfx;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 /**
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 27/05/16.
+ * @see SimpleGfxApple
+ *
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mario Ponte on 27/05/16.
  */
 public class SimpleGfxPurpleApple extends SimpleGfxApple {
 

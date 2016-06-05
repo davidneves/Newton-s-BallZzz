@@ -3,7 +3,9 @@ package org.academiadecodigo.macasdoze.gameobjects;
 import org.academiadecodigo.macasdoze.field.Position;
 
 /**
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 27/05/16.
+ * @see Apple
+ *
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mario Ponte on 27/05/16.
  */
 public class PurpleApple extends Apple {
 
@@ -14,10 +16,6 @@ public class PurpleApple extends Apple {
         this.timeBoost = timeBoost;
     }
 
-    /**
-     * @see Apple#isFallen()
-     *
-     */
     public int getTimeBoost() {
         return timeBoost;
     }

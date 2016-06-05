@@ -9,7 +9,7 @@ import org.academiadecodigo.macasdoze.field.PositionFactory;
  * <p>
  * Creates the different types of Game Objects.
  * <p>
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mario Ponte on 23/05/16.
  */
 
 public class GameObjectsFactory {
@@ -32,7 +32,7 @@ public class GameObjectsFactory {
      * It has different probabilities to create each type of apple.
      * <p>
      *
-     * @return a Apple
+     * @return an Apple.
      */
     public Apple createApple() {
 
@@ -58,7 +58,7 @@ public class GameObjectsFactory {
     }
 
     /**
-     * @return a new Black Apple
+     * @return a new Black Apple.
      */
     public Apple createBlackApple() {
 
@@ -66,7 +66,7 @@ public class GameObjectsFactory {
     }
 
     /**
-     * @return the player Game Object Newton
+     * @return the player Game Object Newton.
      */
     public Newton createNewton() {
 
@@ -75,7 +75,7 @@ public class GameObjectsFactory {
     }
 
     /**
-     * @return new Game Object of the Secret Level
+     * @return new Game Object of the Secret Level.
      */
     public Apple createNugget() {
         return new RedApple((MovablePosition) positionFactory.createPosition(GameObjectType.NUGGET), 5, 20);

@@ -5,7 +5,11 @@ import org.academiadecodigo.simplegraphics.graphics.Movable;
 import org.academiadecodigo.simplegraphics.graphics.Shape;
 
 /**
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 24/05/2016.
+ * @see MovablePosition
+ *
+ * @see SimpleGfxPosition
+ *
+ * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mario Ponte on 24/05/2016.
  */
 public abstract class SimpleGfxMovablePosition extends SimpleGfxPosition implements MovablePosition {
 
