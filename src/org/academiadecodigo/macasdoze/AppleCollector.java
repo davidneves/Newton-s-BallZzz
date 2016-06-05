@@ -6,6 +6,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
+ * This class recieves a list of caught apples
+ *
+ *
  * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
  */
 public class AppleCollector {

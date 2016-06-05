@@ -21,6 +21,7 @@ public abstract class Apple extends MovableGameObject {
         this.points = points;
     }
 
+
     public int getPoints() {
         return points;
     }

@@ -7,5 +7,10 @@ package org.academiadecodigo.macasdoze.field;
  */
 public interface MovablePosition extends Position {
 
+    /**
+     *
+     * @param dx
+     * @param dy
+     */
     void move(int dx, int dy);
 }

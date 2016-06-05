@@ -80,7 +80,7 @@ public class Sound {
     }
 
     /**
-     * Plays a sound every time newton jumps.
+     * Plays a sound every time Newton jumps.
      */
     public static void jumpSound() {
 
