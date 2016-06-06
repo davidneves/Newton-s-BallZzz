@@ -213,3 +213,5 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         return normalMode;
     }
 }
+
+
