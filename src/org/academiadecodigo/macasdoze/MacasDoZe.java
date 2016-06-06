@@ -56,13 +56,13 @@ public class MacasDoZe implements KeyboardHandler {
         menu = new SimpleGfxMenu();
 
         menu.init();
-        Sound.playMenuSound();
+        SoundHandler.playMenuSound();
 
         while (!menu.continueGame()) {
             menu.animateMenu();
         }
 
-        Sound.stopSound();
+        SoundHandler.stopSound("/resources/Mozart.wav");
         menu.clearMenu();
         gameDraw(menu.isNormalMode());
         start(menu.isNormalMode());
@@ -79,11 +79,11 @@ public class MacasDoZe implements KeyboardHandler {
         score = new Score(30);
         field = factory.getPositionFactory().createField(HEIGHT, WIDTH, MARGIN, GROUND, score);
         if (normalMode) {
-            Sound.playSound();
+            SoundHandler.playSound();
             field.normalInit();
         } else {
             field.secretInit();
-            Sound.playSecretSong();
+            SoundHandler.playSecretSong();
         }
 
         newton = factory.createNewton();
@@ -250,8 +250,8 @@ public class MacasDoZe implements KeyboardHandler {
      */
     private void endWin() throws InterruptedException {
 
-        Sound.stopSound();
-        Sound.playVictory();
+        SoundHandler.stopSound("/resources/tetris.wav");
+        SoundHandler.playVictory();
 
         while (true) {
 
@@ -263,6 +263,7 @@ public class MacasDoZe implements KeyboardHandler {
 
             if (restart) {
                 clear();
+                SoundHandler.stopSound("/resources/Celebration.wav");
                 Main.main(new String[]{});
             }
         }
@@ -276,8 +277,8 @@ public class MacasDoZe implements KeyboardHandler {
      */
     private void endLose() throws InterruptedException {
 
-        Sound.stopSound();
-        Sound.playGameOver();
+        SoundHandler.stopSound("/resources/tetris.wav");
+        SoundHandler.playGameOver();
 
         while (true) {
 
@@ -289,6 +290,7 @@ public class MacasDoZe implements KeyboardHandler {
 
             if (restart) {
                 clear();
+                SoundHandler.stopSound("/resources/gameover.wav");
                 Main.main(new String[]{});
             }
         }
@@ -302,8 +304,8 @@ public class MacasDoZe implements KeyboardHandler {
      */
     private void endSecret() throws InterruptedException {
 
-        Sound.stopSound();
-        Sound.playVictory();
+        SoundHandler.stopSound("/resources/bonusLevelSong.wav");
+        SoundHandler.playVictory();
 
         while (true) {
 
@@ -315,6 +317,7 @@ public class MacasDoZe implements KeyboardHandler {
 
             if (restart) {
                 clear();
+                SoundHandler.stopSound("/resources/Celebration.wav");
                 Main.main(new String[]{});
             }
         }
@@ -345,7 +348,6 @@ public class MacasDoZe implements KeyboardHandler {
      */
     private void clear() {
 
-        Sound.stopSound();
         if (menu.isNormalMode()) {
             field.clearNormalMode();
         } else {
