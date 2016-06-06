@@ -6,7 +6,9 @@ import java.util.Iterator;
 import java.util.LinkedList;
 
 /**
- * Created by codecadet on 23/05/16.
+ * This class receives a list of caught apples.
+ *
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public class AppleCollector {
 
@@ -20,6 +22,9 @@ public class AppleCollector {
         this.score = score;
     }
 
+    /**
+     * Compares Newton's position with the apple's. If it matches, increases score, increases the timer or reduces score.
+     */
     public void appleCatch() {
 
         Apple apple = null;

@@ -3,9 +3,9 @@ package org.academiadecodigo.macasdoze.field;
 /**
  * To be instantiated by the Field of the defined library.
  * <p>
- * Draws the pictures and textes of the Field.
+ * Draws the pictures and texts of the Field.
  * <p>
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public interface Field {
 

@@ -5,13 +5,19 @@ import org.academiadecodigo.simplegraphics.graphics.Shape;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 /**
- * Created by <vi.KING_> David Neves on 23/05/16.
+ * Defines the positon of one object using the SimpleGraphics library and draws it.
+ * <p>
+ * <p>
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public abstract class SimpleGfxPosition implements Position {
 
     private Shape shape;
 
-
+    /**
+     * Creates a shape and draws it.
+     * @param shape
+     */
     public SimpleGfxPosition(Shape shape) {
         this.shape = shape;
         shape.draw();
@@ -22,7 +28,10 @@ public abstract class SimpleGfxPosition implements Position {
         return shape;
     }
 
-
+    /**
+     *
+     * @see Position#updatePicture(String)
+     */
     public void updatePicture(String path) {
 
         try {
@@ -44,6 +53,9 @@ public abstract class SimpleGfxPosition implements Position {
         return shape.getY();
     }
 
+    /**
+     * @see Position#deleteObject()
+     */
     @Override
     public void deleteObject() {
         shape.delete();

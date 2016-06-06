@@ -1,7 +1,11 @@
 package org.academiadecodigo.macasdoze;
 
 /**
- * Created by <vi.KING_> David Neves on 27/05/16.
+ * To be instantiated by the MacasDoZe class.
+ * <p>
+ * Counts the number of Apples collected and increases the score.
+ * <p>
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public class Score {
 
@@ -42,30 +46,51 @@ public class Score {
         return timer;
     }
 
+    /**
+     * @param points Number of points by which the score will be increased.
+     */
     public void increaseScore(int points) {
         score += points;
     }
 
+    /**
+     * Increases the Green Apples.
+     */
     public void increaseGreenApples() {
         greenApples++;
     }
 
+    /**
+     * Increases the Red Apples.
+     */
     public void increaseRedApples() {
         redApples++;
     }
 
+    /**
+     * Increases the Purple Apples.
+     */
     public void increasePurpleApples() {
         purpleApples++;
     }
 
+    /**
+     * Increases the Black Apples.
+     */
     public void increaseBlackApples() {
         blackApples++;
     }
 
+    /**
+     * @param n Number by which the timer will be increased.
+     */
     public void increaseTimer(int n) {
         timer += n;
     }
 
+    /**
+     * Decreases the timer.
+     */
     public void decreaseTimer() {
         timer--;
     }

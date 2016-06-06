@@ -4,7 +4,10 @@ import org.academiadecodigo.macasdoze.field.MovablePosition;
 import org.academiadecodigo.macasdoze.field.Position;
 
 /**
- * Created by codecadet on 23/05/16.
+ *
+ * @see GameObject
+ *
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public abstract class MovableGameObject extends GameObject {
 

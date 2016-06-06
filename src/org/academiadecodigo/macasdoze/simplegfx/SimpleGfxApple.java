@@ -3,7 +3,11 @@ package org.academiadecodigo.macasdoze.simplegfx;
 import org.academiadecodigo.simplegraphics.graphics.Shape;
 
 /**
- * Created by <vi.KING_> David Neves on 24/05/2016.
+ * Instatiated in SimpleGfxPositionFactory
+ *
+ * @see SimpleGfxMovablePosition
+ *
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public abstract class SimpleGfxApple extends SimpleGfxMovablePosition {
 

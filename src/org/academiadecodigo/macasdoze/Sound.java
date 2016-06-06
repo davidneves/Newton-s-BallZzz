@@ -7,13 +7,19 @@ import java.io.FileInputStream;
 import java.io.InputStream;
 
 /**
- * Created by <vi.KING_> David Neves on 29/05/2016.
+ * Sounds that our game will implement.
+ * <p>
+ * <p>
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public class Sound {
 
     private static InputStream in;
     private static AudioStream as;
 
+    /**
+     * Loads and plays the menu music.
+     */
     public static void playMenuSound() {
 
         try {
@@ -28,6 +34,9 @@ public class Sound {
         }
     }
 
+    /**
+     * Loads and plays the normal game music.
+     */
     public static void playSound() {
 
         try {
@@ -42,12 +51,18 @@ public class Sound {
         }
     }
 
+    /**
+     * Stops the music.
+     */
     public static void stopSound() {
 
         AudioPlayer.player.stop(as);
 
     }
 
+    /**
+     * Plays a sound every time you catch one apple.
+     */
     public static void appleCatchSound() {
 
         try {
@@ -63,6 +78,9 @@ public class Sound {
 
     }
 
+    /**
+     * Plays a sound every time Newton jumps.
+     */
     public static void jumpSound() {
 
         try {
@@ -78,7 +96,9 @@ public class Sound {
 
     }
 
-
+    /**
+     * Plays a music when you lose the game.
+     */
     public static void playGameOver() {
 
         try {
@@ -93,6 +113,9 @@ public class Sound {
         }
     }
 
+    /**
+     * Plays a music when you win the game.
+     */
     public static void playVictory() {
 
         try {
@@ -107,6 +130,9 @@ public class Sound {
         }
     }
 
+    /**
+     * Plays the secret level music.
+     */
     public static void playSecretSong() {
 
         try {
@@ -120,8 +146,6 @@ public class Sound {
             System.out.println("file not found.");
         }
     }
-
-
 
 
 }

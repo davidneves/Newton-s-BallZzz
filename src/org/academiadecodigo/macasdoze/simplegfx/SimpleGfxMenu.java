@@ -11,7 +11,9 @@ import org.academiadecodigo.simplegraphics.mouse.MouseHandler;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 /**
- * Created by codecadet on 30/05/16.
+ * @see Menu
+ * <p>
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public class SimpleGfxMenu implements Menu, MouseHandler {
 
@@ -47,6 +49,9 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         width = MacasDoZe.WIDTH;
     }
 
+    /**
+     * @see Menu#init()
+     */
     public void init() {
 
         Mouse m = new Mouse(this);
@@ -114,6 +119,11 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
 
     }
 
+    /**
+     * Animates the Menu buttons.
+     *
+     * @throws InterruptedException
+     */
     public void animateMenu() throws InterruptedException {
         if (bird.getX() >= 540) {
             bird.translate(-540, 0);
@@ -141,7 +151,9 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
     }
 
 
-
+    /**
+     * @see Menu#clearMenu()
+     */
     public void clearMenu() {
 
         background.delete();
@@ -161,10 +173,19 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         credits.delete();
     }
 
+    /**
+     * Enables the start of the game.
+     * <p>
+     * @return boolean
+     */
     public boolean continueGame() {
         return continueGame;
     }
 
+    /**
+     * @param m
+     * @see MouseHandler#mouseClicked(MouseEvent)
+     */
     @Override
     public void mouseClicked(MouseEvent m) {
 
@@ -179,6 +200,10 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
         }
     }
 
+    /**
+     * @param mouseEvent
+     * @see MouseHandler#mouseMoved(MouseEvent)
+     */
     @Override
     public void mouseMoved(MouseEvent mouseEvent) {
     }

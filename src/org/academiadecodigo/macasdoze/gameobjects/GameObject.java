@@ -3,7 +3,9 @@ package org.academiadecodigo.macasdoze.gameobjects;
 import org.academiadecodigo.macasdoze.field.Position;
 
 /**
- * Created by codecadet on 23/05/16.
+ * Defines where every object will be in the Field.
+ * <p>
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public abstract class GameObject {
 

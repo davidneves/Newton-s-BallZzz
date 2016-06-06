@@ -1,7 +1,11 @@
 package org.academiadecodigo.macasdoze.field;
 
 /**
- * Created by codecadet on 23/05/16.
+ * To be instantiated by the Position of the defined library.
+ * <p>
+ * Creates the position of the object.
+ * <p>
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public interface Position {
 
@@ -13,7 +17,14 @@ public interface Position {
 
     int getHeight();
 
+    /**
+     * Deletes the representation of the object.
+     */
     void deleteObject();
 
+    /**
+     * Updates the image of the object with a given path.
+     * @param path
+     */
     void updatePicture(String path);
 }

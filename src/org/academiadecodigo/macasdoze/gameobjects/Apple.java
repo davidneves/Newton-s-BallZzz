@@ -3,7 +3,9 @@ package org.academiadecodigo.macasdoze.gameobjects;
 import org.academiadecodigo.macasdoze.field.Position;
 
 /**
- * Created by codecadet on 23/05/16.
+ * Defines what methods and properties an Apple will have.
+ * <p>
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public abstract class Apple extends MovableGameObject {
 
@@ -18,13 +20,18 @@ public abstract class Apple extends MovableGameObject {
         this.points = points;
     }
 
+
     public int getPoints() {
         return points;
     }
 
+    /**
+     * Makes the apple "fall" with a given speed.
+     */
     public void fall() {
         super.move(0, fallSpeed);
     }
+
 
     public boolean isFallen() {
         return fallen;
@@ -38,6 +45,9 @@ public abstract class Apple extends MovableGameObject {
         return fallenCycleCounter;
     }
 
+    /**
+     * Increases the cycles that apples spent on the ground.
+     */
     public void increaseFallenCycleCounter() {
         this.fallenCycleCounter++;
     }

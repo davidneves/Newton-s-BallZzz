@@ -5,7 +5,7 @@ import org.academiadecodigo.macasdoze.gameobjects.GameObjectsFactory;
 import org.academiadecodigo.macasdoze.simplegfx.SimpleGfxPositionFactory;
 
 /**
- * Created by codecadet on 23/05/16.
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public class Main {
 

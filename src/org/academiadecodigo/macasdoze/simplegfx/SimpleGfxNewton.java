@@ -4,7 +4,11 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
 
 
 /**
- * Created by <vi.KING_> David Neves on 24/05/2016.
+ * Instatiated in SimpleGfxPositionFactory
+ *
+ * @see SimpleGfxMovablePosition
+ *
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public class SimpleGfxNewton extends SimpleGfxMovablePosition {
 
@@ -13,6 +17,11 @@ public class SimpleGfxNewton extends SimpleGfxMovablePosition {
     public static final int HEIGHT = 117;
 
 
+    /**
+     * Creates a new picture and defines its path.
+     * @param x
+     * @param y
+     */
     public SimpleGfxNewton(int x, int y) {
         super(new Picture(x, y, "resources/newtonStillL.png"));
 
