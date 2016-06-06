@@ -39,7 +39,7 @@ public class AppleCollector {
                     && apple.getPosition().getWidth() + apple.getPosition().getX() > newton.getPosition().getX())) {
 
                 score.increaseScore(apple.getPoints());
-                Sound.appleCatchSound();
+                SoundHandler.appleCatchSound();
 
                 if (apple instanceof GreenApple) {
                     score.increaseGreenApples();

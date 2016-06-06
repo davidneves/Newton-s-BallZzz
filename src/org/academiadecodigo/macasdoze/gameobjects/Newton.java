@@ -1,7 +1,7 @@
 package org.academiadecodigo.macasdoze.gameobjects;
 
 import org.academiadecodigo.macasdoze.MacasDoZe;
-import org.academiadecodigo.macasdoze.Sound;
+import org.academiadecodigo.macasdoze.SoundHandler;
 import org.academiadecodigo.macasdoze.field.Position;
 import org.academiadecodigo.macasdoze.simplegfx.SimpleGfxNewton;
 import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
@@ -148,7 +148,7 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
                 rightPressed = true;
             } else if (e.getKey() == KeyboardEvent.KEY_SPACE && this.getPosition().getY() == MacasDoZe.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND - SimpleGfxNewton.HEIGHT) {
                 spacePressed = true;
-                Sound.jumpSound();
+                SoundHandler.jumpSound();
             }
         }
     }
