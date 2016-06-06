@@ -16,6 +16,7 @@ public abstract class SimpleGfxPosition implements Position {
 
     /**
      * Creates a shape and draws it.
+     *
      * @param shape
      */
     public SimpleGfxPosition(Shape shape) {
@@ -29,13 +30,12 @@ public abstract class SimpleGfxPosition implements Position {
     }
 
     /**
-     *
      * @see Position#updatePicture(String)
      */
     public void updatePicture(String path) {
 
         try {
-        ((Picture) shape).load(path);
+            ((Picture) shape).load(path);
         } catch (Exception e) {
             System.out.println("newton moving error");
         }

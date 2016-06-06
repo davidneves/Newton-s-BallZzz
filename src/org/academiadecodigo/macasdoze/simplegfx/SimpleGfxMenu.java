@@ -176,6 +176,7 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
     /**
      * Enables the start of the game.
      * <p>
+     *
      * @return boolean
      */
     public boolean continueGame() {

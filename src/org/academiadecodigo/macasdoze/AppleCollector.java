@@ -7,7 +7,7 @@ import java.util.LinkedList;
 
 /**
  * This class receives a list of caught apples.
- *
+ * <p>
  * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public class AppleCollector {

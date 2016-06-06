@@ -2,7 +2,7 @@ package org.academiadecodigo.macasdoze;
 
 /**
  * Generates a random number within a range.
- *
+ * <p>
  * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public class RandomGenerator {

@@ -34,8 +34,8 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
 
 
     /**
-    * Makes Newton move and jump.
-    */
+     * Makes Newton move and jump.
+     */
     public void move() {
 
         int startingY = MacasDoZe.HEIGHT + MacasDoZe.MARGIN - MacasDoZe.GROUND - this.getPosition().getHeight();
@@ -106,6 +106,7 @@ public class Newton extends MovableGameObject implements KeyboardHandler {
 
     /**
      * Updates newton's picture according to his direction and moves him according to user input.
+     *
      * @param e
      */
     @Override

@@ -6,9 +6,8 @@ import org.academiadecodigo.simplegraphics.graphics.Shape;
 
 /**
  * @see MovablePosition
- *
  * @see SimpleGfxPosition
- *
+ * <p>
  * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public abstract class SimpleGfxMovablePosition extends SimpleGfxPosition implements MovablePosition {

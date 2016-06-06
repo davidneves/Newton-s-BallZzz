@@ -24,6 +24,7 @@ public interface Position {
 
     /**
      * Updates the image of the object with a given path.
+     *
      * @param path
      */
     void updatePicture(String path);

@@ -7,7 +7,7 @@ import org.academiadecodigo.simplegraphics.pictures.Picture;
  * Instatiated in SimpleGfxPositionFactory
  *
  * @see SimpleGfxMovablePosition
- *
+ * <p>
  * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public class SimpleGfxNewton extends SimpleGfxMovablePosition {
@@ -19,6 +19,7 @@ public class SimpleGfxNewton extends SimpleGfxMovablePosition {
 
     /**
      * Creates a new picture and defines its path.
+     *
      * @param x
      * @param y
      */
