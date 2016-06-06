@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 /**
@@ -19,7 +18,11 @@ public class SoundHandler {
 
     private static Map<String, Clip> soundMap = new HashMap();
 
-
+    /**
+     * Loads the wav into the Clip and play's it.
+     *
+     * @param pathStr
+     */
     public static void loadSound(String pathStr) {
 
 
@@ -74,9 +77,8 @@ public class SoundHandler {
     }
 
 
-
     /**
-     * Loads and plays the menu music.
+     * Loads the menu music.
      */
     public static void playMenuSound() {
 
@@ -84,7 +86,7 @@ public class SoundHandler {
     }
 
     /**
-     * Loads and plays the normal game music.
+     * Loads the main music.
      */
     public static void playSound() {
 
@@ -93,7 +95,7 @@ public class SoundHandler {
 
 
     /**
-     * Plays a sound every time you catch one apple.
+     * Loads the apple catch music.
      */
     public static void appleCatchSound() {
 
@@ -112,7 +114,6 @@ public class SoundHandler {
      * Plays a music when you lose the game.
      */
     public static void playGameOver() {
-        System.out.println("gameover");
 
         loadSound("/resources/gameover.wav");
     }
