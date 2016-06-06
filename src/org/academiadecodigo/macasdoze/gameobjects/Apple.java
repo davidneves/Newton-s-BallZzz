@@ -5,7 +5,7 @@ import org.academiadecodigo.macasdoze.field.Position;
 /**
  * Defines what methods and properties an Apple will have.
  * <p>
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mario Ponte on 23/05/16.
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public abstract class Apple extends MovableGameObject {
 

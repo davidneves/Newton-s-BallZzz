@@ -5,7 +5,7 @@ package org.academiadecodigo.macasdoze.field;
  * <p>
  * Draws the Menu.
  * <p>
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mario Ponte on 31/05/16.
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public interface Menu {
 

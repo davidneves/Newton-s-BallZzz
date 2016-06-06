@@ -7,7 +7,7 @@ import org.academiadecodigo.simplegraphics.graphics.Shape;
  *
  * @see SimpleGfxMovablePosition
  *
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 24/05/2016.
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public abstract class SimpleGfxApple extends SimpleGfxMovablePosition {
 

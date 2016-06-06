@@ -13,7 +13,7 @@ import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
  * Defines what methods and properties Newton will have
  * <p>
  * <p>
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mario Ponte on 23/05/16.
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public class Newton extends MovableGameObject implements KeyboardHandler {
 

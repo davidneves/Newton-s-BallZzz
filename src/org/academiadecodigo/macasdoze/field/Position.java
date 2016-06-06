@@ -5,7 +5,7 @@ package org.academiadecodigo.macasdoze.field;
  * <p>
  * Creates the position of the object.
  * <p>
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mario Ponte on 23/05/16.
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public interface Position {
 

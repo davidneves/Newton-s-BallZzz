@@ -10,8 +10,7 @@ import java.io.InputStream;
  * Sounds that our game will implement.
  * <p>
  * <p>
- * <p>
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mário Ponte on 23/05/16.
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public class Sound {
 

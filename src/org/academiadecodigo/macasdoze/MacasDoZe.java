@@ -20,7 +20,7 @@ import java.util.LinkedList;
  * <p>
  * The game logic.
  * <p>
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mario Ponte on 23/05/16.
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public class MacasDoZe implements KeyboardHandler {
 

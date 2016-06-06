@@ -5,7 +5,7 @@ package org.academiadecodigo.macasdoze;
  * <p>
  * Counts the number of Apples collected and increases the score.
  * <p>
- * Created by <vi.KINGS_> David Neves, Fábio Santos, Hélia Marcos and Mario Ponte on 27/05/16.
+ * Created by vi.KINGS David Neves, Fabio Santos, Helia Marcos and Mario Ponte on 23/05/16.
  */
 public class Score {
 
