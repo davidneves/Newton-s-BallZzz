@@ -115,8 +115,8 @@ public class SimpleGfxMenu implements Menu, MouseHandler {
     }
 
     public void animateMenu() throws InterruptedException {
-        if (bird.getX() >= 520) {
-            bird.translate(-520, 0);
+        if (bird.getX() >= 540) {
+            bird.translate(-540, 0);
         }
         bird.load("resources/bird" + i + ".png");
         play.load("resources/playButton1.png");
